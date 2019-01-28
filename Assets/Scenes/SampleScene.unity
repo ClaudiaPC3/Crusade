@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 863613334}
   - component: {fileID: 863613335}
   m_Layer: 0
-  m_Name: Jugador Test
+  m_Name: Mago Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
