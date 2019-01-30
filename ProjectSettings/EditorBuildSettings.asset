@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu principal.unity
     guid: d4707ee2235990e47bdfaf6e43b97932
+  - enabled: 1
+    path: Assets/Scenes/Menu Jugar.unity
+    guid: 3ecadfd8fcab1e844825835d0ec5f151
+  - enabled: 1
+    path: Assets/Scenes/Menu Multijugador.unity
+    guid: bd2ec86e2ef9aed479b0e42b09218054
+  - enabled: 1
+    path: Assets/Scenes/Menu Clase.unity
+    guid: b190a3b19c71c9c458dcd29d0668d51e
   m_configObjects: {}
