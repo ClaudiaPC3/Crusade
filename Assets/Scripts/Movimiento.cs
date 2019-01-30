@@ -10,15 +10,21 @@ public class Movimiento : MonoBehaviour
     //Objeto del animador
     public Animator anim;
 
+    //Objeto Rigid Body
+    Rigidbody2D rg2d;
+
     //Variables de control de animaciones
     public float lastX = 0f;
     public float lastY = -1f;
     public bool isMov = false;
 
+    private Vector2 mov;
+
     // Start is called before the first frame update
     void Start()
     {
        anim = GetComponent<Animator>(); // Ubica nuestro animador
+       rg2d = GetComponent<Rigidbody2D>();//Ubica el cuerpo
     }
 
     // Update is called once per frame
@@ -29,10 +35,9 @@ public class Movimiento : MonoBehaviour
 
     private void FixedUpdate() //Esto es de diosito chichenol
     {
-        Vector3 mov = new Vector3( //En este vector se asigna la información obtenida por perifericos
+            mov = new Vector2( //En este vector se asigna la información obtenida por perifericos
             Input.GetAxisRaw("Horizontal"), //señal X de los perifericos
-            Input.GetAxisRaw("Vertical"), //señal Y de los perifericos
-            0 //Z xdxd nadie te quiere
+            Input.GetAxisRaw("Vertical") //señal Y de los perifericos
             );
 
         if (mov.x != 0 || mov.y != 0) //el if es usado para evitar que se le asigne 0,0 y terminar con la animacion default
@@ -50,10 +55,7 @@ public class Movimiento : MonoBehaviour
         else
             isMov = true;  //chi chenol      
 
-        transform.position = Vector3.MoveTowards( //Se le aplica al transform del jugador (obtenido desde fuera) la funcion towards (los mueve de lugar)
-            transform.position, //Aqui se indica su anterior posicion 
-            transform.position + mov, //Aqui su nueva
-            speed); //Aqui su velocidad
+        rg2d.MovePosition(rg2d.position + mov * speed * Time.deltaTime); //Esto se encarga de hacer el movimiento
 
         anim.SetFloat("MovX", mov.x); //Se envian las variables para las animaciones del arbol de movimientos
         anim.SetFloat("MovY", mov.y);
