@@ -55,7 +55,13 @@ public class Movimiento : MonoBehaviour
         else
             isMov = true;  //chi chenol      
 
-        rg2d.MovePosition(rg2d.position + mov * speed * Time.deltaTime); //Esto se encarga de hacer el movimiento
+        if(mov.x == 0 || mov.y == 0) { 
+            rg2d.MovePosition(rg2d.position + mov * speed * Time.deltaTime); //Esto se encarga de hacer el movimiento
+        }
+        else
+        {
+            rg2d.MovePosition(rg2d.position + mov * (speed/1.7f) * Time.deltaTime);
+        }
 
         anim.SetFloat("MovX", mov.x); //Se envian las variables para las animaciones del arbol de movimientos
         anim.SetFloat("MovY", mov.y);
