@@ -27,11 +27,11 @@ public class Movimiento : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camara = GameObject.Find("Main Camera");
         anim = GetComponent<Animator>(); // Ubica nuestro animador
-       rg2d = GetComponent<Rigidbody2D>();//Ubica el cuerpo
-       transCam = camara.GetComponent<Transform>();
+        rg2d = GetComponent<Rigidbody2D>();//Ubica el cuerpo
         propio = GetComponent<Transform>();
+        camara = GameObject.Find("Main Camera");
+        transCam = camara.GetComponent<Transform>();
     }
 
     // Update is called once per frame
