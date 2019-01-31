@@ -5,6 +5,9 @@ using UnityEngine.Networking;
 
 public class Movimiento : NetworkBehaviour
 {
+    public GameObject camara;
+    public Transform transCam, propio;
+
     //Variable de la velocidad del personaje (Editable desde el prefab del personaje)
     public float speed = 4f;
 
@@ -20,12 +23,15 @@ public class Movimiento : NetworkBehaviour
     public bool isMov = false;
 
     private Vector2 mov;
-
+    private Vector3 cam;
     // Start is called before the first frame update
     void Start()
     {
-       anim = GetComponent<Animator>(); // Ubica nuestro animador
+        camara = GameObject.Find("Main Camera");
+        anim = GetComponent<Animator>(); // Ubica nuestro animador
        rg2d = GetComponent<Rigidbody2D>();//Ubica el cuerpo
+       transCam = camara.GetComponent<Transform>();
+        propio = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -67,6 +73,10 @@ public class Movimiento : NetworkBehaviour
         {
             rg2d.MovePosition(rg2d.position + mov * (speed/1.7f) * Time.deltaTime);
         }
+
+        cam = new Vector3(propio.position.x, propio.position.y, -10);
+        transCam.position = cam;
+        
 
         anim.SetFloat("MovX", mov.x); //Se envian las variables para las animaciones del arbol de movimientos
         anim.SetFloat("MovY", mov.y);
