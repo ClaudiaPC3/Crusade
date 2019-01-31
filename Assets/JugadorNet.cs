@@ -31,7 +31,7 @@ public class JugadorNet : NetworkBehaviour
     void CmdSpawnMago(){
         GameObject jugador = Instantiate(Personaje);
 
-        NetworkServer.Spawn(jugador);
+        NetworkServer.SpawnWithClientAuthority(jugador, connectionToClient);
     }
 
 

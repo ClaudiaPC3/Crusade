@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Movimiento : MonoBehaviour
+public class Movimiento : NetworkBehaviour
 {
     //Variable de la velocidad del personaje (Editable desde el prefab del personaje)
     public float speed = 4f;
@@ -35,6 +36,10 @@ public class Movimiento : MonoBehaviour
 
     private void FixedUpdate() //Esto es de diosito chichenol
     {
+        if (!hasAuthority)
+        {
+            return;
+        }
             mov = new Vector2( //En este vector se asigna la información obtenida por perifericos
             Input.GetAxisRaw("Horizontal"), //señal X de los perifericos
             Input.GetAxisRaw("Vertical") //señal Y de los perifericos
