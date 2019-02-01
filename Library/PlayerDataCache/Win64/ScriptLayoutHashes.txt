@@ -130,12 +130,14 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 36942a71cbbf409e9f2f444461330179 Assembly-CSharp.dll:Tiled2Unity.ImportBehaviour
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
+ebd66c155e408e232ce8abe319d2617c Assembly-CSharp.dll:.PrinOpc
 114c64d7c9091de73ea3842a56704e68 Assembly-CSharp.dll:.Imagen
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 8865faea894807799316645853413f05 Assembly-CSharp.dll:.RegresoMenus
 46eeb73e9847dd29fb0770e46e8a6715 Assembly-CSharp.dll:.Pausa
 02645cd2809521863e990f79b565042a Assembly-CSharp.dll:Tiled2Unity.TiledMap
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
+ebd66c155e408e232ce8abe319d2617c Assembly-CSharp.dll:.CabOpc
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.OpcionesAdm
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
@@ -173,7 +175,9 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+ebd66c155e408e232ce8abe319d2617c Assembly-CSharp.dll:.MagoOpc
 f32d1d61e48bba08149fd1b81df8d6f5 Assembly-CSharp.dll:Tiled2Unity.TileLayer
+ebd66c155e408e232ce8abe319d2617c Assembly-CSharp.dll:.HerrOpc
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
@@ -187,7 +191,3 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 a2037a6d3d69e2ae4365852f05289f5a Assembly-CSharp.dll:Tiled2Unity.TmxObject
 d85bbd888aa54c8f611afd383179454e Assembly-CSharp.dll:.capsula
-ebd66c155e408e232ce8abe319d2617c Assembly-CSharp.dll:.MagoOpc
-ebd66c155e408e232ce8abe319d2617c Assembly-CSharp.dll:.PrinOpc
-ebd66c155e408e232ce8abe319d2617c Assembly-CSharp.dll:.CabOpc
-ebd66c155e408e232ce8abe319d2617c Assembly-CSharp.dll:.HerrOpc
