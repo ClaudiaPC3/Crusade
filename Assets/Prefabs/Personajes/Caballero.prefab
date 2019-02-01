@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8647262679686409915}
   - component: {fileID: 6107213922240951860}
   - component: {fileID: 5767379292740926015}
+  - component: {fileID: 766773700100174220}
   m_Layer: 0
   m_Name: Caballero
   m_TagString: Untagged
@@ -143,6 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af37179e2dad48847a3289824a0ee65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camara: {fileID: 0}
+  transCam: {fileID: 0}
+  propio: {fileID: 0}
   speed: 6
   anim: {fileID: 0}
   lastX: 0
@@ -230,9 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.04761905
+  m_SyncRotationAxis: 3
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
   m_MovementTheshold: 0.001
@@ -240,3 +244,23 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &766773700100174220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8647262679686409914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 8647262679686409919}
+  m_ParameterSendBits: 31
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
