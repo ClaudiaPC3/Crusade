@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Menus\HerrOpc.cs" />
     <Compile Include="Assets\Scripts\Menus\Imagen.cs" />
     <Compile Include="Assets\Scripts\Menus\MagoOpc.cs" />
+    <Compile Include="Assets\Scripts\Menus\NavPrinc.cs" />
     <Compile Include="Assets\Scripts\Menus\OpcionesAdm.cs" />
     <Compile Include="Assets\Scripts\Menus\Pausa.cs" />
     <Compile Include="Assets\Scripts\Menus\PrinOpc.cs" />

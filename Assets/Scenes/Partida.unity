@@ -183,6 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuPausa: {fileID: 1727041416}
+  BotReg: {fileID: 1263204787}
+  BotSalir: {fileID: 1828995177}
   estado: 1
 --- !u!1 &176445605
 GameObject:
