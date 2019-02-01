@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1293,8 +1293,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 243.5, y: 186.5}
-  m_SizeDelta: {x: 117.1, y: 112.1}
+  m_AnchoredPosition: {x: 148, y: 87.600006}
+  m_SizeDelta: {x: 774.3, y: 458.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729126383
 MonoBehaviour:
@@ -1309,11 +1309,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frames:
-  - {fileID: 21300000, guid: d451f620260516f40a7121f65b44bbb5, type: 3}
-  - {fileID: 21300002, guid: d451f620260516f40a7121f65b44bbb5, type: 3}
-  - {fileID: 21300004, guid: d451f620260516f40a7121f65b44bbb5, type: 3}
-  - {fileID: 21300006, guid: d451f620260516f40a7121f65b44bbb5, type: 3}
-  cantidad: 5
+  - {fileID: 21300000, guid: 461756eb557a28c4db1b8cf19ced9f69, type: 3}
+  - {fileID: 21300000, guid: 46d7e9893cbc37443bf616eb3aeb7836, type: 3}
+  - {fileID: 21300000, guid: ada2b509625120d4eb05f270621e00e0, type: 3}
+  - {fileID: 21300000, guid: 5abad229d96d7e942845f200d7cd8413, type: 3}
+  - {fileID: 21300000, guid: c7f684c40a5215448947306f023d6119, type: 3}
+  - {fileID: 21300000, guid: e6691a602e8179a48b65399899987ede, type: 3}
+  - {fileID: 21300000, guid: 0babc520d762a81418e80241d110da9a, type: 3}
+  - {fileID: 21300000, guid: 6fc3cc5dfd38d094c86c9cddccfcca87, type: 3}
+  - {fileID: 21300000, guid: 332f5c298b2d96641a8952f33d82782f, type: 3}
+  - {fileID: 21300000, guid: a6d082b2e1e8ed0458a6b4625120810a, type: 3}
+  - {fileID: 21300000, guid: 0fbab43db93f43e42830ce5a3c7e17e9, type: 3}
+  cantidad: 8
 --- !u!114 &1729126384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,7 +1341,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d451f620260516f40a7121f65b44bbb5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 461756eb557a28c4db1b8cf19ced9f69, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
