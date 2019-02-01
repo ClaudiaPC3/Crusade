@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/and/Desktop/test/Crusade.exe
+C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Crusade.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
@@ -108,7 +108,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-28c242a14e57748d0a057732f164e617 Assembly-CSharp.dll:.JugadorNet
+74c580c11d954ef127c21cb577afb86b Assembly-CSharp.dll:.JugadorNet
 00274a21279f5cb831ce20f895049e38 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
 f05a6cf31feba28e0485ad18626cf1f7 Assembly-CSharp.dll:.Regresa
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -131,6 +131,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
+8865faea894807799316645853413f05 Assembly-CSharp.dll:.RegresoMenus
 46eeb73e9847dd29fb0770e46e8a6715 Assembly-CSharp.dll:.Pausa
 02645cd2809521863e990f79b565042a Assembly-CSharp.dll:Tiled2Unity.TiledMap
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
@@ -184,3 +185,4 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 103a359583d39d3cbd790e3f412fb376 Assembly-CSharp.dll:.Movimiento
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 a2037a6d3d69e2ae4365852f05289f5a Assembly-CSharp.dll:Tiled2Unity.TmxObject
+114c64d7c9091de73ea3842a56704e68 Assembly-CSharp.dll:.Imagen
