@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2232054015606119455
+--- !u!1 &1479318902396152962
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2232054015606119452}
-  - component: {fileID: 2232054015606119453}
-  - component: {fileID: 2232054015606119454}
+  - component: {fileID: 791449713054257484}
+  - component: {fileID: 3802560106986418595}
+  - component: {fileID: 7569086514547332361}
   m_Layer: 0
   m_Name: Jugador (Net)
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2232054015606119452
+--- !u!4 &791449713054257484
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2232054015606119455}
+  m_GameObject: {fileID: 1479318902396152962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.292308, y: -42.259117, z: 22.792652}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2232054015606119453
+--- !u!114 &3802560106986418595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2232054015606119455}
+  m_GameObject: {fileID: 1479318902396152962}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
@@ -65,17 +65,18 @@ MonoBehaviour:
     i15: 0
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &2232054015606119454
+--- !u!114 &7569086514547332361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2232054015606119455}
+  m_GameObject: {fileID: 1479318902396152962}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a32e183c1b3c5c41b766320f2915dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cierra: {fileID: 0}
   Personaje: {fileID: 115776761818075580, guid: 03b65f7795a940849a29f333cc95f2f8,
     type: 3}

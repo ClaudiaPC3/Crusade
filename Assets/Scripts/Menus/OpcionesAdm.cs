@@ -21,4 +21,9 @@ public class OpcionesAdm : MonoBehaviour
     {
         SceneManager.LoadScene(EscenaNombre);  //Ejecuta la escena enviada en el string del parámetro 
     }
+
+    public void Salir()
+    {
+        Application.Quit();                    //Cierra la aplicación
+    }
 }

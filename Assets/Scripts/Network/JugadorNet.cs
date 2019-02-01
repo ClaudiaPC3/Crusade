@@ -5,18 +5,22 @@ using UnityEngine.Networking;
 
 public class JugadorNet : NetworkBehaviour
 {
-    
+
+    public GameObject Cierra;
 
     // Start is called before the first frame update
     void Start()
     {
+
         if (!isLocalPlayer)
         {
             return;
         }
 
-        //lista de condiciones para ver que personaje es
+        Cierra = GameObject.Find("Carga");
 
+        //lista de condiciones para ver que personaje es
+        Cierra.SetActive(false);
         CmdSpawnMago();
     }
 

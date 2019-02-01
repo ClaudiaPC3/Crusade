@@ -17,6 +17,7 @@ public class Regresa : MonoBehaviour
         Regresar.Cambio();   //Invoca La función Cambio() del script Pausa
     }
 
+
     // Update is called once per frame
     
 }
