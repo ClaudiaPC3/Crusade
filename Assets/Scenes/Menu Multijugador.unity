@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 403515732}
   - component: {fileID: 403515731}
   m_Layer: 5
-  m_Name: "Bot\xF3n-Multijugador"
+  m_Name: "Bot\xF3n-Rapida"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 928151946}
   - component: {fileID: 928151945}
   m_Layer: 5
-  m_Name: "Bot\xF3n-Entrenamiento"
+  m_Name: "Bot\xF3n-Normal"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1006,6 +1006,7 @@ GameObject:
   - component: {fileID: 1080205014}
   - component: {fileID: 1080205013}
   - component: {fileID: 1080205015}
+  - component: {fileID: 1080205016}
   m_Layer: 0
   m_Name: ControlOpc
   m_TagString: Untagged
@@ -1052,6 +1053,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Escena: Menu Jugar
+--- !u!114 &1080205016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080205012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfb93bf14acbe34ca856b67ec564050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bot1: {fileID: 403515729}
+  Bot2: {fileID: 928151943}
+  BotSalir: {fileID: 703146557}
+  ir1: Menu Clase
+  ir2: Menu Clase
+  ir3: Menu Jugar
 --- !u!1 &1121325424
 GameObject:
   m_ObjectHideFlags: 0

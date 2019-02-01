@@ -621,6 +621,7 @@ GameObject:
   - component: {fileID: 968818572}
   - component: {fileID: 968818571}
   - component: {fileID: 968818573}
+  - component: {fileID: 968818574}
   m_Layer: 0
   m_Name: ControlOpc
   m_TagString: Untagged
@@ -667,6 +668,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Escena: Menu principal
+--- !u!114 &968818574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968818570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfb93bf14acbe34ca856b67ec564050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bot1: {fileID: 349715401}
+  Bot2: {fileID: 1836136305}
+  BotSalir: {fileID: 118737619}
+  ir1: Menu Multijugador
+  ir2: Menu Clase
+  ir3: Menu principal
 --- !u!1 &1194168137
 GameObject:
   m_ObjectHideFlags: 0
