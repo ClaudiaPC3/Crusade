@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115776761818075580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.555643, y: -39.236073, z: 0}
+  m_LocalPosition: {x: 8.555643, y: -39.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,18 +119,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011407852, y: -0.18490696}
+  m_Offset: {x: -0.567132, y: -6.2321053}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2.5555556}
+    oldSize: {x: 21.17647, y: 27.058823}
     newSize: {x: 0.19, y: 0.26}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2323341, y: 2.1385212}
+  m_Size: {x: 12.94355, y: 14.232918}
   m_EdgeRadius: 0
 --- !u!114 &115776761818075577
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   camara: {fileID: 0}
   transCam: {fileID: 0}
   propio: {fileID: 0}
-  speed: 6
+  speed: 50
   anim: {fileID: 0}
   lastX: 0
   lastY: -1
@@ -186,9 +186,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.43014908}
+  m_Offset: {x: -0.40109825, y: 3.5700169}
   serializedVersion: 2
-  m_Radius: 0.9301491
+  m_Radius: 8.168478
 --- !u!114 &115776761818075578
 MonoBehaviour:
   m_ObjectHideFlags: 0

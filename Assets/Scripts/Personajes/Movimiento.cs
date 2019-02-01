@@ -9,7 +9,7 @@ public class Movimiento : NetworkBehaviour
     public Transform transCam, propio;
 
     //Variable de la velocidad del personaje (Editable desde el prefab del personaje)
-    public float speed = 4f;
+    private float speed = 50f;
 
     //Objeto del animador
     public Animator anim;
