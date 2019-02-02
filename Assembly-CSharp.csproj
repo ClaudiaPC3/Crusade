@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Menus\PrinOpc.cs" />
     <Compile Include="Assets\Scripts\Menus\Regresa.cs" />
     <Compile Include="Assets\Scripts\Menus\RegresoMenus.cs" />
+    <Compile Include="Assets\Scripts\Menus\TerminarCon.cs" />
     <Compile Include="Assets\Scripts\Network\JugadorNet.cs" />
     <Compile Include="Assets\Scripts\Personajes\Movimiento.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
