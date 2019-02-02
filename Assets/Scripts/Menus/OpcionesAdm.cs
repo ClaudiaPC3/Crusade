@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement; //Encargado de administrar las escenas
 
 public class OpcionesAdm : MonoBehaviour
 {
+    
+    public GameObject Cierra;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,4 +28,10 @@ public class OpcionesAdm : MonoBehaviour
     {
         Application.Quit();                    //Cierra la aplicación
     }
+
+    public void Ocultar()
+    {
+        Cierra.SetActive(false);
+    }
+    
 }
