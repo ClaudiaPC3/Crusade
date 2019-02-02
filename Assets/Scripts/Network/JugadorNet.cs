@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+
 public class JugadorNet : NetworkBehaviour
 {
 
@@ -29,7 +30,7 @@ public class JugadorNet : NetworkBehaviour
         Capsula = GameObject.Find("Capsula");
         opcion = (int) Capsula.transform.position.x;
         //lista de condiciones para ver que personaje es
-        Cierra.SetActive(false);
+        
 
         switch (opcion)
         {
