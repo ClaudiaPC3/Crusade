@@ -11,7 +11,7 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Herrero;
     public GameObject Princesa;
     public GameObject Caballero;
-    public GameObject Cierra;
+    private GameObject Cierra;
     public GameObject Pelota;
     public int opcion;
 
@@ -49,6 +49,7 @@ public class JugadorNet : NetworkBehaviour
                 break;
 
             default:
+                CmdSpawnPrin();
                 break;
         }
 

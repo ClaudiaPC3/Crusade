@@ -60,28 +60,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Desbloqueo.cs" />
-    <Compile Include="Assets\Scripts\Contenedor.cs" />
-    <Compile Include="Assets\Scripts\Follow.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
-    <Compile Include="Assets\Scripts\Menus\CabOpc.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Desbloqueo.cs" />
+    <Compile Include="Assets\Scripts\Menus\Conexion\EnviarIpC.cs" />
     <Compile Include="Assets\Scripts\Menus\Conexion\Host.cs" />
-    <Compile Include="Assets\Scripts\Menus\EnviarIpC.cs" />
-    <Compile Include="Assets\Scripts\Menus\HerrOpc.cs" />
+    <Compile Include="Assets\Scripts\Menus\Conexion\MuestraIP.cs" />
+    <Compile Include="Assets\Scripts\Menus\Conexion\TerminarCon.cs" />
+    <Compile Include="Assets\Scripts\Menus\EnPartida\Pausa.cs" />
+    <Compile Include="Assets\Scripts\Menus\EnPartida\Regresa.cs" />
     <Compile Include="Assets\Scripts\Menus\Imagen.cs" />
-    <Compile Include="Assets\Scripts\Menus\MagoOpc.cs" />
-    <Compile Include="Assets\Scripts\Menus\MuestraIP.cs" />
+    <Compile Include="Assets\Scripts\Menus\Menu Clase\CabOpc.cs" />
+    <Compile Include="Assets\Scripts\Menus\Menu Clase\HerrOpc.cs" />
+    <Compile Include="Assets\Scripts\Menus\Menu Clase\MagoOpc.cs" />
+    <Compile Include="Assets\Scripts\Menus\Menu Clase\PrinOpc.cs" />
     <Compile Include="Assets\Scripts\Menus\NavClase.cs" />
     <Compile Include="Assets\Scripts\Menus\NavConexion.cs" />
     <Compile Include="Assets\Scripts\Menus\NavJug.cs" />
     <Compile Include="Assets\Scripts\Menus\NavPer.cs" />
     <Compile Include="Assets\Scripts\Menus\NavPrinc.cs" />
     <Compile Include="Assets\Scripts\Menus\OpcionesAdm.cs" />
-    <Compile Include="Assets\Scripts\Menus\Pausa.cs" />
-    <Compile Include="Assets\Scripts\Menus\PrinOpc.cs" />
-    <Compile Include="Assets\Scripts\Menus\Regresa.cs" />
     <Compile Include="Assets\Scripts\Menus\RegresoMenus.cs" />
-    <Compile Include="Assets\Scripts\Menus\TerminarCon.cs" />
     <Compile Include="Assets\Scripts\Network\JugadorNet.cs" />
     <Compile Include="Assets\Scripts\Personajes\Movimiento.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
