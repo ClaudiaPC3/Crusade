@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6077577cf7cfb1c49b7ea2b2b5280e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  manager: {fileID: 990481899}
   checkbox: {fileID: 278636857}
 --- !u!114 &278636857
 MonoBehaviour:
@@ -4733,7 +4733,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1001 &1674566705958925872
 PrefabInstance:
   m_ObjectHideFlags: 0
