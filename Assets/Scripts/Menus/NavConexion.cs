@@ -27,4 +27,20 @@ public class NavConexion : MonoBehaviour
         }
         
     }
+
+    public void CrearOn()
+    {
+        if (Crear.isOn)
+        {
+            Unir.isOn = false;
+        }
+    }
+
+    public void UnirOn()
+    {
+        if (Unir.isOn)
+        {
+            Crear.isOn = false;
+        } 
+    }
 }
