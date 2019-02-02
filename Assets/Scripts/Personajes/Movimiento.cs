@@ -24,14 +24,29 @@ public class Movimiento : NetworkBehaviour
 
     private Vector2 mov;
     private Vector3 cam;
+    private Vector3 inicio;
     // Start is called before the first frame update
     void Start()
     {
+        
         anim = GetComponent<Animator>(); // Ubica nuestro animador
         rg2d = GetComponent<Rigidbody2D>();//Ubica el cuerpo
         propio = GetComponent<Transform>();
         camara = GameObject.Find("Main Camera");
         transCam = camara.GetComponent<Transform>();
+          
+
+        if (hasAuthority)
+        {
+            inicio = new Vector3(1349, -431, 0);
+            propio.position = inicio;
+        }
+        else
+        {
+            inicio = new Vector3(111, -431, 0);
+            propio.position = inicio;
+        }        
+                
     }
 
     // Update is called once per frame
