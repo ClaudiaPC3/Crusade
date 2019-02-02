@@ -202,6 +202,17 @@ MonoBehaviour:
           m_StringArgument: Partida
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 34920472}
+        m_MethodName: JoinClient
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &12012861
@@ -357,6 +368,8 @@ GameObject:
   - component: {fileID: 34920469}
   - component: {fileID: 34920470}
   - component: {fileID: 34920471}
+  - component: {fileID: 34920472}
+  - component: {fileID: 34920473}
   m_Layer: 0
   m_Name: Control de menu
   m_TagString: Untagged
@@ -435,6 +448,34 @@ MonoBehaviour:
   Crear: {fileID: 278636857}
   Unir: {fileID: 2001166369}
   Entrar: {fileID: 12012858}
+--- !u!114 &34920472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34920466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3da40684fbc8b49bcc188e1087cf4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 990481899}
+  cliente: {fileID: 2001166369}
+  ip: {fileID: 1499745268}
+--- !u!114 &34920473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34920466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f8b4077757bf943bb3633c89f7b8c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 990481899}
 --- !u!1 &42920875
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6077577cf7cfb1c49b7ea2b2b5280e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  manager: {fileID: 990481899}
   checkbox: {fileID: 278636857}
 --- !u!114 &278636857
 MonoBehaviour:
@@ -2184,7 +2225,7 @@ MonoBehaviour:
   m_ServerBindToIP: 0
   m_ServerBindAddress: 
   m_NetworkAddress: localhost
-  m_DontDestroyOnLoad: 1
+  m_DontDestroyOnLoad: 0
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
@@ -2201,7 +2242,7 @@ MonoBehaviour:
   - {fileID: 8647262679686409914, guid: 8e4731235f3bc3440a14c64a80154742, type: 3}
   - {fileID: 115776761818075580, guid: 03b65f7795a940849a29f333cc95f2f8, type: 3}
   - {fileID: 796660719801594912, guid: 5131e0fce42f96c44ac3d600e48fb792, type: 3}
-  m_CustomConfig: 0
+  m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:
     m_PacketSize: 1440
@@ -4251,6 +4292,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 34920473}
+        m_MethodName: Terminar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu principal
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 34920467}
         m_MethodName: CargaEscena
         m_Mode: 5
@@ -4733,7 +4785,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1001 &1674566705958925872
 PrefabInstance:
   m_ObjectHideFlags: 0

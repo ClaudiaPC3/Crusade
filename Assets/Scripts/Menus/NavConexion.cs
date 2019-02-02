@@ -17,9 +17,13 @@ public class NavConexion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Crear.isOn||Crear.isOn)
+        if (Crear.isOn||Unir.isOn)
         {
             Entrar.SetActive(true);
+        }
+        else
+        {
+            Entrar.SetActive(false);
         }
         
     }
