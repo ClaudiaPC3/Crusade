@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Crusade.exe
+C:/Users/and/Desktop/test/Crusade.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
@@ -122,6 +122,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+f02a46ab9530dd4da349745c52375a48 Assembly-CSharp.dll:.Desbloqueo
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 ebd66c155e408e232ce8abe319d2617c Assembly-CSharp.dll:.PrinOpc
