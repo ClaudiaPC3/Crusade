@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -547,7 +547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000047106932, y: 0.000008839469}
+  m_AnchoredPosition: {x: -0.000014876495, y: -0.000025323823}
   m_SizeDelta: {x: 0, y: 335.7}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &744978198
@@ -627,6 +627,7 @@ GameObject:
   - component: {fileID: 991605580}
   - component: {fileID: 991605579}
   - component: {fileID: 991605581}
+  - component: {fileID: 991605582}
   m_Layer: 0
   m_Name: ControlOpc
   m_TagString: Untagged
@@ -673,6 +674,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Escena: Menu principal
+--- !u!114 &991605582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991605578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20398389ed626034c876f11f9ab30658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BotSalir: {fileID: 1949758115}
+  ir1: Menu principal
 --- !u!1 &1022408713
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +929,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1476977386}
   m_HandleRect: {fileID: 1476977385}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
