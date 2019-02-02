@@ -63,6 +63,7 @@
     <Compile Include="Assets\Desbloqueo.cs" />
     <Compile Include="Assets\Scripts\Contenedor.cs" />
     <Compile Include="Assets\Scripts\Follow.cs" />
+    <Compile Include="Assets\Scripts\GlobalData.cs" />
     <Compile Include="Assets\Scripts\Menus\CabOpc.cs" />
     <Compile Include="Assets\Scripts\Menus\Conexion\Host.cs" />
     <Compile Include="Assets\Scripts\Menus\EnviarIpC.cs" />
