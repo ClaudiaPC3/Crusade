@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -982,6 +982,7 @@ GameObject:
   - component: {fileID: 678579941}
   - component: {fileID: 678579940}
   - component: {fileID: 678579942}
+  - component: {fileID: 678579943}
   m_Layer: 0
   m_Name: ControlOpc
   m_TagString: Untagged
@@ -1028,6 +1029,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Escena: Menu principal
+--- !u!114 &678579943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678579939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20398389ed626034c876f11f9ab30658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BotSalir: {fileID: 350720118}
+  ir1: Menu principal
 --- !u!1 &794269856
 GameObject:
   m_ObjectHideFlags: 0
