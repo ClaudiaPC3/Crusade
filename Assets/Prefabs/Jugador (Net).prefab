@@ -85,4 +85,5 @@ MonoBehaviour:
     type: 3}
   Cierra: {fileID: 0}
   Capsula: {fileID: 7285761995600834481, guid: fe296b63a9e7ff340ac4527e9d78889c, type: 3}
+  Pelota: {fileID: 796660719801594912, guid: 5131e0fce42f96c44ac3d600e48fb792, type: 3}
   opcion: 0

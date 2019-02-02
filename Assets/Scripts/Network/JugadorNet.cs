@@ -12,6 +12,7 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Caballero;
     public GameObject Cierra;
     public GameObject Capsula;
+    public GameObject Pelota;
     public int opcion;
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class JugadorNet : NetworkBehaviour
             return;
         }
 
+        
         Cierra = GameObject.Find("Carga");
         Capsula = GameObject.Find("Capsula");
         opcion = (int) Capsula.transform.position.x;
@@ -64,8 +66,9 @@ public class JugadorNet : NetworkBehaviour
     [Command]
     void CmdSpawnMago(){
         GameObject jugador = Instantiate(Mago);
-
+        GameObject pel = Instantiate(Pelota);
         NetworkServer.SpawnWithClientAuthority(jugador, connectionToClient);
+        NetworkServer.Spawn(pel);
     }
 
     [Command]
