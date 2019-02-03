@@ -11,8 +11,7 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Herrero;
     public GameObject Princesa;
     public GameObject Caballero;
-    public GameObject Cierra;
-    public GameObject Capsula;
+    private GameObject Cierra;
     public GameObject Pelota;
     public int opcion;
 
@@ -27,8 +26,7 @@ public class JugadorNet : NetworkBehaviour
 
         
         Cierra = GameObject.Find("Carga");
-        Capsula = GameObject.Find("Capsula");
-        opcion = (int) Capsula.transform.position.x;
+        opcion = GlobalData.Character;
         //lista de condiciones para ver que personaje es
         
 
@@ -51,6 +49,7 @@ public class JugadorNet : NetworkBehaviour
                 break;
 
             default:
+                CmdSpawnPrin();
                 break;
         }
 
