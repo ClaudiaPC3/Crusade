@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class Desbloqueo : NetworkBehaviour
 {
@@ -21,7 +22,9 @@ public class Desbloqueo : NetworkBehaviour
 
         if(clientes == 2)
         {
+
             CmdDestruirBarreras(barrera);
+            
         }
     }
 

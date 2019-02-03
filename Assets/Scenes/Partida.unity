@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 12012861}
   - component: {fileID: 12012860}
   m_Layer: 5
-  m_Name: "Bot\xF3n-Entrar"
+  m_Name: Boton-Entrar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,6 +448,7 @@ MonoBehaviour:
   Crear: {fileID: 278636857}
   Unir: {fileID: 2001166369}
   Entrar: {fileID: 12012858}
+  IpTexto: {fileID: 291602301}
 --- !u!114 &34920472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2549,7 +2550,7 @@ GameObject:
   - component: {fileID: 1016474414}
   - component: {fileID: 1016474413}
   m_Layer: 5
-  m_Name: Txt Nombre (1)
+  m_Name: Txt Unirse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2702,7 +2703,7 @@ GameObject:
   - component: {fileID: 1086425500}
   - component: {fileID: 1086425499}
   m_Layer: 5
-  m_Name: Txt Nombre
+  m_Name: Txt Crear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3673,6 +3674,16 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 990481899}
+    - target: {fileID: 4107160416769422232, guid: bb776995e7b9e3d4bb18da532d15f75c,
+        type: 3}
+      propertyPath: Entrar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107160416769422232, guid: bb776995e7b9e3d4bb18da532d15f75c,
+        type: 3}
+      propertyPath: Crear
+      value: 
+      objectReference: {fileID: 278636857}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb776995e7b9e3d4bb18da532d15f75c, type: 3}
 --- !u!4 &1514095539 stripped
@@ -5198,6 +5209,16 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 990481899}
+    - target: {fileID: 4107160416769422232, guid: bb776995e7b9e3d4bb18da532d15f75c,
+        type: 3}
+      propertyPath: Entrar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107160416769422232, guid: bb776995e7b9e3d4bb18da532d15f75c,
+        type: 3}
+      propertyPath: Crear
+      value: 
+      objectReference: {fileID: 278636857}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb776995e7b9e3d4bb18da532d15f75c, type: 3}
 --- !u!1001 &4412462996789652659
