@@ -33,9 +33,13 @@ public class Host : MonoBehaviour
             int i = 0;
             while (i < noiseValues.Length)
             {
-                noiseValues[i] = Random.value;
-                noiseValues[i] = noiseValues[i] * 10;
-                prueba = (int)noiseValues[i];
+                do
+                {
+                    noiseValues[i] = Random.value;
+                    noiseValues[i] = noiseValues[i] * 10;
+                    prueba = (int)noiseValues[i];
+
+                } while (prueba > 5 || prueba < 0);
                 Debug.Log(prueba);
                 i++;
             }
