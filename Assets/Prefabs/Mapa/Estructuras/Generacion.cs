@@ -7,8 +7,8 @@ public class NewBehaviourScript : MonoBehaviour
     struct casilla
     {
         public bool taken;
-        public int x, y, id;
-        public casilla(int x, int y, int id, bool taken)
+        public sbyte x, y, id;
+        public casilla(sbyte x, sbyte y, sbyte id, bool taken)
         {
             this.x = x;
             this.y = y;

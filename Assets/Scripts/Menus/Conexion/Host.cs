@@ -9,7 +9,9 @@ public class Host : MonoBehaviour
     public NetworkManager manager;
     public Toggle checkbox;
     private bool isCreated = false;
-
+    ///
+    private float[] noiseValues;
+    private int prueba;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,19 @@ public class Host : MonoBehaviour
         {
             manager.StartHost();
             isCreated = true;
+            ///
+
+            Random.seed = (int)System.DateTime.Now.Ticks;
+            noiseValues = new float[10];
+            int i = 0;
+            while (i < noiseValues.Length)
+            {
+                noiseValues[i] = Random.value;
+                noiseValues[i] = noiseValues[i] * 10;
+                prueba = (int)noiseValues[i];
+                Debug.Log(prueba);
+                i++;
+            }
         }
         
         if(!checkbox.isOn && isCreated)
