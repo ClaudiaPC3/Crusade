@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Prefabs\Mapa\Estructuras\Generacion.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
     <Compile Include="Assets\Scripts\Mapa\Desbloqueo.cs" />
     <Compile Include="Assets\Scripts\Menus\Conexion\EnviarIpC.cs" />
