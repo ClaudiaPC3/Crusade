@@ -28,7 +28,7 @@ public class Host : MonoBehaviour
             isCreated = true;
             ///
 
-            Random.seed = (int)System.DateTime.Now.Ticks;
+            Random.seed = (int)System.DateTime.Now.Ticks;            
             noiseValues = new float[10];
             int i = 0;
             while (i < noiseValues.Length)
