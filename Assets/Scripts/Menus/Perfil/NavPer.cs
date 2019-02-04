@@ -20,7 +20,7 @@ public class NavPer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Return))      //Obtiene la lectura de la tecla Espacio
+        if (Input.GetKeyUp(KeyCode.Return))      //Obtiene la lectura de la tecla Espacio
         {
             if (seleccion == 1)
             {

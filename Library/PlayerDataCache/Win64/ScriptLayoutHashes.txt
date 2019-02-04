@@ -184,3 +184,4 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 c89cc226a411a1e797ad9eaf84bc8a28 Assembly-CSharp.dll:.Movimiento
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 4b63f2658702c43526560f617e8a67c2 Assembly-CSharp.dll:.NavJug
+5d8c4f878fe3ef7438c4f0ce12d59f97 Assembly-CSharp.dll:.NombresControl
