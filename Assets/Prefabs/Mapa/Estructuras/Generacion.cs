@@ -51,15 +51,58 @@ public class Generacion : MonoBehaviour
         Random.seed = (int)System.DateTime.Now.Ticks; //Provisional
         for(int i = 0; i<19; i++)
         {
+            bool validX = false;
+            bool validY = false;
+            
+            
             if (!mapa[i, 0].taken)                
             {
-                float rand;
                 do
                 {
-                    rand = Random.value;
-                } while (rand > 0.6 || rand < 0);
-                rand = rand * 10;
-                mapa[i, 0].x = (sbyte) rand;
+                    int TamXval = 0;
+                    //Asignacion de x
+                    float randx;
+                    do
+                    {
+                        randx = Random.value;
+                    } while (randx > 0.6 || randx < 0);
+                    randx = randx * 10;
+                    mapa[i, 0].x = (sbyte)randx;                    
+                    //validacion
+                    TamXval = i + mapa[i, 0].x;
+                    if(TamXval <= 19)
+                    {                        
+                        validX = true;
+                    }
+                    else
+                    {
+                        validX = false;
+                    }
+                } while (!validX);
+                do
+                {
+                    int TamYval = 0;
+                    //Asignacion de y
+                    float randy;
+                    do
+                    {
+                        randy = Random.value;
+                    } while (randy > 0.6 || randy < 0);
+                    randy = randy * 10;
+                    mapa[i, 0].y = (sbyte)randy;
+                    //validacion
+                    TamYval = 0 + mapa[i, 0].y;//aqui ira la variable del segundo for
+                    if (TamYval <= 8)
+                    {
+                        validY = true;
+                    }
+                    else
+                    {
+                        validY = false;
+                    }
+                } while (!validY);
+                Debug.Log("en " + i + " x " + mapa[i, 0].x + " y " + mapa[i, 0].y);
+                //Falta poner cuales ya se ocuparon
             }
         }
     }
