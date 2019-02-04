@@ -10,13 +10,13 @@ public class Generacion : MonoBehaviour
     public GameObject fourxone, fourxtwo, fourxthree, fourxfour, fourxfive;
     public GameObject fivexone, fivextwo, fivexthree, fivexfour, fivexfive;
 
-    private int Xoffset;
-    private int Yoffset;
+    private int Xoffset = 168;
+    private int Yoffset = -168;
 
     public struct casilla
     {
         public bool taken;
-        public sbyte x, y, id; // x y y NO son sus posiciones, son el tamaño del prefab que esta ocupando esta casilla
+        public sbyte x, y, id; // x y y NO son sus posiciones, son el tamaño del prefab que esta ocupando esta casilla, Ej 1 y 5, o 3 y 2
         public casilla(sbyte x, sbyte y, sbyte id, bool taken)
         {
             this.x = x;
@@ -48,12 +48,18 @@ public class Generacion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Random.seed = 1; //Provisional
+        Random.seed = (int)System.DateTime.Now.Ticks; //Provisional
         for(int i = 0; i<19; i++)
         {
-            if (!mapa[i, 0].taken)
+            if (!mapa[i, 0].taken)                
             {
-
+                float rand;
+                do
+                {
+                    rand = Random.value;
+                } while (rand > 0.6 || rand < 0);
+                rand = rand * 10;
+                mapa[i, 0].x = (sbyte) rand;
             }
         }
     }
