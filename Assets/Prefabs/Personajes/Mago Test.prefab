@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 115776761818075573}
   - component: {fileID: 115776761818075572}
   - component: {fileID: 115776761818075575}
-  - component: {fileID: 115776761818075574}
   - component: {fileID: 115776761818075577}
   - component: {fileID: 115776761818075576}
-  - component: {fileID: 115776761818075579}
   - component: {fileID: 115776761818075578}
   - component: {fileID: 115776761818075581}
+  - component: {fileID: 4614117416064296763}
+  - component: {fileID: 4077717165823963948}
   m_Layer: 0
   m_Name: Mago Test
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115776761818075580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.555643, y: -39.236073, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,32 +105,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &115776761818075574
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115776761818075580}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.011407852, y: -0.18490696}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2.5555556}
-    newSize: {x: 0.19, y: 0.26}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2323341, y: 2.1385212}
-  m_EdgeRadius: 0
 --- !u!114 &115776761818075577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +120,6 @@ MonoBehaviour:
   camara: {fileID: 0}
   transCam: {fileID: 0}
   propio: {fileID: 0}
-  speed: 6
   anim: {fileID: 0}
   lastX: 0
   lastY: -1
@@ -172,22 +145,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &115776761818075579
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115776761818075580}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.43014908}
-  serializedVersion: 2
-  m_Radius: 0.9301491
 --- !u!114 &115776761818075578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
-  m_SendInterval: 0.1
+  m_SendInterval: 0.04761905
   m_SyncRotationAxis: 3
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -243,3 +200,66 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &4614117416064296763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115776761818075580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 115776761818075575}
+  m_ParameterSendBits: 31
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
+--- !u!60 &4077717165823963948
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115776761818075580}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 21.17647, y: 27.058823}
+    newSize: {x: 0.19, y: 0.26}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 7.1315837, y: 9.874398}
+      - {x: 4.6707335, y: 12.476381}
+      - {x: 2.844249, y: 13.360481}
+      - {x: 2.247663, y: 13.770237}
+      - {x: -4.3804574, y: 13.718851}
+      - {x: -6.416382, y: 12.641975}
+      - {x: -8.54122, y: 9.917032}
+      - {x: -9.631067, y: 6.190833}
+      - {x: -8.588134, y: -3.8980165}
+      - {x: -8.452216, y: -5.386235}
+      - {x: -8.201474, y: -8.00082}
+      - {x: -7.4121933, y: -10.368386}
+      - {x: -6.132966, y: -13.529411}
+      - {x: 4.808425, y: -13.649822}
+      - {x: 5.7717295, y: -13.288586}
+      - {x: 6.4942055, y: -12.686522}
+      - {x: 7.9655657, y: -2.2071905}
+      - {x: 8.300395, y: 6.425063}
