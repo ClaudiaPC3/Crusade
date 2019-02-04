@@ -25,9 +25,14 @@ public class NombresControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetString("Nombre") == null)
+        if (PlayerPrefs.GetString("Nombre") == "")
         { 
-            PlayerPrefs.SetString("Nombre","Jugador");
+            PlayerPrefs.SetString("Nombre","Player");
+        }
+        if (PlayerPrefs.GetString("Sobrenombre") == "")
+        {
+            PlayerPrefs.SetString("Sobrenombre", "Player");
+
         }
         TxtNom.text = PlayerPrefs.GetString("Nombre");
         TxtSobr.text = PlayerPrefs.GetString("Sobrenombre");
