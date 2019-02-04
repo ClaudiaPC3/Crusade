@@ -63,40 +63,41 @@
     <Compile Include="Assets\Prefabs\Mapa\Estructuras\Generacion.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
     <Compile Include="Assets\Scripts\Mapa\Desbloqueo.cs" />
+    <Compile Include="Assets\Scripts\Menus\Clase\CabOpc.cs" />
+    <Compile Include="Assets\Scripts\Menus\Clase\HerrOpc.cs" />
+    <Compile Include="Assets\Scripts\Menus\Clase\MagoOpc.cs" />
+    <Compile Include="Assets\Scripts\Menus\Clase\NavClase.cs" />
+    <Compile Include="Assets\Scripts\Menus\Clase\PrinOpc.cs" />
+    <Compile Include="Assets\Scripts\Menus\Compartidos\Imagen.cs" />
+    <Compile Include="Assets\Scripts\Menus\Compartidos\OpcionesAdm.cs" />
+    <Compile Include="Assets\Scripts\Menus\Compartidos\RegresoMenus.cs" />
+    <Compile Include="Assets\Scripts\Menus\Conexion Menu\NavConexion.cs" />
     <Compile Include="Assets\Scripts\Menus\Conexion\EnviarIpC.cs" />
     <Compile Include="Assets\Scripts\Menus\Conexion\Host.cs" />
     <Compile Include="Assets\Scripts\Menus\Conexion\MuestraIP.cs" />
     <Compile Include="Assets\Scripts\Menus\Conexion\TerminarCon.cs" />
     <Compile Include="Assets\Scripts\Menus\EnPartida\Pausa.cs" />
     <Compile Include="Assets\Scripts\Menus\EnPartida\Regresa.cs" />
-    <Compile Include="Assets\Scripts\Menus\Imagen.cs" />
-    <Compile Include="Assets\Scripts\Menus\Menu Clase\CabOpc.cs" />
-    <Compile Include="Assets\Scripts\Menus\Menu Clase\HerrOpc.cs" />
-    <Compile Include="Assets\Scripts\Menus\Menu Clase\MagoOpc.cs" />
-    <Compile Include="Assets\Scripts\Menus\Menu Clase\PrinOpc.cs" />
-    <Compile Include="Assets\Scripts\Menus\NavClase.cs" />
-    <Compile Include="Assets\Scripts\Menus\NavConexion.cs" />
-    <Compile Include="Assets\Scripts\Menus\NavJug.cs" />
-    <Compile Include="Assets\Scripts\Menus\NavPer.cs" />
-    <Compile Include="Assets\Scripts\Menus\NavPrinc.cs" />
-    <Compile Include="Assets\Scripts\Menus\OpcionesAdm.cs" />
-    <Compile Include="Assets\Scripts\Menus\RegresoMenus.cs" />
+    <Compile Include="Assets\Scripts\Menus\Jugar\NavJug.cs" />
+    <Compile Include="Assets\Scripts\Menus\Perfil\NavPer.cs" />
+    <Compile Include="Assets\Scripts\Menus\Perfil\NombresControl.cs" />
+    <Compile Include="Assets\Scripts\Menus\Principal\NavPrinc.cs" />
     <Compile Include="Assets\Scripts\Network\JugadorNet.cs" />
     <Compile Include="Assets\Scripts\Personajes\Movimiento.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -300,13 +301,13 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/and/Documents/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/and/Documents/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/and/Documents/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
