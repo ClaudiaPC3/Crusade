@@ -14,6 +14,8 @@ public class JugadorNet : NetworkBehaviour
     private GameObject Cierra;
     public GameObject Pelota;
     public int opcion;
+    [SyncVar]
+    public string name;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,8 @@ public class JugadorNet : NetworkBehaviour
         
         Cierra = GameObject.Find("Carga");
         opcion = GlobalData.Character;
+        CmdObtName(name);
+        
         //lista de condiciones para ver que personaje es
         
 
@@ -93,5 +97,12 @@ public class JugadorNet : NetworkBehaviour
         GameObject jugador = Instantiate(Caballero);
 
         NetworkServer.SpawnWithClientAuthority(jugador, connectionToClient);
+    }
+
+    [Command]
+    void CmdObtName(string n)
+    {
+        n = PlayerPrefs.GetString("Sobrenombre");
+        name = n;
     }
 }

@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Crusade.exe
+C:/Users/and/Desktop/tst/Crusade.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
@@ -103,7 +103,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-4037ca73660e020dc899c1fbed8ac7c1 Assembly-CSharp.dll:.JugadorNet
+637bef5db1dce0734b14f6dd0268858b Assembly-CSharp.dll:.JugadorNet
 00274a21279f5cb831ce20f895049e38 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
 f05a6cf31feba28e0485ad18626cf1f7 Assembly-CSharp.dll:.Regresa
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
