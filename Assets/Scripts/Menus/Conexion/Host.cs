@@ -28,21 +28,7 @@ public class Host : MonoBehaviour
             isCreated = true;
             ///
 
-            Random.seed = (int)System.DateTime.Now.Ticks;            
-            noiseValues = new float[10];
-            int i = 0;
-            while (i < noiseValues.Length)
-            {
-                do
-                {
-                    noiseValues[i] = Random.value;
-                    noiseValues[i] = noiseValues[i] * 10;
-                    prueba = (int)noiseValues[i];
-
-                } while (prueba > 5 || prueba < 0);
-                Debug.Log(prueba);
-                i++;
-            }
+            
         }
         
         if(!checkbox.isOn && isCreated)
