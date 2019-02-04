@@ -14,6 +14,7 @@ public class JugadorNet : NetworkBehaviour
     private GameObject Cierra;
     public GameObject Pelota;
     public int opcion;
+    private string tempname;
     [SyncVar]
     public string name;
 
@@ -29,7 +30,8 @@ public class JugadorNet : NetworkBehaviour
         
         Cierra = GameObject.Find("Carga");
         opcion = GlobalData.Character;
-        CmdObtName(name);
+        tempname = PlayerPrefs.GetString("Sobrenombre");
+        CmdObtName(tempname);
         
         //lista de condiciones para ver que personaje es
         
@@ -58,13 +60,6 @@ public class JugadorNet : NetworkBehaviour
         }
 
        
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     [Command]
@@ -102,7 +97,7 @@ public class JugadorNet : NetworkBehaviour
     [Command]
     void CmdObtName(string n)
     {
-        n = PlayerPrefs.GetString("Sobrenombre");
         name = n;
+        
     }
 }
