@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; //Encargado de administrar las escenas
 using UnityEngine.UI;              //Encargado de manejar el UI
-
+using UnityEngine.Networking;
 public class Pausa : MonoBehaviour
 {
+    public NetworkManager manager;
     public GameObject MenuPausa;   //Objeto del juego
     public GameObject BotReg;
     public GameObject BotSalir;
@@ -15,6 +16,7 @@ public class Pausa : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("pausado",0);
         MenuPausa.SetActive(false);   //Al iniciar el menu es invisible
     }
 
@@ -36,7 +38,20 @@ public class Pausa : MonoBehaviour
 
                 if (seleccion == 2)
                 {
+
+                    if (NetworkServer.active && NetworkClient.active)
+                    {
+
+                        manager.StopHost();
+
+                    }
+
+                    if (NetworkClient.active)
+                    {
+                        manager.StopClient();
+                    }
                     SceneManager.LoadScene("Menu principal");
+                    
                 }
             }
 
@@ -73,11 +88,13 @@ public class Pausa : MonoBehaviour
     {
         MenuPausa.SetActive(true);             //Activa el menu 
         estado = 0;                            //Modifica la variable de control
+        PlayerPrefs.SetInt("pausado", 1);
     }
 
     public void Continuar()
     {
         MenuPausa.SetActive(false);           //Esconde menu      
-        estado = 1;                           //Modifica la variable de control          
+        estado = 1;                           //Modifica la variable de control       
+        PlayerPrefs.SetInt("pausado", 0);
     }
 }

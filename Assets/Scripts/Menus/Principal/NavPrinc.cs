@@ -6,18 +6,23 @@ using UnityEngine.UI;              //Encargado de manejar el UI
 
 public class NavPrinc : MonoBehaviour
 {
+    int menor = 1;
+    int mayor = 5;
     public GameObject BotJug;
     public GameObject BotPer;
     public GameObject BotHis;
     public GameObject BotCon;
     public GameObject BotSalir;
+    public GameObject BotReg;
+    public GameObject BotConf;
+    public GameObject Pregunta;
 
     int seleccion = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Pregunta.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,13 +52,31 @@ public class NavPrinc : MonoBehaviour
 
             if (seleccion == 5)
             {
+                Pregunta.SetActive(true);
+                seleccion++;
+                mayor = 8;
+                menor = 7;
+            }
+
+            if(seleccion == 7)
+            {
+                Pregunta.SetActive(false);
+                Limpia();
+                BotSalir.GetComponent<Image>().color = Color.grey;
+                seleccion =5;
+                mayor = 5;
+                menor = 1;
+            }
+
+            if (seleccion == 8)
+            {
                 Application.Quit();
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))      //Obtiene la lectura de la tecla Arriba
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))      //Obtiene la lectura de la tecla Arriba
         {
-            if (seleccion > 1)
+            if (seleccion > menor)
             {
                 seleccion--;
                 Limpia();
@@ -61,9 +84,9 @@ public class NavPrinc : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))      //Obtiene la lectura de la tecla Abajo
+        if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))      //Obtiene la lectura de la tecla Abajo
         {
-            if (seleccion != 5)
+            if (seleccion < mayor)
             {
                 seleccion++;
                 Limpia();
@@ -92,6 +115,14 @@ public class NavPrinc : MonoBehaviour
             case 5:
                 BotSalir.GetComponent<Image>().color = Color.grey;
                 break;
+
+            case 7:
+                BotReg.GetComponent<Image>().color = Color.grey;
+                break;
+
+            case 8:
+                BotConf.GetComponent<Image>().color = Color.grey;
+                break;
         }
         
     }
@@ -103,6 +134,23 @@ public class NavPrinc : MonoBehaviour
         BotHis.GetComponent<Image>().color = Color.white;
         BotCon.GetComponent<Image>().color = Color.white;
         BotSalir.GetComponent<Image>().color = Color.white;
+        BotReg.GetComponent<Image>().color = Color.white;
+        BotConf.GetComponent<Image>().color = Color.white;
+    }
+
+    public void Muestra()
+    {
+        Pregunta.SetActive(true);
+    }
+
+    public void Oculta()
+    {
+        Pregunta.SetActive(false);
+    }
+
+    public void Salir()
+    {
+        Application.Quit();
     }
 }
 

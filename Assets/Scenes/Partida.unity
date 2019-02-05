@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4d3195861720941aab7d308968dfb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 990481899}
   MenuPausa: {fileID: 1727041416}
   BotReg: {fileID: 1263204787}
   BotSalir: {fileID: 1828995177}

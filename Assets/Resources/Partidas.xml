@@ -1,0 +1,42 @@
+﻿<document>
+ <Partida>
+  <string>Hirvaini</string >
+  <string>Victoria</string>
+  <string>Rápida</string>
+  <string>3 pts</string>
+  <string>1 pts</string>
+  <string>04/02/2019</string>
+ </Partida>
+ <Partida>
+  <string>Juanito</string >
+  <string>Derrota</string>
+  <string>Normal</string>
+  <string>2 pts</string>
+  <string>5 pts</string>
+  <string>03/02/2019</string>
+ </Partida>
+ <Partida>
+  <string>Dracs</string >
+  <string>Derrota</string>
+  <string>Normal</string>
+  <string>3 pts</string>
+  <string>5 pts</string>
+  <string>03/02/2019</string>
+ </Partida>
+ <Partida>
+  <string>Geozac</string >
+  <string>Victoria</string>
+  <string>Rapida</string>
+  <string>3 pts</string>
+  <string>1 pts</string>
+  <string>02/02/2019</string>
+ </Partida>
+ <Partida>
+  <string>Geozac</string >
+  <string>Derrota</string>
+  <string>Rapida</string>
+  <string>2 pts</string>
+  <string>3 pts</string>
+  <string>02/02/2019</string>
+ </Partida>
+</document>
