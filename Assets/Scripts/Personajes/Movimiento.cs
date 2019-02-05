@@ -61,6 +61,7 @@ public class Movimiento : NetworkBehaviour
         {
             return;
         }
+        if(PlayerPrefs.GetInt("pausado")==0)
             mov = new Vector2( //En este vector se asigna la información obtenida por perifericos
             Input.GetAxisRaw("Horizontal"), //señal X de los perifericos
             Input.GetAxisRaw("Vertical") //señal Y de los perifericos
