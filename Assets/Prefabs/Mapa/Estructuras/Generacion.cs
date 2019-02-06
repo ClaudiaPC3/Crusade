@@ -51,58 +51,81 @@ public class Generacion : MonoBehaviour
         Random.seed = (int)System.DateTime.Now.Ticks; //Provisional
         for(int conty = 0; conty<8; conty++) { 
         for(int contx = 0; contx<19; contx++)
-        {
-            bool validX = false;
-            bool validY = false;
-            
-            
+        {                                        
             if (!mapa[contx, conty].taken)                
             {
-                do
-                {
-                    int TamXval = 0;
-                    //Asignacion de x
-                    float randx;
-                    do
-                    {
-                        randx = Random.value;
-                    } while (randx > 0.6 || randx < 0);
-                    randx = randx * 10;
-                    mapa[contx, conty].x = (sbyte)randx;                    
-                    //validacion
-                    TamXval = contx + mapa[contx, conty].x;
-                    if(TamXval <= 19)
-                    {                        
-                        validX = true;
-                    }
-                    else
-                    {
-                        validX = false;
-                    }
-                } while (!validX);
-                do
-                {
-                    int TamYval = 0;
-                    //Asignacion de y
-                    float randy;
-                    do
-                    {
-                        randy = Random.value;
-                    } while (randy > 0.6 || randy < 0);
-                    randy = randy * 10;
-                    mapa[contx, conty].y = (sbyte)randy;
-                    //validacion
-                    TamYval = conty + mapa[contx, conty].y;//aqui ira la variable del segundo for
-                    if (TamYval <= 8)
-                    {
-                        validY = true;
-                    }
-                    else
-                    {
-                        validY = false;
-                    }
-                } while (!validY);
-                Debug.Log("en " + contx + ","+ conty + " x " + mapa[contx, conty].x + " y " + mapa[contx, conty].y);
+                    bool validPref = true;
+                    do {
+                        validPref = true;
+                        bool validX = false;
+                        bool validY = false;
+                        do
+                        {
+                            
+                            int TamXval = 0;
+                            //Asignacion de x
+                            float randx;
+                            do
+                            {
+                                randx = Random.value;
+                            } while (randx > 0.6 || randx < 0);
+                            randx = randx * 10;
+                            mapa[contx, conty].x = (sbyte)randx;
+                            //validacion
+                            TamXval = contx + mapa[contx, conty].x;
+                            if (TamXval <= 19)
+                            {
+                                validX = true;
+                            }
+                            else
+                            {
+                                validX = false;
+                            }
+                        } while (!validX);
+                        do
+                        {
+                            
+                            int TamYval = 0;
+                            //Asignacion de y
+                            float randy;
+                            do
+                            {
+                                randy = Random.value;
+                            } while (randy > 0.6 || randy < 0);
+                            randy = randy * 10;
+                            mapa[contx, conty].y = (sbyte)randy;
+                            //validacion 1
+                            TamYval = conty + mapa[contx, conty].y;//aqui ira la variable del segundo for
+                            if (TamYval <= 8)
+                            {
+                                validY = true;
+                            }
+                            else
+                            {
+                                validY = false;
+                            }
+                        } while (!validY);
+                        //FALTA CHECAR QUE NINGUNA ESTE OCUPADA
+
+                        int checky = 0;
+                        do
+                        {
+                            int tempy = conty + checky;
+                            int checkx = 0;
+                            do
+                            {
+                                int tempx = contx + checkx;
+                                if(mapa[tempx, tempy].taken)
+                                {
+                                    validPref = false;
+                                }
+                                checkx++;
+                            } while (checkx < mapa[contx, conty].x);
+                            checky++;
+                        } while (checky < mapa[contx, conty].y);
+
+                    } while (!validPref);
+                Debug.Log("en " + contx + "," + conty + " x " + mapa[contx, conty].x + " y " + mapa[contx, conty].y);
                     
                     int taky = 0;
                     do
