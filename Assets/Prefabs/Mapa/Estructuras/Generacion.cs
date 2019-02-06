@@ -24,23 +24,7 @@ public class Generacion : MonoBehaviour
             this.id = id;
             this.taken = taken;
         }
-        /*
-         Random.seed = (int)System.DateTime.Now.Ticks;            
-            noiseValues = new float[10];
-            int i = 0;
-            while (i < noiseValues.Length)
-            {
-                do
-                {
-                    noiseValues[i] = Random.value;
-                    noiseValues[i] = noiseValues[i] * 10;
-                    prueba = (int)noiseValues[i];
-
-                } while (prueba > 5 || prueba < 0);
-                Debug.Log(prueba);
-                i++;
-            }
-         */
+      
     }
 
     casilla[,] mapa = new casilla [19,8]; //Los indices de el arreglo indica la posicion de la casilla en el cuadrante (1,0)
@@ -51,7 +35,8 @@ public class Generacion : MonoBehaviour
         Random.seed = (int)System.DateTime.Now.Ticks; //Provisional
         for(int conty = 0; conty<8; conty++) { 
         for(int contx = 0; contx<19; contx++)
-        {                                        
+        {
+                GameObject Inst;
             if (!mapa[contx, conty].taken)                
             {
                     bool validPref = true;
@@ -105,7 +90,7 @@ public class Generacion : MonoBehaviour
                                 validY = false;
                             }
                         } while (!validY);
-                        //FALTA CHECAR QUE NINGUNA ESTE OCUPADA
+                        
 
                         int checky = 0;
                         do
@@ -140,14 +125,45 @@ public class Generacion : MonoBehaviour
                         } while (takx < mapa[contx, conty].x);
                         taky++;
                     } while (taky < mapa[contx, conty].y);
+
+                    switch (mapa[contx, conty].x)
+                    {
+                        case 0:
+
+                            break;
+
+                        case 1:
+                            switch(mapa[contx, conty].y)
+                            {
+                                case 0:
+                                    break;
+
+                                case 1:
+                                    Inst = Instantiate(onexone, new Vector3((Xoffset+(contx*28)), (Yoffset-(conty*28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 2:
+                                    break;
+
+                            }
+                            break;
+
+                        case 2:
+                            break;
+
+                        case 3:
+                            break;
+
+                        case 4:
+                            break;
+
+                        case 5:
+                            break;
+                    }
             }
         }
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

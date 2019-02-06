@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Crusade.exe
+C:/Users/and/Desktop/tst/Crusade.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
