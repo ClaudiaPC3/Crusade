@@ -36,8 +36,7 @@ public class Generacion : MonoBehaviour
         for(int conty = 0; conty<8; conty++) { 
         for(int contx = 0; contx<19; contx++)
         {
-                GameObject Inst;
-            if (!mapa[contx, conty].taken)                
+                if (!mapa[contx, conty].taken)                
             {
                     bool validPref = true;
                     do {
@@ -138,23 +137,23 @@ public class Generacion : MonoBehaviour
                                     break;
 
                                 case 1:
-                                    Inst = Instantiate(onexone, new Vector3((Xoffset+(contx*28)), (Yoffset-(conty*28)), 0), Quaternion.identity);
+                                    Llenar(onexone, contx, conty); 
                                     break;
 
                                 case 2:
-                                    Inst = Instantiate(onextwo, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(onextwo, contx, conty);
                                     break;
 
                                 case 3:
-                                    Inst = Instantiate(onexthree, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(onexthree, contx, conty);
                                     break;
 
                                 case 4:
-                                    Inst = Instantiate(onexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(onexfour, contx, conty);
                                     break;
 
                                 case 5:
-                                    Inst = Instantiate(onexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(onexfive, contx, conty);
                                     break;
                             }
                             break;
@@ -166,23 +165,23 @@ public class Generacion : MonoBehaviour
                                     break;
 
                                 case 1:
-                                    Inst = Instantiate(twoxone, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(twoxone, contx, conty);
                                     break;
 
                                 case 2:
-                                    Inst = Instantiate(twoxtwo, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(twoxtwo, contx, conty);
                                     break;
 
                                 case 3:
-                                    Inst = Instantiate(twoxthree, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(twoxthree, contx, conty);
                                     break;
 
                                 case 4:
-                                    Inst = Instantiate(twoxfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(twoxfour, contx, conty);
                                     break;
 
                                 case 5:
-                                    Inst = Instantiate(twoxfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(twoxfive, contx, conty);
                                     break;
                             }
                             break;
@@ -195,23 +194,23 @@ public class Generacion : MonoBehaviour
                                     break;
 
                                 case 1:
-                                    Inst = Instantiate(threexone, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(threexone, contx, conty);
                                     break;
 
                                 case 2:
-                                    Inst = Instantiate(threextwo, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(threextwo, contx, conty);
                                     break;
 
                                 case 3:
-                                    Inst = Instantiate(threexthree, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(threexthree, contx, conty);
                                     break;
 
                                 case 4:
-                                    Inst = Instantiate(threexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(threexfour, contx, conty);
                                     break;
 
                                 case 5:
-                                    Inst = Instantiate(threexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(threexfive, contx, conty);
                                     break;
                             }
                             break;
@@ -223,23 +222,23 @@ public class Generacion : MonoBehaviour
                                     break;
 
                                 case 1:
-                                    Inst = Instantiate(fourxone, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(fourxone, contx, conty);
                                     break;
 
                                 case 2:
-                                    Inst = Instantiate(fourxtwo, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(fourxtwo, contx, conty);
                                     break;
 
                                 case 3:
-                                    Inst = Instantiate(fourxthree, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(fourxthree, contx, conty);
                                     break;
 
                                 case 4:
-                                    Inst = Instantiate(fourxfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(fourxfour, contx, conty);
                                     break;
 
                                 case 5:
-                                    Inst = Instantiate(fourxfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(fourxfive, contx, conty);
                                     break;
                             }
                             break;
@@ -251,23 +250,23 @@ public class Generacion : MonoBehaviour
                                     break;
 
                                 case 1:
-                                    Inst = Instantiate(fivexone, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(fivexone, contx, conty);
                                     break;
 
                                 case 2:
-                                    Inst = Instantiate(fivextwo, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(fivextwo, contx, conty);
                                     break;
 
                                 case 3:
-                                    Inst = Instantiate(fivexthree, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(fivexthree, contx, conty);
                                     break;
 
                                 case 4:
-                                    Inst = Instantiate(fivexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(fivexfour, contx, conty);
                                     break;
 
                                 case 5:
-                                    Inst = Instantiate(fivexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    Llenar(fivexfive, contx, conty);
                                     break;
                             }
                             break;
@@ -277,5 +276,24 @@ public class Generacion : MonoBehaviour
         }
     }
 
+
+    public void Llenar(GameObject objeto,int contx,int conty)
+    {
+        GameObject Inst;
+        Vector3 newScale;
+        Inst = Instantiate(objeto, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+        Inst = Instantiate(objeto, new Vector3((1288 - (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+        newScale = Inst.transform.localScale;
+        newScale.x *= -1;
+        Inst.transform.localScale = newScale;
+        Inst = Instantiate(objeto, new Vector3((Xoffset + (contx * 28)), (-700 + (conty * 28)), 0), Quaternion.identity);
+        newScale = Inst.transform.localScale;
+        newScale.y *= -1;
+        Inst.transform.localScale = newScale;
+        Inst = Instantiate(objeto, new Vector3((1288 - (contx * 28)), (-700 + (conty * 28)), 0), Quaternion.identity);
+        newScale = Inst.transform.localScale;
+        newScale.y *= -1;
+        Inst.transform.localScale = newScale;
+    }
    
 }
