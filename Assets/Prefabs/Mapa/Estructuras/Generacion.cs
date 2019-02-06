@@ -49,13 +49,14 @@ public class Generacion : MonoBehaviour
     void Start()
     {
         Random.seed = (int)System.DateTime.Now.Ticks; //Provisional
+        for(int a = 0; a<8; a++) { 
         for(int i = 0; i<19; i++)
         {
             bool validX = false;
             bool validY = false;
             
             
-            if (!mapa[i, 0].taken)                
+            if (!mapa[i, a].taken)                
             {
                 do
                 {
@@ -67,9 +68,9 @@ public class Generacion : MonoBehaviour
                         randx = Random.value;
                     } while (randx > 0.6 || randx < 0);
                     randx = randx * 10;
-                    mapa[i, 0].x = (sbyte)randx;                    
+                    mapa[i, a].x = (sbyte)randx;                    
                     //validacion
-                    TamXval = i + mapa[i, 0].x;
+                    TamXval = i + mapa[i, a].x;
                     if(TamXval <= 19)
                     {                        
                         validX = true;
@@ -89,9 +90,9 @@ public class Generacion : MonoBehaviour
                         randy = Random.value;
                     } while (randy > 0.6 || randy < 0);
                     randy = randy * 10;
-                    mapa[i, 0].y = (sbyte)randy;
+                    mapa[i, a].y = (sbyte)randy;
                     //validacion
-                    TamYval = 0 + mapa[i, 0].y;//aqui ira la variable del segundo for
+                    TamYval = a + mapa[i, a].y;//aqui ira la variable del segundo for
                     if (TamYval <= 8)
                     {
                         validY = true;
@@ -101,9 +102,11 @@ public class Generacion : MonoBehaviour
                         validY = false;
                     }
                 } while (!validY);
-                Debug.Log("en " + i + " x " + mapa[i, 0].x + " y " + mapa[i, 0].y);
+                Debug.Log("en " + i + ","+ a + " x " + mapa[i, a].x + " y " + mapa[i, a].y);
+
                 //Falta poner cuales ya se ocuparon
             }
+        }
         }
     }
 
