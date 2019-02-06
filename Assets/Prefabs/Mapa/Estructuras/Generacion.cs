@@ -49,14 +49,14 @@ public class Generacion : MonoBehaviour
     void Start()
     {
         Random.seed = (int)System.DateTime.Now.Ticks; //Provisional
-        for(int a = 0; a<8; a++) { 
-        for(int i = 0; i<19; i++)
+        for(int conty = 0; conty<8; conty++) { 
+        for(int contx = 0; contx<19; contx++)
         {
             bool validX = false;
             bool validY = false;
             
             
-            if (!mapa[i, a].taken)                
+            if (!mapa[contx, conty].taken)                
             {
                 do
                 {
@@ -68,9 +68,9 @@ public class Generacion : MonoBehaviour
                         randx = Random.value;
                     } while (randx > 0.6 || randx < 0);
                     randx = randx * 10;
-                    mapa[i, a].x = (sbyte)randx;                    
+                    mapa[contx, conty].x = (sbyte)randx;                    
                     //validacion
-                    TamXval = i + mapa[i, a].x;
+                    TamXval = contx + mapa[contx, conty].x;
                     if(TamXval <= 19)
                     {                        
                         validX = true;
@@ -90,9 +90,9 @@ public class Generacion : MonoBehaviour
                         randy = Random.value;
                     } while (randy > 0.6 || randy < 0);
                     randy = randy * 10;
-                    mapa[i, a].y = (sbyte)randy;
+                    mapa[contx, conty].y = (sbyte)randy;
                     //validacion
-                    TamYval = a + mapa[i, a].y;//aqui ira la variable del segundo for
+                    TamYval = conty + mapa[contx, conty].y;//aqui ira la variable del segundo for
                     if (TamYval <= 8)
                     {
                         validY = true;
@@ -102,9 +102,21 @@ public class Generacion : MonoBehaviour
                         validY = false;
                     }
                 } while (!validY);
-                Debug.Log("en " + i + ","+ a + " x " + mapa[i, a].x + " y " + mapa[i, a].y);
-
-                //Falta poner cuales ya se ocuparon
+                Debug.Log("en " + contx + ","+ conty + " x " + mapa[contx, conty].x + " y " + mapa[contx, conty].y);
+                    
+                    int taky = 0;
+                    do
+                    {
+                        int tempy = conty + taky;
+                        int takx = 0;
+                        do
+                        {
+                            int tempx = contx + takx;
+                            mapa[tempx, tempy].taken = true;
+                            takx++;
+                        } while (takx < mapa[contx, conty].x);
+                        taky++;
+                    } while (taky < mapa[contx, conty].y);
             }
         }
         }
