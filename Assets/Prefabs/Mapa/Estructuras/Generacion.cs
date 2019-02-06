@@ -129,7 +129,6 @@ public class Generacion : MonoBehaviour
                     switch (mapa[contx, conty].x)
                     {
                         case 0:
-
                             break;
 
                         case 1:
@@ -143,21 +142,134 @@ public class Generacion : MonoBehaviour
                                     break;
 
                                 case 2:
+                                    Inst = Instantiate(onextwo, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
                                     break;
 
+                                case 3:
+                                    Inst = Instantiate(onexthree, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 4:
+                                    Inst = Instantiate(onexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 5:
+                                    Inst = Instantiate(onexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
                             }
                             break;
 
                         case 2:
+                            switch (mapa[contx, conty].y)
+                            {
+                                case 0:
+                                    break;
+
+                                case 1:
+                                    Inst = Instantiate(twoxone, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 2:
+                                    Inst = Instantiate(twoxtwo, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 3:
+                                    Inst = Instantiate(twoxthree, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 4:
+                                    Inst = Instantiate(twoxfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 5:
+                                    Inst = Instantiate(twoxfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+                            }
                             break;
+                            
 
                         case 3:
+                            switch (mapa[contx, conty].y)
+                            {
+                                case 0:
+                                    break;
+
+                                case 1:
+                                    Inst = Instantiate(threexone, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 2:
+                                    Inst = Instantiate(threextwo, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 3:
+                                    Inst = Instantiate(threexthree, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 4:
+                                    Inst = Instantiate(threexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 5:
+                                    Inst = Instantiate(threexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+                            }
                             break;
 
                         case 4:
+                            switch (mapa[contx, conty].y)
+                            {
+                                case 0:
+                                    break;
+
+                                case 1:
+                                    Inst = Instantiate(fourxone, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 2:
+                                    Inst = Instantiate(fourxtwo, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 3:
+                                    Inst = Instantiate(fourxthree, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 4:
+                                    Inst = Instantiate(fourxfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 5:
+                                    Inst = Instantiate(fourxfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+                            }
                             break;
 
                         case 5:
+                            switch (mapa[contx, conty].y)
+                            {
+                                case 0:
+                                    break;
+
+                                case 1:
+                                    Inst = Instantiate(fivexone, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 2:
+                                    Inst = Instantiate(fivextwo, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 3:
+                                    Inst = Instantiate(fivexthree, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 4:
+                                    Inst = Instantiate(fivexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+
+                                case 5:
+                                    Inst = Instantiate(fivexfour, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+                                    break;
+                            }
                             break;
                     }
             }
