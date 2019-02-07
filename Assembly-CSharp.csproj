@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Menus\Principal\NavPrinc.cs" />
     <Compile Include="Assets\Scripts\Network\JugadorNet.cs" />
     <Compile Include="Assets\Scripts\Personajes\Movimiento.cs" />
+    <Compile Include="Assets\Semilla.cs" />
     <None Include="Assets\Resources\Partidas.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
