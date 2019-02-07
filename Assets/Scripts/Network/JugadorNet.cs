@@ -13,6 +13,7 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Caballero;
     private GameObject Cierra;
     public GameObject Pelota;
+    public GameObject SemGen;
     public int opcion;
     private string tempname;
     [SyncVar]
@@ -25,6 +26,11 @@ public class JugadorNet : NetworkBehaviour
         if (!isLocalPlayer)
         {
             return;
+        }
+
+        if (isServer)
+        {
+            CmdSpawnSem();
         }
 
         
@@ -60,6 +66,13 @@ public class JugadorNet : NetworkBehaviour
         }
 
        
+    }
+
+    [Command]
+    void CmdSpawnSem()
+    {
+        GameObject Gen = Instantiate(SemGen);
+        NetworkServer.SpawnWithClientAuthority(Gen, connectionToClient);
     }
 
     [Command]

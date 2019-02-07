@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Generacion : MonoBehaviour
+public class Generacion : NetworkBehaviour
 {
     public GameObject onexone, onextwo, onexthree, onexfour, onexfive;
     public GameObject twoxone, twoxtwo, twoxthree, twoxfour, twoxfive;
     public GameObject threexone, threextwo, threexthree, threexfour, threexfive;
     public GameObject fourxone, fourxtwo, fourxthree, fourxfour, fourxfive;
     public GameObject fivexone, fivextwo, fivexthree, fivexfour, fivexfive;
-
+    
     private int Xoffset = 168;
     private int Yoffset = -168;
+
+    [SyncVar]
+    public int seed;
 
     public struct casilla
     {
@@ -32,7 +36,14 @@ public class Generacion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Random.seed = (int)System.DateTime.Now.Ticks; //Provisional
+       
+
+        if (isServer)
+        {
+            seed = (int)System.DateTime.Now.Ticks;
+        }
+
+        Random.seed = seed; //Provisional
         for(int conty = 0; conty<8; conty++) { 
         for(int contx = 0; contx<19; contx++)
         {
