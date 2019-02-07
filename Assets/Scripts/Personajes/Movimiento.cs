@@ -61,11 +61,17 @@ public class Movimiento : NetworkBehaviour
         {
             return;
         }
-        if(PlayerPrefs.GetInt("pausado")==0)
+        if (PlayerPrefs.GetInt("pausado") == 0)
+        {
             mov = new Vector2( //En este vector se asigna la información obtenida por perifericos
             Input.GetAxisRaw("Horizontal"), //señal X de los perifericos
             Input.GetAxisRaw("Vertical") //señal Y de los perifericos
             );
+        }
+        else
+        {
+            mov = new Vector2(0, 0);
+        }
 
         if (mov.x != 0 || mov.y != 0) //el if es usado para evitar que se le asigne 0,0 y terminar con la animacion default
         {
