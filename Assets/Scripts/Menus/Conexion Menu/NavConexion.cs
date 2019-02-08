@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; //Encargado de administrar las escenas
 
 public class NavConexion : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class NavConexion : MonoBehaviour
     public Toggle Unir;
     public GameObject Entrar;
     public GameObject IpTexto;
+    TerminarCon Fin;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,10 @@ public class NavConexion : MonoBehaviour
         {
             Unir.isOn = false;
             IpTexto.SetActive(false);
+        }
+        if (!Crear.isOn)
+        {
+            SceneManager.LoadScene("Partida");
         }
     }
 
