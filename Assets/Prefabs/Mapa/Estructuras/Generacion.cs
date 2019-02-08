@@ -292,16 +292,16 @@ public class Generacion : NetworkBehaviour
     {
         GameObject Inst;
         Vector3 newScale;
-        Inst = Instantiate(objeto, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 1), Quaternion.identity);
-        Inst = Instantiate(objeto, new Vector3((1288 - (contx * 28)), (Yoffset - (conty * 28)), 1), Quaternion.identity);
+        Inst = Instantiate(objeto, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+        Inst = Instantiate(objeto, new Vector3((1288 - (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
         newScale = Inst.transform.localScale;
         newScale.x *= -1;
         Inst.transform.localScale = newScale;
-        Inst = Instantiate(objeto, new Vector3((Xoffset + (contx * 28)), (-700 + (conty * 28)), 1), Quaternion.identity);
+        Inst = Instantiate(objeto, new Vector3((Xoffset + (contx * 28)), (-700 + (conty * 28)), 0), Quaternion.identity);
         newScale = Inst.transform.localScale;
         newScale.y *= -1;
         Inst.transform.localScale = newScale;
-        Inst = Instantiate(objeto, new Vector3((1288 - (contx * 28)), (-700 + (conty * 28)), 1), Quaternion.identity);
+        Inst = Instantiate(objeto, new Vector3((1288 - (contx * 28)), (-700 + (conty * 28)), 0), Quaternion.identity);
         newScale = Inst.transform.localScale;
         newScale.y *= -1;
         newScale.x *= -1;

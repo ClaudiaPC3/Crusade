@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/2DDL/Examples/9 - Light Car/9 - Light Car.unity
+- path: Assets/Scenes/Partida.unity
   isLoaded: 1
   isActive: 1
