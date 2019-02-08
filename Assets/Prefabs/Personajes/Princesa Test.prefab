@@ -455,7 +455,7 @@ MonoBehaviour:
   Segments: 8
   Layer:
     serializedVersion: 2
-    m_Bits: 16640
+    m_Bits: 256
   useEvents: 1
   objectsWithinSight: 0
   intelliderConvex: 0
