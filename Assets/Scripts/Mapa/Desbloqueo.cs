@@ -22,7 +22,7 @@ public class Desbloqueo : NetworkBehaviour
 
         if(clientes == 2)
         {
-
+            GlobalData.EnCurso = true;
             CmdDestruirBarreras(barrera);
             
         }

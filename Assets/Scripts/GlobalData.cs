@@ -1,6 +1,7 @@
 ﻿public static class GlobalData
 {
     private static int character;
+    private static bool enCurso=false;
 
     public static int Character
     {
@@ -14,5 +15,16 @@
         }
     }
 
-    
+    public static bool EnCurso
+    {
+        get
+        {
+            return enCurso;
+        }
+        set
+        {
+            enCurso = value;
+        }
+    }
+
 }
