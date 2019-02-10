@@ -14,6 +14,7 @@ public class Desbloqueo : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (NetworkServer.active)
         {
             clientes = NetworkServer.connections.Count;
@@ -22,7 +23,7 @@ public class Desbloqueo : NetworkBehaviour
 
         if(clientes == 2)
         {
-            GlobalData.EnCurso = true;
+            
             CmdDestruirBarreras(barrera);
             
         }

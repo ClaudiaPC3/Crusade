@@ -120,7 +120,7 @@ public class Generacion : NetworkBehaviour
                         } while (checky < mapa[contx, conty].y);
 
                     } while (!validPref);
-                Debug.Log("en " + contx + "," + conty + " x " + mapa[contx, conty].x + " y " + mapa[contx, conty].y);
+               
                     
                     int taky = 0;
                     do

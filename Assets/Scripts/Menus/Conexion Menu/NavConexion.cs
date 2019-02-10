@@ -10,7 +10,7 @@ public class NavConexion : MonoBehaviour
     public Toggle Unir;
     public GameObject Entrar;
     public GameObject IpTexto;
-    TerminarCon Fin;
+   
     // Start is called before the first frame update
     void Start()
     {

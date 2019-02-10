@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class TerminarCon : MonoBehaviour
+public class TerminarCon : NetworkBehaviour
 {
     public NetworkManager manager;
+    private int clientes = 0;
 
     void Update()
     {
-        if (NetworkServer.active && NetworkClient.active)
+        if (manager.IsClientConnected())
         {
             GlobalData.EnCurso = true;
         }
-        if (!NetworkServer.active && NetworkClient.active)
+        else
         {
-            GlobalData.EnCurso = true;
-        }
-
+            GlobalData.EnCurso = false;
+        }    
+  
     }
+     
     public void Terminar()
     {
         if (NetworkServer.active && NetworkClient.active)

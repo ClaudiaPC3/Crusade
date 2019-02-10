@@ -68,6 +68,10 @@ public class JugadorNet : NetworkBehaviour
        
     }
 
+
+
+   
+
     [Command]
     void CmdSpawnSem()
     {
