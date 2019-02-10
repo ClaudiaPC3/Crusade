@@ -10,9 +10,16 @@ public class TerminarCon : NetworkBehaviour
 
     void Update()
     {
-        if (manager.IsClientConnected())
+        if (NetworkServer.active)
         {
+            clientes = NetworkServer.connections.Count;
+
+        }
+        if ((clientes==2)||(manager.IsClientConnected()&& !NetworkServer.active))
+        {
+
             GlobalData.EnCurso = true;
+
         }
         else
         {
