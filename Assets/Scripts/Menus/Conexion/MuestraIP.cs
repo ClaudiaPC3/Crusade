@@ -9,14 +9,20 @@ using UnityEngine.UI;
 public class MuestraIP : NetworkBehaviour
 {
     public Text ip;
-    
+    public GameObject bot;
+
     // Start is called before the first frame update
     void Start()
     {
-             
-        ip = GetComponent<Text>();
-        ip.text = LocalIPAddress();
-        
+        if(NetworkServer.active && NetworkClient.active)
+        { 
+            ip = GetComponent<Text>();
+            ip.text = LocalIPAddress();
+        }
+        else
+        {
+            bot.SetActive(false);
+        }
     }
 
     // Update is called once per frame

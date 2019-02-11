@@ -10,19 +10,31 @@ public class NavConexion : MonoBehaviour
     public Toggle Unir;
     public GameObject Entrar;
     public GameObject IpTexto;
+    public GameObject BotConectar;
    
     // Start is called before the first frame update
     void Start()
     {
         Entrar.SetActive(false);
         IpTexto.SetActive(false);
+        BotConectar.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        /*if (Crear.isOn||Unir.isOn)
+        if (Crear.isOn||Unir.isOn)
+        {
+            Entrar.SetActive(true);
+        }
+        else
+        {
+            Entrar.SetActive(false);
+
+        }
+
+        /*if (GlobalData.EnCurso==true)
         {
             Entrar.SetActive(true);
         }
@@ -32,16 +44,6 @@ public class NavConexion : MonoBehaviour
 
         }*/
 
-        if (GlobalData.EnCurso==true)
-        {
-            Entrar.SetActive(true);
-        }
-        else
-        {
-            Entrar.SetActive(false);
-
-        }
-
     }
 
     public void CrearOn()
@@ -50,6 +52,7 @@ public class NavConexion : MonoBehaviour
         {
             Unir.isOn = false;
             IpTexto.SetActive(false);
+            BotConectar.SetActive(false);
         }
         if (!Crear.isOn)
         {
@@ -62,11 +65,13 @@ public class NavConexion : MonoBehaviour
         if (!Unir.isOn)
         {
             IpTexto.SetActive(false);
+            BotConectar.SetActive(false);
         }
         if (Unir.isOn)
         {
             Crear.isOn = false;
             IpTexto.SetActive(true);
+            BotConectar.SetActive(true);
         }
     }
 
