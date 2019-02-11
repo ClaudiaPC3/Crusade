@@ -24,7 +24,17 @@ public class NavConexion : MonoBehaviour
     void Update()
     {
 
-        /*if (Crear.isOn||Unir.isOn)
+        if (Crear.isOn||Unir.isOn)
+        {
+            Entrar.SetActive(true);
+        }
+        else
+        {
+            Entrar.SetActive(false);
+
+        }
+
+        /*if (GlobalData.EnCurso==true)
         {
             Entrar.SetActive(true);
         }
@@ -33,16 +43,6 @@ public class NavConexion : MonoBehaviour
             Entrar.SetActive(false);
 
         }*/
-
-        if (GlobalData.EnCurso==true)
-        {
-            Entrar.SetActive(true);
-        }
-        else
-        {
-            Entrar.SetActive(false);
-
-        }
 
     }
 

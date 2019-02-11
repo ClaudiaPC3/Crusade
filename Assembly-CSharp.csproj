@@ -125,6 +125,7 @@
     <Compile Include="Assets\manager.cs" />
     <Compile Include="Assets\Prefabs\Mapa\Estructuras\Generacion.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Cofre\CofreInteraccion.cs" />
     <Compile Include="Assets\Scripts\Mapa\Desbloqueo.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\CabOpc.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\HerrOpc.cs" />
