@@ -87,6 +87,7 @@ MonoBehaviour:
     type: 3}
   fivexfive: {fileID: 7425992723753561588, guid: a70c4159d2cc0614a880f2bb343518e7,
     type: 3}
+  cofre: {fileID: 1406084844399474616, guid: 7375a8e321823d44788b4af5874bab4b, type: 3}
   seed: 0
 --- !u!114 &5087680245629552303
 MonoBehaviour:
