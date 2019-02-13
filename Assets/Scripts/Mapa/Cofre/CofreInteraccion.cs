@@ -10,12 +10,15 @@ public class CofreInteraccion : MonoBehaviour
     private Transform posicion;
     private bool proceso = true;
     private int dist = 30;
+    private bool activo = true;
+    private float currentTime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
         anim.SetFloat("Estado", 1);
         posicion = GetComponent<Transform>();
-        MenuCofre.SetActive(false);
+        MenuCofre = GameObject.FindWithTag("Cofre");
+        
         //proceso = GlobalData.EnCurso;////////////////////////////////////////////////
 
     }
@@ -52,19 +55,36 @@ public class CofreInteraccion : MonoBehaviour
         }
         if (proceso)
         {
-            if ((personaje1.GetComponent<Transform>().transform.position.x <= (posicion.position.x + dist) && personaje1.GetComponent<Transform>().transform.position.x >= (posicion.position.x - dist)) && (personaje1.GetComponent<Transform>().transform.position.y <= (posicion.position.y + dist) && personaje1.GetComponent<Transform>().transform.position.y >= (posicion.position.y - dist)))
+            if (((personaje1.GetComponent<Transform>().transform.position.x <= (posicion.position.x + dist) && personaje1.GetComponent<Transform>().transform.position.x >= (posicion.position.x - dist)) && (personaje1.GetComponent<Transform>().transform.position.y <= (posicion.position.y + dist) && personaje1.GetComponent<Transform>().transform.position.y >= (posicion.position.y - dist)))&&activo)
             {
-                MenuCofre.SetActive(true);
                 anim.SetFloat("Estado", 2);
-
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    MenuCofre.SetActive(true);
+                    GlobalData.EnCofre = true;
+                    anim.SetFloat("Estado", 3);
+                    activo = false;
+                }
+            }
+            else
+            {
+                if (activo)
+                {
+                    anim.SetFloat("Estado", 1);
+                }
+            }
+            if (!activo)
+            {
+                currentTime = Time.deltaTime+currentTime;
+                if (currentTime >= 30.0f)
+                {
+                    currentTime = 0.0f;
+                    activo = true;
+                    anim.SetFloat("Estado", 1);
+                }
             }
         }
         
-    }
-
-    public void CerrarCofre()
-    {
-        anim.SetFloat("Estado", 3);
-        MenuCofre.SetActive(false);
+        
     }
 }

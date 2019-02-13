@@ -123,10 +123,11 @@
     <Compile Include="Assets\2DDL\Examples\OLD Examples\8 - ConeOfSight - FieldOfView\fire.cs" />
     <Compile Include="Assets\2DDL\Examples\OLD Examples\8 - ConeOfSight - FieldOfView\rotate_2.cs" />
     <Compile Include="Assets\manager.cs" />
-    <Compile Include="Assets\Prefabs\Mapa\Estructuras\Generacion.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
     <Compile Include="Assets\Scripts\Mapa\Cofre\CofreInteraccion.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Cofre\MenuCofre.cs" />
     <Compile Include="Assets\Scripts\Mapa\Desbloqueo.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Generacion.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\CabOpc.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\HerrOpc.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\MagoOpc.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Assets\Scripts\Menus\EnPartida\Regresa.cs" />
     <Compile Include="Assets\Scripts\Menus\Historial\MeterPartida.cs" />
     <Compile Include="Assets\Scripts\Menus\Jugar\NavJug.cs" />
+    <Compile Include="Assets\Scripts\Menus\Pausa\MenuPausa.cs" />
     <Compile Include="Assets\Scripts\Menus\Perfil\NavPer.cs" />
     <Compile Include="Assets\Scripts\Menus\Perfil\NombresControl.cs" />
     <Compile Include="Assets\Scripts\Menus\Principal\NavPrinc.cs" />

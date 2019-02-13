@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement; //Encargado de administrar las escenas
 public class OpcionesAdm : MonoBehaviour
 {
     
-    public GameObject Cierra;
+    public GameObject Cierra,MenuCofre;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class OpcionesAdm : MonoBehaviour
     public void Ocultar()
     {
         Cierra.SetActive(false);
+        MenuCofre.SetActive(false);
     }
     
 }

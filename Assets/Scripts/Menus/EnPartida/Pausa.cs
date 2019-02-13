@@ -88,13 +88,13 @@ public class Pausa : MonoBehaviour
     {
         MenuPausa.SetActive(true);             //Activa el menu 
         estado = 0;                            //Modifica la variable de control
-        PlayerPrefs.SetInt("pausado", 1);
+        GlobalData.EnPausa = true;
     }
 
     public void Continuar()
     {
         MenuPausa.SetActive(false);           //Esconde menu      
         estado = 1;                           //Modifica la variable de control       
-        PlayerPrefs.SetInt("pausado", 0);
+        GlobalData.EnPausa = false;
     }
 }

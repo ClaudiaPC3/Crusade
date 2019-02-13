@@ -10,6 +10,7 @@ public class Generacion : NetworkBehaviour
     public GameObject threexone, threextwo, threexthree, threexfour, threexfive;
     public GameObject fourxone, fourxtwo, fourxthree, fourxfour, fourxfive;
     public GameObject fivexone, fivextwo, fivexthree, fivexfour, fivexfive;
+    public GameObject cofre;
     
     private int Xoffset = 168;
     private int Yoffset = -168;
@@ -285,6 +286,22 @@ public class Generacion : NetworkBehaviour
             }
         }
         }
+        GameObject Inst;
+        Vector3 newScale;
+        Inst = Instantiate(cofre, new Vector3((Xoffset + (5 * 28)), (Yoffset - (5 * 28)), 0), Quaternion.identity);
+        Inst = Instantiate(cofre, new Vector3((1288 - (5 * 28)), (Yoffset - (5 * 28)), 0), Quaternion.identity);
+        newScale = Inst.transform.localScale;
+        newScale.x *= -1;
+        Inst.transform.localScale = newScale;
+        Inst = Instantiate(cofre, new Vector3((Xoffset + (5 * 28)), (-700 + (5 * 28)), 0), Quaternion.identity);
+        newScale = Inst.transform.localScale;
+        newScale.y *= -1;
+        Inst.transform.localScale = newScale;
+        Inst = Instantiate(cofre, new Vector3((1288 - (5 * 28)), (-700 + (5 * 28)), 0), Quaternion.identity);
+        newScale = Inst.transform.localScale;
+        newScale.x *= -1;
+        newScale.y *= -1;
+        Inst.transform.localScale = newScale;
     }
 
 

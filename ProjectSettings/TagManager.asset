@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - onlyTrigger
+  - Cofre
   layers:
   - Default
   - TransparentFX
