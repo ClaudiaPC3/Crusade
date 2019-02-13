@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/and/Desktop/test/Crusade.exe
+C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Relic Hunter.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
@@ -187,7 +187,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 af362fd51ef8182678df1065d289b63d Assembly-CSharp.dll:.NavPer
-9942ae6da5bb8f1dfa20ff97eeb08b10 Assembly-CSharp.dll:.CofreInteraccion
+fa232564dc7c503af530a5f399aeb348 Assembly-CSharp.dll:.CofreInteraccion
 66bca5cc6a18c5298ec75235e56a84d6 Assembly-CSharp.dll:DynamicLight2D.LookAt
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
