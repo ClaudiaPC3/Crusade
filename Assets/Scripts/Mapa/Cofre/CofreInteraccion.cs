@@ -5,7 +5,7 @@ using UnityEngine;
 public class CofreInteraccion : MonoBehaviour
 {
     public Animator anim;
-    public GameObject personaje1, personaje2;
+    public GameObject personaje1;
     public GameObject MenuCofre;
     private Transform posicion;
     private bool proceso = true;
@@ -27,31 +27,9 @@ public class CofreInteraccion : MonoBehaviour
     void Update()
     {
 
-        if (personaje1 == null || personaje2 == null)
+        if (personaje1 == null)
         {
-            switch (GlobalData.Character)
-            {
-                case 1:
-                    personaje1 = GameObject.Find("Princesa Test(Clone)");
-                    personaje2 = GameObject.Find("Princesa Test(Clone)");
-
-                    break;
-                case 2:
-                    personaje1 = GameObject.Find("Mago Test(Clone)");
-                    personaje2 = GameObject.Find("Mago Test(Clone)");
-
-                    break;
-                case 3:
-                    personaje1 = GameObject.Find("Caballero(Clone)");
-                    personaje2 = GameObject.Find("Caballero(Clone)");
-
-                    break;
-                case 4:
-                    personaje1 = GameObject.Find("Herrero Test(Clone)");
-                    personaje2 = GameObject.Find("Herrero Test(Clone)");
-
-                    break;
-            }
+            personaje1 = GameObject.Find("Main Camera");
         }
         if (proceso)
         {
