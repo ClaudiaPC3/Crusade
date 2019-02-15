@@ -44,7 +44,50 @@ public class Generacion : NetworkBehaviour
             seed = (int)System.DateTime.Now.Ticks;
         }
 
-        Random.seed = seed; //Provisional
+        Random.seed = seed; //Generacion de semilla
+
+        for (int contChe = 0; contChe < 2; contChe++)
+        {
+            int Chx = 0;
+            int Chy = 0;
+            bool validChx = false;
+            bool validChy = false;
+            bool validChGen = false;
+            Debug.Log("0");
+            do
+            {
+                float RandChx = 0;
+               do
+                {
+                    //Asignación de Chx
+                    Debug.Log("1");
+                    do
+                    {
+                        RandChx = Random.value;
+                    } while (RandChx > 0.18 || RandChx < 0.01);
+                    RandChx = RandChx * 100;
+                    Chx = (int)RandChx;
+                    validChx = true;
+                    Debug.Log("2");
+                }while (!validChx);//Validacion de Chx
+                
+                do
+                {
+                    validChy = true;
+                    //Asignación Chy
+                }while (!validChy);//Validacion de Chy
+
+                if (!mapa[Chx, Chy].taken)
+                {
+                    //
+                }
+                
+                Debug.Log(Chx);
+                validChGen = true;
+            } while (!validChGen);
+            
+        }
+        
         for(int conty = 0; conty<8; conty++) { 
         for(int contx = 0; contx<19; contx++)
         {
