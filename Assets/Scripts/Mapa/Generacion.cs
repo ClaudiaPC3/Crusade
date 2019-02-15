@@ -45,17 +45,25 @@ public class Generacion : NetworkBehaviour
         }
 
         Random.seed = seed; //Generacion de semilla
+        int Chests = 0;
+        float RandChests = 0;
+        do
+        {
+            RandChests = Random.value;
+        } while (RandChests > 0.3 || RandChests < 0.1);
+        RandChests = RandChests * 10;
+        Chests = (int)RandChests;
         //to do:Algoritmo de cuenta de cofres
-        for (int contChe = 0; contChe < 2; contChe++)
+        for (int contChe = 0; contChe < Chests; contChe++)
         {
             int Chx = 0;
             int Chy = 0;            
             bool validChGen = false;
-            do
-            {
+            
                 float RandChx = 0;
                 float RandChy = 0;
-                                  
+                bool Gen = true;
+                
                     do
                     {
                         RandChx = Random.value;
@@ -68,9 +76,23 @@ public class Generacion : NetworkBehaviour
                         RandChy = Random.value;
                     } while (RandChy > 0.07 || RandChy < 0.01);
                     RandChy = RandChy * 100;
-                    Chy = (int)RandChy;                                                        
+                    Chy = (int)RandChy;
 
-                if (!mapa[Chx, Chy].taken)
+                int Limx = Chx + 2;
+                int Limy = Chy + 2;
+
+                for (int contx=Chx-1; contx<Limx; contx++)
+                {
+                    for (int conty = Chy-1; conty < Limy; conty++)
+                    {
+                        if(mapa[contx, conty].taken)
+                        {
+                            Gen = false;
+                        }
+                    }
+                }
+
+                if (Gen)
                 {
                     Llenar(cofre, Chx, Chy);
                     mapa[Chx, Chy].taken = true;
@@ -80,9 +102,7 @@ public class Generacion : NetworkBehaviour
                     mapa[Chx, Chy - 1].taken = true;
                 }
                 
-                Debug.Log("x: "+Chx+" y: "+Chy);
-                validChGen = true;//FALTA
-            } while (!validChGen);
+                Debug.Log("x: "+Chx+" y: "+Chy);                
             
         }
         
