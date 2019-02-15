@@ -45,7 +45,7 @@ public class Generacion : NetworkBehaviour
         }
 
         Random.seed = seed; //Generacion de semilla
-
+        //to do:Algoritmo de cuenta de cofres
         for (int contChe = 0; contChe < 2; contChe++)
         {
             int Chx = 0;
@@ -72,11 +72,16 @@ public class Generacion : NetworkBehaviour
 
                 if (!mapa[Chx, Chy].taken)
                 {
-                    //Genarar cofre
+                    Llenar(cofre, Chx, Chy);
+                    mapa[Chx, Chy].taken = true;
+                    mapa[Chx - 1, Chy].taken = true;
+                    mapa[Chx + 1, Chy].taken = true;
+                    mapa[Chx, Chy + 1].taken = true;
+                    mapa[Chx, Chy - 1].taken = true;
                 }
                 
                 Debug.Log("x: "+Chx+" y: "+Chy);
-                validChGen = true;
+                validChGen = true;//FALTA
             } while (!validChGen);
             
         }
@@ -322,7 +327,7 @@ public class Generacion : NetworkBehaviour
             }
         }
         }
-        GameObject Inst;
+        /*GameObject Inst;
         Vector3 newScale;
         Inst = Instantiate(cofre, new Vector3((Xoffset + (5 * 28)), (Yoffset - (5 * 28)), 0), Quaternion.identity);
         Inst = Instantiate(cofre, new Vector3((1288 - (5 * 28)), (Yoffset - (5 * 28)), 0), Quaternion.identity);
@@ -337,7 +342,7 @@ public class Generacion : NetworkBehaviour
         newScale = Inst.transform.localScale;
         newScale.x *= -1;
         newScale.y *= -1;
-        Inst.transform.localScale = newScale;
+        Inst.transform.localScale = newScale;*/
     }
 
 
