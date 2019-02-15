@@ -49,40 +49,33 @@ public class Generacion : NetworkBehaviour
         for (int contChe = 0; contChe < 2; contChe++)
         {
             int Chx = 0;
-            int Chy = 0;
-            bool validChx = false;
-            bool validChy = false;
+            int Chy = 0;            
             bool validChGen = false;
-            Debug.Log("0");
             do
             {
                 float RandChx = 0;
-               do
-                {
-                    //Asignación de Chx
-                    Debug.Log("1");
+                float RandChy = 0;
+                                  
                     do
                     {
                         RandChx = Random.value;
                     } while (RandChx > 0.18 || RandChx < 0.01);
                     RandChx = RandChx * 100;
                     Chx = (int)RandChx;
-                    validChx = true;
-                    Debug.Log("2");
-                }while (!validChx);//Validacion de Chx
-                
-                do
-                {
-                    validChy = true;
-                    //Asignación Chy
-                }while (!validChy);//Validacion de Chy
+                                                                
+                    do
+                    {
+                        RandChy = Random.value;
+                    } while (RandChy > 0.07 || RandChy < 0.01);
+                    RandChy = RandChy * 100;
+                    Chy = (int)RandChy;                                                        
 
                 if (!mapa[Chx, Chy].taken)
                 {
-                    //
+                    //Genarar cofre
                 }
                 
-                Debug.Log(Chx);
+                Debug.Log("x: "+Chx+" y: "+Chy);
                 validChGen = true;
             } while (!validChGen);
             
