@@ -44,7 +44,68 @@ public class Generacion : NetworkBehaviour
             seed = (int)System.DateTime.Now.Ticks;
         }
 
-        Random.seed = seed; //Provisional
+        Random.seed = seed; //Generacion de semilla
+        int Chests = 0;
+        float RandChests = 0;
+        do
+        {
+            RandChests = Random.value;
+        } while (RandChests > 0.3 || RandChests < 0.1);
+        RandChests = RandChests * 10;
+        Chests = (int)RandChests;
+        //to do:Algoritmo de cuenta de cofres
+        for (int contChe = 0; contChe < Chests; contChe++)
+        {
+            int Chx = 0;
+            int Chy = 0;            
+            bool validChGen = false;
+            
+                float RandChx = 0;
+                float RandChy = 0;
+                bool Gen = true;
+                
+                    do
+                    {
+                        RandChx = Random.value;
+                    } while (RandChx > 0.18 || RandChx < 0.01);
+                    RandChx = RandChx * 100;
+                    Chx = (int)RandChx;
+                                                                
+                    do
+                    {
+                        RandChy = Random.value;
+                    } while (RandChy > 0.07 || RandChy < 0.01);
+                    RandChy = RandChy * 100;
+                    Chy = (int)RandChy;
+
+                int Limx = Chx + 2;
+                int Limy = Chy + 2;
+
+                for (int contx=Chx-1; contx<Limx; contx++)
+                {
+                    for (int conty = Chy-1; conty < Limy; conty++)
+                    {
+                        if(mapa[contx, conty].taken)
+                        {
+                            Gen = false;
+                        }
+                    }
+                }
+
+                if (Gen)
+                {
+                    Llenar(cofre, Chx, Chy);
+                    mapa[Chx, Chy].taken = true;
+                    mapa[Chx - 1, Chy].taken = true;
+                    mapa[Chx + 1, Chy].taken = true;
+                    mapa[Chx, Chy + 1].taken = true;
+                    mapa[Chx, Chy - 1].taken = true;
+                }
+                
+                Debug.Log("x: "+Chx+" y: "+Chy);                
+            
+        }
+        
         for(int conty = 0; conty<8; conty++) { 
         for(int contx = 0; contx<19; contx++)
         {
@@ -286,7 +347,7 @@ public class Generacion : NetworkBehaviour
             }
         }
         }
-        GameObject Inst;
+        /*GameObject Inst;
         Vector3 newScale;
         Inst = Instantiate(cofre, new Vector3((Xoffset + (5 * 28)), (Yoffset - (5 * 28)), 0), Quaternion.identity);
         Inst = Instantiate(cofre, new Vector3((1288 - (5 * 28)), (Yoffset - (5 * 28)), 0), Quaternion.identity);
@@ -301,7 +362,7 @@ public class Generacion : NetworkBehaviour
         newScale = Inst.transform.localScale;
         newScale.x *= -1;
         newScale.y *= -1;
-        Inst.transform.localScale = newScale;
+        Inst.transform.localScale = newScale;*/
     }
 
 
