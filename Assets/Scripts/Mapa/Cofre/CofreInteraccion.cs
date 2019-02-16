@@ -9,7 +9,6 @@ public class CofreInteraccion : MonoBehaviour
     public GameObject MenuCofre;
     private Transform posicion;
     private bool proceso = true;
-    private int dist = 30;
     private bool activo = true;
     private float currentTime = 0.0f;
     // Start is called before the first frame update
@@ -33,7 +32,7 @@ public class CofreInteraccion : MonoBehaviour
         }
         if (proceso)
         {
-            if (((personaje1.GetComponent<Transform>().transform.position.x <= (posicion.position.x + dist) && personaje1.GetComponent<Transform>().transform.position.x >= (posicion.position.x - dist)) && (personaje1.GetComponent<Transform>().transform.position.y <= (posicion.position.y + dist) && personaje1.GetComponent<Transform>().transform.position.y >= (posicion.position.y - dist)))&&activo)
+            if (((personaje1.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && personaje1.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (personaje1.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && personaje1.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42)))&&activo)
             {
                 anim.SetFloat("Estado", 2);
                 if (Input.GetKeyUp(KeyCode.E))

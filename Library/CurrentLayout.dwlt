@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 336, y: 274}
   m_MaxSize: {x: 14006, y: 10024}
   vertical: 0
-  controlID: 139
+  controlID: 28
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -188,10 +188,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 885, y: 498}
+  m_MinSize: {x: 887, y: 498}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 1
-  controlID: 58
+  controlID: 120
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -213,10 +213,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 947
-  m_MinSize: {x: 885, y: 498}
+  m_MinSize: {x: 887, y: 498}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
-  controlID: 59
+  controlID: 121
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -238,10 +238,10 @@ MonoBehaviour:
     y: 0
     width: 1394
     height: 947
-  m_MinSize: {x: 608, y: 498}
+  m_MinSize: {x: 610, y: 498}
   m_MaxSize: {x: 14006, y: 14048}
   vertical: 1
-  controlID: 60
+  controlID: 122
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -264,10 +264,10 @@ MonoBehaviour:
     y: 0
     width: 1394
     height: 538
-  m_MinSize: {x: 608, y: 224}
-  m_MaxSize: {x: 12008, y: 4024}
+  m_MinSize: {x: 610, y: 224}
+  m_MaxSize: {x: 12010, y: 4024}
   vertical: 0
-  controlID: 61
+  controlID: 123
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -287,8 +287,8 @@ MonoBehaviour:
     y: 0
     width: 284
     height: 538
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 14580
+  m_LastSelectedObjectID: 5020
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -696,9 +696,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f4380000
-      m_LastClickedID: 14580
-      m_ExpandedIDs: 4cd4feffbcd6feffd4defeff7cebfeff9609ffff0256ffff2470ffff3870ffffdaf9ffff8c38000094380000583a0000
+      m_SelectedIDs: 9c130000
+      m_LastClickedID: 5020
+      m_ExpandedIDs: 92e4ffffd2fbffff34130000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -753,9 +753,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 887.9184, y: -454.22403, z: -36.375}
+    m_Target: {x: 403.62186, y: -549.5606, z: -30.9375}
     speed: 2
-    m_Value: {x: 887.9184, y: -454.22403, z: -36.375}
+    m_Value: {x: 403.62186, y: -549.5606, z: -30.9375}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -787,9 +787,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 923.65027
+    m_Target: 375.66736
     speed: 2
-    m_Value: 923.65027
+    m_Value: 375.66736
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -865,20 +865,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Mapa/Cofre
+    - Assets/Scripts/Mapa/Cofre
   m_ViewMode: 1
   m_StartGridSize: 46
   m_LastFolders:
-  - Assets/Prefabs/Mapa/Cofre
+  - Assets/Scripts/Mapa/Cofre
   m_LastFoldersGridSize: 46
   m_LastProjectPath: "C:\\Users\\ppc\\Documents\\CETI\\Proyecto Titulaci\xF3n\\Crusade"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 56}
-    m_SelectedIDs: 50320000
-    m_LastClickedID: 12880
-    m_ExpandedIDs: 00000000fa3000009e310000a8310000b2310000ea32000012330000ca330000063400003a34000038350000ea350000cc360000d4360000723700007a370000303800008c40000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: ae0e0000
+    m_LastClickedID: 3758
+    m_ExpandedIDs: 00000000e00a00008c0b0000d80c0000000d0000ba0d0000f60d00002a0e0000280f0000da0f0000bc100000c6100000641100006c11000028120000e437000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -906,7 +906,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fa3000009e310000ea32000012330000ca330000063400003a34000038350000ea350000cc360000d4360000723700007a370000303800008c400000
+    m_ExpandedIDs: 00000000e00a00008c0b0000960b0000a00b0000d80c0000000d0000ba0d0000f60d00002a0e0000280f0000da0f0000bc100000c6100000641100006c11000028120000e4370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
