@@ -2424,7 +2424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 635213799}
   - component: {fileID: 635213800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5034,7 +5034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1575255372}
   - component: {fileID: 1575255373}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hitbox Tienda 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5420,7 +5420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1772867677}
   - component: {fileID: 1772867678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hitbox Libros 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5976,7 +5976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1926107060}
   - component: {fileID: 1926107061}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hitbox Tele 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
