@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1406084844399474623}
   - component: {fileID: 1406084844399474620}
-  - component: {fileID: 1406084844399474621}
   - component: {fileID: 1406084844399474618}
   - component: {fileID: 1406084844399474619}
+  - component: {fileID: 7193478081581269968}
   m_Layer: 8
   m_Name: Cofre
   m_TagString: Untagged
@@ -82,32 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1406084844399474621
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406084844399474616}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 13.981855, y: -10.671286}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: -0.235, y: 1.21}
-    oldSize: {x: 19, y: 20}
-    newSize: {x: 1.7272727, y: 1.8181819}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 17.9944, y: 13.172894}
-  m_EdgeRadius: 0
 --- !u!95 &1406084844399474618
 Animator:
   serializedVersion: 3
@@ -142,3 +116,38 @@ MonoBehaviour:
   anim: {fileID: 1406084844399474618}
   personaje1: {fileID: 0}
   MenuCofre: {fileID: 0}
+--- !u!60 &7193478081581269968
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406084844399474616}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: -0.235, y: 1.21}
+    oldSize: {x: 19, y: 20}
+    newSize: {x: 1.7272727, y: 1.8181819}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 20.374872, y: -4.256398}
+      - {x: 18.43931, y: -4.2397017}
+      - {x: 18.441736, y: -5.177385}
+      - {x: 9.483056, y: -5.1751533}
+      - {x: 9.483164, y: -4.248304}
+      - {x: 7.505137, y: -4.2468963}
+      - {x: 5.0208635, y: -7.164852}
+      - {x: 5.02104, y: -17.158474}
+      - {x: 22.970976, y: -17.158451}
+      - {x: 22.970797, y: -7.288365}
