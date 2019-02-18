@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class CofreInteraccion : MonoBehaviour
+public class CofreInteraccion : NetworkBehaviour
 {
     public Animator anim;
     public GameObject personaje1;
@@ -11,10 +12,13 @@ public class CofreInteraccion : MonoBehaviour
     private bool proceso = true;
     private bool activo = true;
     private float currentTime = 0.0f;
+
+    [SyncVar]
+    public int estado=1;
     // Start is called before the first frame update
     void Start()
     {
-        anim.SetFloat("Estado", 1);
+        anim.SetFloat("Estado", estado);
         posicion = GetComponent<Transform>();
         MenuCofre = GameObject.FindWithTag("Cofre");
         
@@ -25,7 +29,7 @@ public class CofreInteraccion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        anim.SetFloat("Estado", estado);
         if (personaje1 == null)
         {
             personaje1 = GameObject.Find("Main Camera");
@@ -34,12 +38,14 @@ public class CofreInteraccion : MonoBehaviour
         {
             if (((personaje1.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && personaje1.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (personaje1.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && personaje1.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42)))&&activo)
             {
-                anim.SetFloat("Estado", 2);
+                estado = 2; //command
+                CmdChangeState(2);
                 if (Input.GetKeyUp(KeyCode.E))
                 {
                     MenuCofre.SetActive(true);
                     GlobalData.EnCofre = true;
-                    anim.SetFloat("Estado", 3);
+                    estado = 3;
+                    CmdChangeState(3);
                     activo = false;
                 }
             }
@@ -47,7 +53,8 @@ public class CofreInteraccion : MonoBehaviour
             {
                 if (activo)
                 {
-                    anim.SetFloat("Estado", 1);
+                    estado = 1;
+                    CmdChangeState(1);
                 }
             }
             if (!activo)
@@ -57,11 +64,18 @@ public class CofreInteraccion : MonoBehaviour
                 {
                     currentTime = 0.0f;
                     activo = true;
-                    anim.SetFloat("Estado", 1);
+                    estado = 1;
+                    CmdChangeState(1);
                 }
             }
         }
         
         
+    }
+
+    [Command]
+    void CmdChangeState(int n)
+    {
+        estado = n;
     }
 }
