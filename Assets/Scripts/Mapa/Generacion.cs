@@ -11,7 +11,7 @@ public class Generacion : NetworkBehaviour
     public GameObject fourxone, fourxtwo, fourxthree, fourxfour, fourxfive;
     public GameObject fivexone, fivextwo, fivexthree, fivexfour, fivexfive;
     public GameObject cofre;
-    
+    public GameObject player;
     private int Xoffset = 168;
     private int Yoffset = -168;
 
@@ -45,47 +45,49 @@ public class Generacion : NetworkBehaviour
         }
 
         Random.seed = seed; //Generacion de semilla
-        int Chests = 0;
-        float RandChests = 0;
-        do
-        {
-            RandChests = Random.value;
-        } while (RandChests > 0.3 || RandChests < 0.1);
-        RandChests = RandChests * 10;
-        Chests = (int)RandChests;
-        //to do:Algoritmo de cuenta de cofres
-        for (int contChe = 0; contChe < Chests; contChe++)
-        {
-            int Chx = 0;
-            int Chy = 0;            
-            bool validChGen = false;
-            
+
+        
+            int Chests = 0;
+            float RandChests = 0;
+            do
+            {
+                RandChests = Random.value;
+            } while (RandChests > 0.3 || RandChests < 0.1);
+            RandChests = RandChests * 10;
+            Chests = (int)RandChests;
+
+            //to do:Algoritmo de cuenta de cofres
+            for (int contChe = 0; contChe < Chests; contChe++)
+            {
+                int Chx = 0;
+                int Chy = 0;
+
                 float RandChx = 0;
                 float RandChy = 0;
                 bool Gen = true;
-                
-                    do
-                    {
-                        RandChx = Random.value;
-                    } while (RandChx > 0.18 || RandChx < 0.01);
-                    RandChx = RandChx * 100;
-                    Chx = (int)RandChx;
-                                                                
-                    do
-                    {
-                        RandChy = Random.value;
-                    } while (RandChy > 0.07 || RandChy < 0.01);
-                    RandChy = RandChy * 100;
-                    Chy = (int)RandChy;
+
+                do
+                {
+                    RandChx = Random.value;
+                } while (RandChx > 0.18 || RandChx < 0.01);
+                RandChx = RandChx * 100;
+                Chx = (int)RandChx;
+
+                do
+                {
+                    RandChy = Random.value;
+                } while (RandChy > 0.07 || RandChy < 0.01);
+                RandChy = RandChy * 100;
+                Chy = (int)RandChy;
 
                 int Limx = Chx + 2;
                 int Limy = Chy + 2;
 
-                for (int contx=Chx-1; contx<Limx; contx++)
+                for (int contx = Chx - 1; contx < Limx; contx++)
                 {
-                    for (int conty = Chy-1; conty < Limy; conty++)
+                    for (int conty = Chy - 1; conty < Limy; conty++)
                     {
-                        if(mapa[contx, conty].taken)
+                        if (mapa[contx, conty].taken)
                         {
                             Gen = false;
                         }
@@ -94,17 +96,19 @@ public class Generacion : NetworkBehaviour
 
                 if (Gen)
                 {
-                    Llenar(cofre, Chx, Chy);
+                    CmdSpawnCh(Chx, Chy);
                     mapa[Chx, Chy].taken = true;
                     mapa[Chx - 1, Chy].taken = true;
                     mapa[Chx + 1, Chy].taken = true;
                     mapa[Chx, Chy + 1].taken = true;
                     mapa[Chx, Chy - 1].taken = true;
                 }
-                
-                Debug.Log("x: "+Chx+" y: "+Chy);                
-            
-        }
+
+                Debug.Log("x: " + Chx + " y: " + Chy);
+
+            }
+        
+        
         
         for(int conty = 0; conty<8; conty++) { 
         for(int contx = 0; contx<19; contx++)
@@ -346,23 +350,7 @@ public class Generacion : NetworkBehaviour
                     }
             }
         }
-        }
-        /*GameObject Inst;
-        Vector3 newScale;
-        Inst = Instantiate(cofre, new Vector3((Xoffset + (5 * 28)), (Yoffset - (5 * 28)), 0), Quaternion.identity);
-        Inst = Instantiate(cofre, new Vector3((1288 - (5 * 28)), (Yoffset - (5 * 28)), 0), Quaternion.identity);
-        newScale = Inst.transform.localScale;
-        newScale.x *= -1;
-        Inst.transform.localScale = newScale;
-        Inst = Instantiate(cofre, new Vector3((Xoffset + (5 * 28)), (-700 + (5 * 28)), 0), Quaternion.identity);
-        newScale = Inst.transform.localScale;
-        newScale.y *= -1;
-        Inst.transform.localScale = newScale;
-        Inst = Instantiate(cofre, new Vector3((1288 - (5 * 28)), (-700 + (5 * 28)), 0), Quaternion.identity);
-        newScale = Inst.transform.localScale;
-        newScale.x *= -1;
-        newScale.y *= -1;
-        Inst.transform.localScale = newScale;*/
+        }        
     }
 
 
@@ -370,42 +358,56 @@ public class Generacion : NetworkBehaviour
     {
         GameObject Inst;
         Vector3 newScale;
+        
         Inst = Instantiate(objeto, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
-        if (objeto == cofre)
-        {
-            contx += 1;
-        }
+        
         Inst = Instantiate(objeto, new Vector3((1288 - (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
-        if (objeto != cofre)
-        {
+        
             newScale = Inst.transform.localScale;
             newScale.x *= -1;
             Inst.transform.localScale = newScale;
-        }
-        if (objeto == cofre)
-        {
-            contx -= 1;
-            conty += 1;
-        }
+        
+        
         Inst = Instantiate(objeto, new Vector3((Xoffset + (contx * 28)), (-700 + (conty * 28)), 0), Quaternion.identity);
-        if (objeto != cofre)
-        {
+       
             newScale = Inst.transform.localScale;
             newScale.y *= -1;
             Inst.transform.localScale = newScale;
-        }
-        if (objeto == cofre)
-        {
-            contx += 1;
-        }
+        
+        
         Inst = Instantiate(objeto, new Vector3((1288 - (contx * 28)), (-700 + (conty * 28)), 0), Quaternion.identity);
-        if (objeto != cofre)
-        { 
-            newScale = Inst.transform.localScale;
+          newScale = Inst.transform.localScale;
             newScale.y *= -1;
             newScale.x *= -1;
             Inst.transform.localScale = newScale;
-        }
+        
     }
-   
+
+    [Command]
+    void CmdSpawnCh(int contx, int conty)
+    {
+        
+        GameObject Inst;
+        Vector3 newScale;
+        player = GameObject.Find("Jugador (Net)(Clone)");
+
+        Inst = Instantiate(cofre, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+        NetworkServer.Spawn(Inst);
+        contx += 1;
+
+        Inst = Instantiate(cofre, new Vector3((1288 - (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
+
+        NetworkServer.SpawnWithClientAuthority(Inst, player);
+        contx -= 1;
+        conty += 1;
+
+        Inst = Instantiate(cofre, new Vector3((Xoffset + (contx * 28)), (-700 + (conty * 28)), 0), Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(Inst, player);
+        contx += 1;
+
+        Inst = Instantiate(cofre, new Vector3((1288 - (contx * 28)), (-700 + (conty * 28)), 0), Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(Inst, player);
+
+    }
+
 }
