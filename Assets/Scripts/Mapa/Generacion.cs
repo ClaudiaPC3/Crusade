@@ -11,9 +11,11 @@ public class Generacion : NetworkBehaviour
     public GameObject fourxone, fourxtwo, fourxthree, fourxfour, fourxfive;
     public GameObject fivexone, fivextwo, fivexthree, fivexfour, fivexfive;
     public GameObject cofre;
-    public GameObject player;
+    public GameObject[] player;
+    public GameObject playerS;
     private int Xoffset = 168;
     private int Yoffset = -168;
+    public bool Gencheck = false;
 
     [SyncVar]
     public int seed;
@@ -44,14 +46,16 @@ public class Generacion : NetworkBehaviour
             seed = (int)System.DateTime.Now.Ticks;
         }
 
-        Random.seed = seed; //Generacion de semilla
+        Random.seed = seed; //Generacion de semilla        
 
+
+        
         
             int Chests = 0;
             float RandChests = 0;
             do
             {
-                RandChests = Random.value;
+                RandChests = 0.2f;
             } while (RandChests > 0.3 || RandChests < 0.1);
             RandChests = RandChests * 10;
             Chests = (int)RandChests;
@@ -105,12 +109,10 @@ public class Generacion : NetworkBehaviour
                 }
 
                 Debug.Log("x: " + Chx + " y: " + Chy);
-
             }
         
-        
-        
-        for(int conty = 0; conty<8; conty++) { 
+
+        for (int conty = 0; conty<8; conty++) { 
         for(int contx = 0; contx<19; contx++)
         {
                 if (!mapa[contx, conty].taken)                
@@ -353,6 +355,12 @@ public class Generacion : NetworkBehaviour
         }        
     }
 
+    private void Update()
+    {
+        
+        
+    }
+
 
     public void Llenar(GameObject objeto,int contx,int conty)
     {
@@ -389,24 +397,27 @@ public class Generacion : NetworkBehaviour
         
         GameObject Inst;
         Vector3 newScale;
-        player = GameObject.Find("Jugador (Net)(Clone)");
+        
 
         Inst = Instantiate(cofre, new Vector3((Xoffset + (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
         NetworkServer.Spawn(Inst);
+        //NetworkServer.SpawnWithClientAuthority(Inst, playerS);
         contx += 1;
 
         Inst = Instantiate(cofre, new Vector3((1288 - (contx * 28)), (Yoffset - (conty * 28)), 0), Quaternion.identity);
-
-        NetworkServer.SpawnWithClientAuthority(Inst, player);
+        NetworkServer.Spawn(Inst);
+       // NetworkServer.SpawnWithClientAuthority(Inst, playerS);
         contx -= 1;
         conty += 1;
 
         Inst = Instantiate(cofre, new Vector3((Xoffset + (contx * 28)), (-700 + (conty * 28)), 0), Quaternion.identity);
-        NetworkServer.SpawnWithClientAuthority(Inst, player);
+        NetworkServer.Spawn(Inst);
+        //NetworkServer.SpawnWithClientAuthority(Inst, playerS);
         contx += 1;
 
         Inst = Instantiate(cofre, new Vector3((1288 - (contx * 28)), (-700 + (conty * 28)), 0), Quaternion.identity);
-        NetworkServer.SpawnWithClientAuthority(Inst, player);
+        NetworkServer.Spawn(Inst);
+        //NetworkServer.SpawnWithClientAuthority(Inst, playerS);
 
     }
 
