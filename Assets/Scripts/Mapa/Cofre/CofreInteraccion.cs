@@ -10,18 +10,22 @@ public class CofreInteraccion : NetworkBehaviour
     public GameObject MenuCofre;
     private Transform posicion;
     private bool proceso = true;
-    private bool activo = true;
+    private bool activo = true;    
     private float currentTime = 0.0f;
+    public GameObject[] jugadores;
+    public GameObject jugadorS;
+    public GameObject jugadorC;
 
-    [SyncVar]
-    public int estado=1;
+    
+    public int estado = 1;
+
     // Start is called before the first frame update
     void Start()
     {
         anim.SetFloat("Estado", estado);
         posicion = GetComponent<Transform>();
         MenuCofre = GameObject.FindWithTag("Cofre");
-        
+
         //proceso = GlobalData.EnCurso;////////////////////////////////////////////////
 
     }
@@ -29,53 +33,97 @@ public class CofreInteraccion : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("Estado", estado);
-        if (personaje1 == null)
-        {
-            personaje1 = GameObject.Find("Main Camera");
-        }
-        if (proceso)
-        {
-            if (((personaje1.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && personaje1.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (personaje1.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && personaje1.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42)))&&activo)
+        if (isServer)
+        {            
+            anim.SetFloat("Estado", estado);
+            if (personaje1 == null)
             {
-                estado = 2; //command
-                CmdChangeState(2);
-                if (Input.GetKeyUp(KeyCode.E))
-                {
-                    MenuCofre.SetActive(true);
-                    GlobalData.EnCofre = true;
-                    estado = 3;
-                    CmdChangeState(3);
-                    activo = false;
-                }
+                personaje1 = GameObject.Find("Main Camera");
             }
-            else
-            {
-                if (activo)
-                {
-                    estado = 1;
-                    CmdChangeState(1);
-                }
-            }
-            if (!activo)
-            {
-                currentTime = Time.deltaTime+currentTime;
-                if (currentTime >= 30.0f)
-                {
-                    currentTime = 0.0f;
-                    activo = true;
-                    estado = 1;
-                    CmdChangeState(1);
-                }
-            }
-        }
-        
-        
-    }
 
-    [Command]
-    void CmdChangeState(int n)
-    {
-        estado = n;
+            if (proceso)
+            {
+                //cambiar
+                jugadores = GameObject.FindGameObjectsWithTag("jugador");
+                
+                jugadorS = jugadores[0];                                
+                jugadorC = jugadores[1];                
+
+                if ((((jugadorS.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorS.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorS.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorS.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) || (jugadorC.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorC.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorC.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorC.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) && activo)
+                {
+                    estado = 2;
+                    if (Input.GetKeyUp(KeyCode.E))  
+                    {
+                        MenuCofre.SetActive(true);
+                        GlobalData.EnCofre = true;
+                        estado = 3;
+                        activo = false;
+                    }
+                }
+                else
+                {
+                    if (activo)
+                    {
+                        estado = 1;
+                    }
+                }
+                if (!activo)
+                {
+                    currentTime = Time.deltaTime + currentTime;
+                    if (currentTime >= 30.0f)
+                    {
+                        currentTime = 0.0f;
+                        activo = true;
+                        estado = 1;
+                    }
+                }                
+            }
+        }
+        else
+        {
+            if (personaje1 == null)
+            {
+                personaje1 = GameObject.Find("Main Camera");
+            }
+
+            if (proceso)
+            {
+                //cambiar
+                jugadores = GameObject.FindGameObjectsWithTag("jugador");
+                if (NetworkServer.active)
+                {
+                    jugadorS = jugadores[0];
+                }
+                else
+                {
+                    jugadorS = jugadores[1];
+                }
+
+                if (((jugadorS.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorS.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorS.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorS.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) && activo)
+                {                
+                    if (Input.GetKeyUp(KeyCode.E))
+                    {
+                        MenuCofre.SetActive(true);
+                        GlobalData.EnCofre = true;
+                        activo = false;
+                    }
+                }
+                
+                if (!activo)
+                {
+                    currentTime = Time.deltaTime + currentTime;
+                    if (currentTime >= 30.0f)
+                    {
+                        currentTime = 0.0f;
+                        activo = true;
+                    }
+                }
+            }
+        }
+
+        
+
+
     }
+   
 }

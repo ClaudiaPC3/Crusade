@@ -6,6 +6,8 @@ TagManager:
   tags:
   - onlyTrigger
   - Cofre
+  - Autho
+  - jugador
   layers:
   - Default
   - TransparentFX
