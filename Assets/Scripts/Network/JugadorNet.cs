@@ -19,6 +19,9 @@ public class JugadorNet : NetworkBehaviour
     [SyncVar]
     public string name;
 
+    [SyncVar]
+    public bool isE;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,8 +72,25 @@ public class JugadorNet : NetworkBehaviour
     }
 
 
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            CmdisE(true);
+        }
+        else
+        {
+            CmdisE(false);
+        }
+    }
 
+
+    [Command]
+    void CmdisE(bool n)
+    {
+        isE = n;
    
+    }
 
     [Command]
     void CmdSpawnSem()

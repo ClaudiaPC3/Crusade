@@ -13,6 +13,8 @@ public class CofreInteraccion : NetworkBehaviour
     private bool activo = true;    
     private float currentTime = 0.0f;
     public GameObject[] jugadores;
+    public GameObject[] jugadoresNet;
+    public GameObject jugadorNetC;
     public GameObject jugadorS;
     public GameObject jugadorC;
 
@@ -45,7 +47,8 @@ public class CofreInteraccion : NetworkBehaviour
             {
                 //cambiar
                 jugadores = GameObject.FindGameObjectsWithTag("jugador");
-                
+                jugadoresNet = GameObject.FindGameObjectsWithTag("Autho");
+                jugadorNetC = jugadoresNet[1];
                 jugadorS = jugadores[0];                                
                 jugadorC = jugadores[1];                
 
@@ -56,6 +59,14 @@ public class CofreInteraccion : NetworkBehaviour
                     {
                         MenuCofre.SetActive(true);
                         GlobalData.EnCofre = true;
+                        estado = 3;
+                        activo = false;
+                    }
+
+                    bool isE = jugadorNetC.GetComponent<JugadorNet>().isE;
+
+                    if (isE)
+                    {                                             
                         estado = 3;
                         activo = false;
                     }
