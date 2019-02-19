@@ -5,6 +5,7 @@
     private static bool enPausa = false;
     private static bool enCofre = false;
     private static int monedas = 0;
+   
 
     public static int Character
     {

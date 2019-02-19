@@ -13,6 +13,8 @@ public class CofreInteraccion : NetworkBehaviour
     private bool activo = true;    
     private float currentTime = 0.0f;
     public GameObject[] jugadores;
+    public GameObject[] jugadoresNet;
+    public GameObject jugadorNetC;
     public GameObject jugadorS;
     public GameObject jugadorC;
 
@@ -45,7 +47,8 @@ public class CofreInteraccion : NetworkBehaviour
             {
                 //cambiar
                 jugadores = GameObject.FindGameObjectsWithTag("jugador");
-                
+                jugadoresNet = GameObject.FindGameObjectsWithTag("Autho");
+                jugadorNetC = jugadoresNet[1];
                 jugadorS = jugadores[0];                                
                 jugadorC = jugadores[1];                
 
@@ -56,6 +59,14 @@ public class CofreInteraccion : NetworkBehaviour
                     {
                         MenuCofre.SetActive(true);
                         GlobalData.EnCofre = true;
+                        estado = 3;
+                        activo = false;
+                    }
+
+                    bool isE = jugadorNetC.GetComponent<JugadorNet>().isE;
+
+                    if (isE)
+                    {                                             
                         estado = 3;
                         activo = false;
                     }
@@ -90,16 +101,13 @@ public class CofreInteraccion : NetworkBehaviour
             {
                 //cambiar
                 jugadores = GameObject.FindGameObjectsWithTag("jugador");
-                if (NetworkServer.active)
-                {
-                    jugadorS = jugadores[0];
-                }
-                else
-                {
-                    jugadorS = jugadores[1];
-                }
+                jugadoresNet = GameObject.FindGameObjectsWithTag("Autho");
+                jugadorNetC = jugadoresNet[0];
+                jugadorS = jugadores[0];
+                jugadorC = jugadores[1];
 
-                if (((jugadorS.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorS.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorS.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorS.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) && activo)
+
+                if ((((jugadorS.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorS.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorS.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorS.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) || (jugadorC.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorC.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorC.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorC.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) && activo)
                 {                
                     if (Input.GetKeyUp(KeyCode.E))
                     {
@@ -107,6 +115,14 @@ public class CofreInteraccion : NetworkBehaviour
                         GlobalData.EnCofre = true;
                         activo = false;
                     }
+
+                    bool isE = jugadorNetC.GetComponent<JugadorNet>().isE;
+
+                    if (isE)
+                    {                        
+                        activo = false;
+                    }
+
                 }
                 
                 if (!activo)
@@ -118,6 +134,8 @@ public class CofreInteraccion : NetworkBehaviour
                         activo = true;
                     }
                 }
+
+               
             }
         }
 

@@ -22,6 +22,7 @@ public class Movimiento : NetworkBehaviour
     public float lastY = -1f;
     public bool isMov = false;
 
+
     private Vector2 mov;
     private Vector3 cam;
     private Vector3 inicio;
@@ -98,10 +99,14 @@ public class Movimiento : NetworkBehaviour
 
         cam = new Vector3(propio.position.x, propio.position.y, -10);
         transCam.position = cam;
+
         
+       
 
         anim.SetFloat("MovX", mov.x); //Se envian las variables para las animaciones del arbol de movimientos
         anim.SetFloat("MovY", mov.y);
         anim.SetBool("Movement", isMov); //Variable de control para cambio de arboles
     }
+
+    
 }
