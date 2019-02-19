@@ -8,6 +8,7 @@ TagManager:
   - Cofre
   - Autho
   - jugador
+  - reliquia
   layers:
   - Default
   - TransparentFX

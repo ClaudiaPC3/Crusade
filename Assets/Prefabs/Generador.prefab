@@ -88,7 +88,14 @@ MonoBehaviour:
   fivexfive: {fileID: 7425992723753561588, guid: a70c4159d2cc0614a880f2bb343518e7,
     type: 3}
   cofre: {fileID: 5433219898102494430, guid: 7375a8e321823d44788b4af5874bab4b, type: 3}
-  player: {fileID: 1479318902396152962, guid: 5979cf648d1cbc543bcd3975b15c04a2, type: 3}
+  reliquia: {fileID: 7244673460950866384, guid: c4fc5509eebe85e48b76108225cb6d10,
+    type: 3}
+  player:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerS: {fileID: 0}
+  Gencheck: 0
   seed: 0
 --- !u!114 &5087680245629552303
 MonoBehaviour:

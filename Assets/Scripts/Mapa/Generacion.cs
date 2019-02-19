@@ -11,10 +11,12 @@ public class Generacion : NetworkBehaviour
     public GameObject fourxone, fourxtwo, fourxthree, fourxfour, fourxfive;
     public GameObject fivexone, fivextwo, fivexthree, fivexfour, fivexfive;
     public GameObject cofre;
+    public GameObject reliquia;
     public GameObject[] player;
     public GameObject playerS;
     private int Xoffset = 168;
     private int Yoffset = -168;
+    private int relx, rely;
     public bool Gencheck = false;
 
     [SyncVar]
@@ -47,11 +49,16 @@ public class Generacion : NetworkBehaviour
         }
 
         Random.seed = seed; //Generacion de semilla        
+        relx = 70;
+        rely = -432;
+        CmdSpawnReliquia(relx,rely);
+
+        relx = 1386;
+        CmdSpawnReliquia(relx, rely);
 
 
-        
-        
-            int Chests = 0;
+
+        int Chests = 0;
             float RandChests = 0;
             do
             {
@@ -419,6 +426,14 @@ public class Generacion : NetworkBehaviour
         NetworkServer.Spawn(Inst);
         //NetworkServer.SpawnWithClientAuthority(Inst, playerS);
 
+    }
+
+    [Command]
+    void CmdSpawnReliquia(int relx, int rely)
+    {
+        GameObject Inst;
+        Inst = Instantiate(reliquia, new Vector3(relx, rely, 0),Quaternion.identity);
+        NetworkServer.Spawn(Inst);
     }
 
 }
