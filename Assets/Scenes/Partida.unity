@@ -2151,6 +2151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 432196760}
+  - component: {fileID: 432196761}
   m_Layer: 0
   m_Name: Control de partida
   m_TagString: Untagged
@@ -2174,6 +2175,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &432196761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432196759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894f9808726284b4ca49cb39b614577b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugadores: []
+  jugadorS: {fileID: 0}
+  jugadorC: {fileID: 0}
+  reliquias: []
+  reliquiaS: {fileID: 0}
+  reliquiaC: {fileID: 0}
+  ubicacion: 0
 --- !u!1 &437839043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,6 +3716,7 @@ MonoBehaviour:
   - {fileID: 796660719801594912, guid: 5131e0fce42f96c44ac3d600e48fb792, type: 3}
   - {fileID: 9020565881532641969, guid: 3b1ec1599af962f4b95a6226cd642c10, type: 3}
   - {fileID: 5433219898102494430, guid: 7375a8e321823d44788b4af5874bab4b, type: 3}
+  - {fileID: 7244673460950866384, guid: c4fc5509eebe85e48b76108225cb6d10, type: 3}
   m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:

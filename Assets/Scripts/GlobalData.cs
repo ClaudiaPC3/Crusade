@@ -5,7 +5,8 @@
     private static bool enPausa = false;
     private static bool enCofre = false;
     private static int monedas = 0;
-   
+    private static bool srel = false;
+    private static bool crel = false;
 
     public static int Character
     {
@@ -64,6 +65,30 @@
         set
         {
             monedas = value;
+        }
+    }
+
+    public static bool Srel
+    {
+        get
+        {
+            return srel;
+        }
+        set
+        {
+            srel = value;
+        }
+    }
+
+    public static bool Crel
+    {
+        get
+        {
+            return crel;
+        }
+        set
+        {
+            crel = value;
         }
     }
 }
