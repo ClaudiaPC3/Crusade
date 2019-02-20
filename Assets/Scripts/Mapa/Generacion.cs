@@ -62,7 +62,7 @@ public class Generacion : NetworkBehaviour
             float RandChests = 0;
             do
             {
-                RandChests = 0.2f;
+                RandChests = Random.value;
             } while (RandChests > 0.3 || RandChests < 0.1);
             RandChests = RandChests * 10;
             Chests = (int)RandChests;
