@@ -35,5 +35,19 @@ public class OpcionesAdm : MonoBehaviour
         Cierra.SetActive(false);
         MenuCofre.SetActive(false);
     }
-    
+
+    public void Reinicio()
+    {
+        GlobalData.Crel = false;
+        GlobalData.EnCurso = false;
+        GlobalData.EnPausa = false;
+        GlobalData.EnCofre = false;
+        GlobalData.Monedas = 0;
+        GlobalData.Srel = false;
+        GlobalData.Crel = false;
+        GlobalData.Punt1 = 0;
+        GlobalData.Punt2 = 0;
+
+    }
+
 }
