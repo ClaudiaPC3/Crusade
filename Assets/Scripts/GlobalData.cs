@@ -7,6 +7,9 @@
     private static int monedas = 0;
     private static bool srel = false;
     private static bool crel = false;
+    private static int punt1=0;
+    private static int punt2=0;
+
 
     public static int Character
     {
@@ -89,6 +92,30 @@
         set
         {
             crel = value;
+        }
+    }
+
+    public static int Punt1
+    {
+        get
+        {
+            return punt1;
+        }
+        set
+        {
+            punt1 = value;
+        }
+    }
+
+    public static int Punt2
+    {
+        get
+        {
+            return punt2;
+        }
+        set
+        {
+            punt2 = value;
         }
     }
 }

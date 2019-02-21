@@ -85,6 +85,7 @@ public class JugadorNet : NetworkBehaviour
     }
 
 
+
     [Command]
     void CmdisE(bool n)
     {
