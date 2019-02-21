@@ -55,7 +55,7 @@ public class CofreInteraccion : NetworkBehaviour
                     jugadorC = jugadores[1];
                 }
 
-                if ((((jugadorS.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorS.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorS.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorS.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) || (jugadorC.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorC.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorC.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorC.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) && activo)
+                if ((((jugadorS.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorS.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorS.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorS.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42)))) && activo)
                 {
                     estado = 2;
                     if (Input.GetKeyUp(KeyCode.E))  
@@ -66,13 +66,7 @@ public class CofreInteraccion : NetworkBehaviour
                         activo = false;
                     }
 
-                    bool isE = jugadorNetC.GetComponent<JugadorNet>().isE;
-
-                    if (isE)
-                    {      //posiblemente el servidor esta entrando aqui                                       
-                        estado = 3;
-                        activo = false;
-                    }
+                    
                 }
                 else
                 {
@@ -81,6 +75,24 @@ public class CofreInteraccion : NetworkBehaviour
                         estado = 1;
                     }
                 }
+                if(((jugadorC.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorC.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorC.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorC.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) && activo)
+                {
+                    estado = 2;
+                    bool isE = jugadorNetC.GetComponent<JugadorNet>().isE;
+
+                    if (isE)
+                    {      //posiblemente el servidor esta entrando aqui                                       
+                        estado = 3;
+                        activo = false;
+                    }
+                }
+                /*else
+                {
+                    if (activo)
+                    {
+                        estado = 1;
+                    }
+                }*/
                 if (!activo)
                 {
                     currentTime = Time.deltaTime + currentTime;
