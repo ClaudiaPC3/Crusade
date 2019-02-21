@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/and/Desktop/test/Relic Hunter.exe
+C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Relic Hunter.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
