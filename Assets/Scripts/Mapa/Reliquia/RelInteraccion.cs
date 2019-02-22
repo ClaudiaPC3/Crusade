@@ -15,11 +15,19 @@ public class RelInteraccion : MonoBehaviour
     private int distancia=30;
     public Text TxtP1, TxtP2;
     public GameObject reliquia;
+    public GameObject flecha;
+    public EfectoZoom llamada;
+
+
+    private bool pasa = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Antizoom();
+        
         reliquia.SetActive(false);
+        flecha.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,6 +56,12 @@ public class RelInteraccion : MonoBehaviour
             {
                 reliquia.SetActive(true);
             }
+            else
+            {
+               
+                Antizoom();
+                flecha.SetActive(true);
+            }
             
         }
         if ((jugadorC.GetComponent<Transform>().transform.position.x <= (reliquiaC.GetComponent<Transform>().position.x + distancia) && jugadorC.GetComponent<Transform>().transform.position.x >= (reliquiaC.GetComponent<Transform>().position.x - distancia)) && (jugadorC.GetComponent<Transform>().transform.position.y <= (reliquiaC.GetComponent<Transform>().position.y + distancia) && jugadorC.GetComponent<Transform>().transform.position.y >= (reliquiaC.GetComponent<Transform>().position.y - distancia)))
@@ -64,7 +78,13 @@ public class RelInteraccion : MonoBehaviour
             {
                 reliquia.SetActive(true);
             }
+            else
+            {
+                flecha.SetActive(true);
+                Antizoom();
+            }
         }
+
         if (GlobalData.Srel)
         {
             if((jugadorS.GetComponent<Transform>().transform.position.x <= (100) && jugadorS.GetComponent<Transform>().transform.position.x >= (50)) && (jugadorS.GetComponent<Transform>().transform.position.y <= (-402) && jugadorS.GetComponent<Transform>().transform.position.y >= (-462)))
@@ -77,6 +97,10 @@ public class RelInteraccion : MonoBehaviour
                 if (NetworkServer.active)
                 {
                     reliquia.SetActive(false);
+                }
+                else
+                {
+                    flecha.SetActive(false);
                 }
 
             }
@@ -93,6 +117,10 @@ public class RelInteraccion : MonoBehaviour
                 if (!NetworkServer.active)
                 {
                     reliquia.SetActive(false);
+                }
+                else
+                {
+                    flecha.SetActive(false);
                 }
             }
         }
@@ -112,4 +140,10 @@ public class RelInteraccion : MonoBehaviour
         //Introducri codigo para soltar reliquia
 
     }
+
+    public void Antizoom()
+    {
+        llamada.hacer = true;
+    }
+
 }
