@@ -32,6 +32,15 @@ public class Look : MonoBehaviour
             enem = plays[0];
         }
 
+        if (NetworkServer.active)
+        {
+            transform.position = plays[0].transform.position;
+
+        }
+        else
+        {
+            transform.position = plays[1].transform.position;
+        }
         transform.up = enem.transform.position - transform.position;
         
     }
