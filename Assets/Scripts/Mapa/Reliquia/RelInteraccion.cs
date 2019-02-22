@@ -49,7 +49,7 @@ public class RelInteraccion : MonoBehaviour
         if ((jugadorS.GetComponent<Transform>().transform.position.x <= (reliquiaC.GetComponent<Transform>().position.x + distancia) && jugadorS.GetComponent<Transform>().transform.position.x >= (reliquiaC.GetComponent<Transform>().position.x - distancia)) && (jugadorS.GetComponent<Transform>().transform.position.y <= (reliquiaC.GetComponent<Transform>().position.y + distancia) && jugadorS.GetComponent<Transform>().transform.position.y >= (reliquiaC.GetComponent<Transform>().position.y - distancia)))
         {
 
-            nuevo = new Vector3(0, 0, 0);
+            nuevo = new Vector3(0, 0, 2);
             reliquiaC.GetComponent<Transform>().position = nuevo;
             GlobalData.Srel=true;
             if (NetworkServer.active)
@@ -71,7 +71,7 @@ public class RelInteraccion : MonoBehaviour
         }
         if ((jugadorC.GetComponent<Transform>().transform.position.x <= (reliquiaS.GetComponent<Transform>().position.x + distancia) && jugadorC.GetComponent<Transform>().transform.position.x >= (reliquiaS.GetComponent<Transform>().position.x - distancia)) && (jugadorC.GetComponent<Transform>().transform.position.y <= (reliquiaS.GetComponent<Transform>().position.y + distancia) && jugadorC.GetComponent<Transform>().transform.position.y >= (reliquiaS.GetComponent<Transform>().position.y - distancia)))
         {
-            nuevo = new Vector3(0, 0, 0);
+            nuevo = new Vector3(0, 0, 2);
             reliquiaS.GetComponent<Transform>().position = nuevo;
             GlobalData.Crel = true;
             if (!NetworkServer.active)
