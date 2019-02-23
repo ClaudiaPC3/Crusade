@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Relic Hunter.exe
+C:/Users/manie/Desktop/tst/Relic Hunter.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
@@ -28,7 +28,6 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
-21e871d89bbce53c038fc75ad1b7c7f3 Assembly-CSharp.dll:.manager
 09f8a67d47d3c8d6519ddde9b2058686 Assembly-CSharp.dll:Prime31.CharacterController2D
 f09b45b439372b5677cdfb4b3c046210 Assembly-CSharp.dll:DynamicLight2D.DynamicLight
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
