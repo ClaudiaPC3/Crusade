@@ -1,5 +1,10 @@
 ﻿public static class GlobalData
 {
+    /**
+     * GlobalData se usa para guardar y consultar datos 
+     * desde cualquier escena del juego.
+     * Estos datos no se destuyen al cambiar de escena.
+     * */
     private static int character = 1;
     private static bool enCurso = false;
     private static bool enPausa = false;
@@ -10,7 +15,9 @@
     private static int punt1=0;
     private static int punt2=0;
 
-
+    /**
+     * Character es usado para saber que personaje fue seleccionado
+     * */
     public static int Character
     {
         get
@@ -22,7 +29,7 @@
             character = value;
         }
     }
-
+    
     public static bool EnCurso
     {
         get
