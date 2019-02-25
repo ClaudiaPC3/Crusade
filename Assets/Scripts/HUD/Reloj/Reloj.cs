@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class Reloj : MonoBehaviour
 {
     public Text reloj;
-    int segs = 10;
+    int segs = 45;
     int mins = 0;
+    string segsS;
+    string minsS;
     bool pre = true;
     float counter = 0;
+    GameObject[] jugadores;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,8 @@ public class Reloj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GlobalData.Desb == true)
+        jugadores = GameObject.FindGameObjectsWithTag("jugador");
+        if (jugadores.Length==2)
         {
             counter += Time.deltaTime;
             reloj.fontSize = 90;
@@ -42,7 +46,23 @@ public class Reloj : MonoBehaviour
                     segs = 0;
                 }
             }
-            reloj.text = mins + ":" + segs;
+            if (segs < 10)
+            {
+                segsS = "0" + segs;
+            }
+            else
+            {
+                segsS = "" + segs;
+            }
+            if (mins < 10)
+            {
+                minsS = "0" + mins;
+            }
+            else
+            {
+                minsS = "" + mins;
+            }
+            reloj.text = minsS + ":" + segsS;
         }
         
     }

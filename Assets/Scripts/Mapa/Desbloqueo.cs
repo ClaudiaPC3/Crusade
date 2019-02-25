@@ -17,6 +17,8 @@ public class Desbloqueo : NetworkBehaviour
     public NetworkManager manager;
     public GameObject barrera;
     private int clientes = 0;
+    int size;
+    public GameObject[] jugadores;
 
     // Update is called once per frame
     /**
@@ -26,19 +28,16 @@ public class Desbloqueo : NetworkBehaviour
      **/
     void Update()
     {
-        
-        if (NetworkServer.active)
-        {
-            clientes = NetworkServer.connections.Count;
-           
-        }
 
-        if(clientes == 2)
+        jugadores = GameObject.FindGameObjectsWithTag("jugador");
+        if (jugadores.Length == 2)
         {
+            if (NetworkServer.active)
+            {
+                CmdDestruirBarreras(barrera);
+            }
             
-            CmdDestruirBarreras(barrera);
-            GlobalData.Desb = true;
-            
+
         }
     }
     /**
@@ -49,5 +48,9 @@ public class Desbloqueo : NetworkBehaviour
     void CmdDestruirBarreras(GameObject barreracmd)
     {
         NetworkServer.Destroy(barreracmd);
+        
+
     }
+
+    
 }
