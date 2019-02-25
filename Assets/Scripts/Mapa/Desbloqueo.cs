@@ -37,6 +37,7 @@ public class Desbloqueo : NetworkBehaviour
         {
             
             CmdDestruirBarreras(barrera);
+            GlobalData.Desb = true;
             
         }
     }
