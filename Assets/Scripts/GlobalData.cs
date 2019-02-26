@@ -15,6 +15,8 @@
     private static int punt1=0;
     private static int punt2=0;
     private static bool desb = false;
+    
+   
 
     /**
      * Character es usado para saber que personaje fue seleccionado
@@ -138,4 +140,6 @@
             punt2 = value;
         }
     }
+
+
 }

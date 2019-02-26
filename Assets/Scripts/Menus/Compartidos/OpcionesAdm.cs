@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement; //Encargado de administrar las escenas
 public class OpcionesAdm : MonoBehaviour
 {
     
-    public GameObject Cierra,MenuCofre;
+    public GameObject Cierra,MenuCofre,MenuSeleccionObj;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        MenuSeleccionObj.SetActive(false);
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class OpcionesAdm : MonoBehaviour
 
     public void Reinicio()
     {
-        GlobalData.Crel = false;
+
         GlobalData.EnCurso = false;
         GlobalData.EnPausa = false;
         GlobalData.EnCofre = false;
@@ -48,6 +48,21 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.Punt1 = 0;
         GlobalData.Punt2 = 0;
         GlobalData.Desb = false;
+        Objetos.Inv1 = -1;
+        Objetos.Inv2 = -1;
+        Objetos.Inv3 = -1;
+        Objetos.Inv4 = -1;
+        Objetos.ObjSelec = 0;
+    }
+
+    public void MuestraSeleccionObj()
+    {
+        MenuSeleccionObj.SetActive(true);               
+    }
+
+    public void OcultaSeleccionObj()
+    {
+        MenuSeleccionObj.SetActive(false);
     }
 
 }
