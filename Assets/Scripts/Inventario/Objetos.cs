@@ -70,7 +70,7 @@
     {
         switch (personaje)
         {
-            case 0:
+            case 1:
                 {
                     if (objeto <= 8||objeto>=36)
                     {
@@ -82,7 +82,7 @@
                     }
                     break;
                 }
-            case 1:
+            case 2:
                 {
                     if ((objeto >=9&&objeto<=17) || objeto >= 36)
                     {
@@ -94,7 +94,7 @@
                     }
                     break;
                 }
-            case 2:
+            case 3:
                 {
                     if ((objeto >= 18 && objeto <= 26) || objeto >= 36)
                     {
@@ -106,7 +106,7 @@
                     }
                     break;
                 }
-            case 3:
+            case 4:
                 {
                     if ((objeto >= 27 && objeto <= 35) || objeto >= 36)
                     {

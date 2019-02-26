@@ -38,7 +38,7 @@ public class OpcionesAdm : MonoBehaviour
 
     public void Reinicio()
     {
-        GlobalData.Crel = false;
+
         GlobalData.EnCurso = false;
         GlobalData.EnPausa = false;
         GlobalData.EnCofre = false;
@@ -48,6 +48,11 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.Punt1 = 0;
         GlobalData.Punt2 = 0;
         GlobalData.Desb = false;
+        Objetos.Inv1 = -1;
+        Objetos.Inv2 = -1;
+        Objetos.Inv3 = -1;
+        Objetos.Inv4 = -1;
+        Objetos.ObjSelec = 0;
     }
 
     public void MuestraSeleccionObj()

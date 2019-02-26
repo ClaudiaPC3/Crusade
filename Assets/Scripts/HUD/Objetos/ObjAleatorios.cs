@@ -32,6 +32,15 @@ public class ObjAleatorios : MonoBehaviour
         numero3 = (int)numero3;
         Debug.Log(numero1+" "+numero2+" "+numero3);
 
+        Obj1.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + numero1.ToString());
+        Obj1.GetComponent<ObjetoId>().id = (int)numero1;
+
+        Obj2.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + numero2.ToString());
+        Obj2.GetComponent<ObjetoId>().id = (int)numero2;
+
+        Obj3.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + numero3.ToString());
+        Obj3.GetComponent<ObjetoId>().id = (int)numero3;
+
     }
 
     // Update is called once per frame
@@ -42,7 +51,6 @@ public class ObjAleatorios : MonoBehaviour
 
     public void InicializarCofre()
     {
-        Debug.Log("wa entrar");
         Random.seed = (int)System.DateTime.Now.Ticks;
         do
         {
@@ -50,7 +58,6 @@ public class ObjAleatorios : MonoBehaviour
         } while (numero1 < 0.01 || numero1 > 0.35);
         numero1 *= 100;
         numero1 = (int)numero1;
-        Debug.Log("sali del 1");
         do
         {
             numero2 = Random.value;
@@ -64,6 +71,15 @@ public class ObjAleatorios : MonoBehaviour
         numero3 *= 100;
         numero3 = (int)numero3;
         Debug.Log(numero1 + " " + numero2 + " " + numero3);
+
+        Obj1.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + numero1.ToString());
+        Obj1.GetComponent<ObjetoId>().id = (int)numero1;
+
+        Obj2.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + numero2.ToString());
+        Obj2.GetComponent<ObjetoId>().id = (int)numero2;
+
+        Obj3.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + numero3.ToString());
+        Obj3.GetComponent<ObjetoId>().id = (int)numero3;
 
     }
 
