@@ -3,29 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+/**
+ * La clase Generacion es la encargada de ejecutar el 
+ * algoritmo de generacion procedural de el mapa.
+ * Aqui se generan las paredes, los cofres y las reliquias.
+**/
+
 public class Generacion : NetworkBehaviour
 {
+    /**
+     * Se importan los objetos prefabricados de las paredes 
+     **/
     public GameObject onexone, onextwo, onexthree, onexfour, onexfive;
     public GameObject twoxone, twoxtwo, twoxthree, twoxfour, twoxfive;
     public GameObject threexone, threextwo, threexthree, threexfour, threexfive;
     public GameObject fourxone, fourxtwo, fourxthree, fourxfour, fourxfive;
     public GameObject fivexone, fivextwo, fivexthree, fivexfour, fivexfive;
+    /**
+     * Se importan los objetos de cofres y reliquias
+     **/
     public GameObject cofre;
     public GameObject reliquia;
-    public GameObject[] player;
-    public GameObject playerS;
+
+    public GameObject[] player;//En este arreglo se guardaran la referencia a todos los jugadores
+    public GameObject playerS;//Aqui se guardara la referencia al jugador que es host de la partida
+    /**
+     * Las varibles Xoffset y Yoffset son usadas para calcular la pocicion 
+     * donde se crearan las paredes dentro del cuadrante principal
+    **/
     private int Xoffset = 168;
     private int Yoffset = -168;
+
     private int relx, rely;
     public bool Gencheck = false;
 
     [SyncVar]
-    public int seed;
+    public int seed; //La varibles sincronizada seed es usada para que ambos jugadores tengan el mismo mapa
 
     public struct casilla
     {
         public bool taken;
-        public sbyte x, y, id; // x y y NO son sus posiciones, son el tamaño del prefab que esta ocupando esta casilla, Ej 1 y 5, o 3 y 2
+        public sbyte x, y, id; // x y y NO son sus posiciones, son el tamaño del prefab que esta ocupando esta casilla, Ej: 1 y 5, o 3 y 2
         public casilla(sbyte x, sbyte y, sbyte id, bool taken)
         {
             this.x = x;

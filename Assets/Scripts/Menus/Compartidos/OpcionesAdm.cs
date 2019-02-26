@@ -47,7 +47,7 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.Crel = false;
         GlobalData.Punt1 = 0;
         GlobalData.Punt2 = 0;
-
+        GlobalData.Desb = false;
     }
 
 }
