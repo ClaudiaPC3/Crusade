@@ -48,12 +48,17 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.Punt1 = 0;
         GlobalData.Punt2 = 0;
         GlobalData.Desb = false;
+        GlobalData.Energ = 0;
+        GlobalData.EnergLim = 100f;
+        GlobalData.EnergSpe = 1f;
         Objetos.Inv1 = -1;
         Objetos.Inv2 = -1;
         Objetos.Inv3 = -1;
         Objetos.Inv4 = -1;
         Objetos.ObjSelec = 0;
-    }
+
+       
+}
 
     public void MuestraSeleccionObj()
     {

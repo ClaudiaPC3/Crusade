@@ -26,7 +26,7 @@ public class Barra : MonoBehaviour
         if (jugadores.Length == 2)
         {
             check = false;
-            if (counter >= 1f && GlobalData.Energ < 100)
+            if (counter >= GlobalData.EnergSpe && GlobalData.Energ < GlobalData.EnergLim)
             {
                 counter = 0;
                 GlobalData.Energ++;
@@ -38,6 +38,7 @@ public class Barra : MonoBehaviour
     void BarUpd()
     {
         energ = GlobalData.Energ;
+        energ = (energ * 100)/ GlobalData.EnergLim;
         energ = energ / 100;
         trans.localScale = new Vector3(1, energ, 1);
     }
