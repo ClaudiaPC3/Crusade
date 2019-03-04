@@ -171,6 +171,7 @@ e197d0b748f0fe21846663bdb6454914 Assembly-CSharp.dll:.TerminarCon
 5c0934043154fa312e9998eba0ef9cc8 Assembly-CSharp.dll:.OpenEgyptianGate
 3f3fffa9a19557cbbc409e4d7965e5c9 Assembly-CSharp.dll:DynamicLight2D.ColorBlending
 41479ee7a850f65081ae714a000e53ec Assembly-CSharp.dll:.RelInteraccion
+227d24f5e09a241f5d8171cba5b72338 Assembly-CSharp.dll:.Cast
 14a5a2e5cdf8fb05a06abfcbd609c22a Assembly-CSharp.dll:.followPlayer
 fcc524e590f5b53ae7cc133882265388 Assembly-CSharp.dll:.TimerClass
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
@@ -195,7 +196,7 @@ b1e37e0e288346f9ceaeed261a10ede2 Assembly-CSharp.dll:.ObjetoId
 2f6944d2bab00edd3a78100a20e09472 Assembly-CSharp.dll:.CofreInteraccion
 66bca5cc6a18c5298ec75235e56a84d6 Assembly-CSharp.dll:DynamicLight2D.LookAt
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
-f38753bbd0f0c2296b2ad173e20f612d Assembly-CSharp.dll:.AsignacionObj
+6d7f75a44df93fe4b07b5b0196bae2f2 Assembly-CSharp.dll:.AsignacionObj
 aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 cf96e5f7b3d069bab453925bd41be04e UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
