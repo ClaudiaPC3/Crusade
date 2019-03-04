@@ -161,6 +161,7 @@
     <Compile Include="Assets\Scripts\Menus\Perfil\NombresControl.cs" />
     <Compile Include="Assets\Scripts\Menus\Principal\NavPrinc.cs" />
     <Compile Include="Assets\Scripts\Network\JugadorNet.cs" />
+    <Compile Include="Assets\Scripts\Personajes\Cast.cs" />
     <Compile Include="Assets\Scripts\Personajes\Movimiento.cs" />
     <None Include="Assets\2DDL\Examples\16 - Soft and Smooth shadows edges\_BloomAndFlares\MobileBlur.shader" />
     <None Include="Assets\2DDL\2DLight\Shaders\StencilObject.shader" />
