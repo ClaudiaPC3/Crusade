@@ -15,12 +15,22 @@
     private static int punt1=0;
     private static int punt2=0;
     private static bool desb = false;
-    
+    private static float energ = 0;
    
 
-    /**
-     * Character es usado para saber que personaje fue seleccionado
-     * */
+    public static float Energ
+    {
+        get
+        {
+            return energ;
+        }
+        set
+        {
+            energ = value;
+        }
+    }
+
+
     public static bool Desb
     {
         get
