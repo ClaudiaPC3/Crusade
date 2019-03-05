@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement; //Encargado de administrar las escenas
 public class OpcionesAdm : MonoBehaviour
 {
     
-    public GameObject Cierra,MenuCofre,MenuSeleccionObj;
+    public GameObject Cierra,MenuCofre,MenuSeleccionObj,MenuTiendaPrin;
 
     // Start is called before the first frame update
     void Start()
     {
         MenuSeleccionObj.SetActive(false);
+        //MenuTiendaPrin.SetActive(false);
     }
 
     // Update is called once per frame
@@ -68,6 +69,16 @@ public class OpcionesAdm : MonoBehaviour
     public void OcultaSeleccionObj()
     {
         MenuSeleccionObj.SetActive(false);
+    }
+
+    public void MuestraTiendaPrin()
+    {
+        MenuTiendaPrin.SetActive(true);
+    }
+
+    public void OcultaTiendaPrin()
+    {
+        MenuTiendaPrin.SetActive(false);
     }
 
 }

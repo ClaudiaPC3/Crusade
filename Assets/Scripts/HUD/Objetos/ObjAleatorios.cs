@@ -15,19 +15,19 @@ public class ObjAleatorios : MonoBehaviour
         do
         { 
             numero1 = Random.value;
-        } while (numero1 < 0.01 || numero1 > 0.35);
+        } while (numero1 < 0.00 || numero1 > 0.47);
         numero1 *= 100;
         numero1 = (int)numero1;
         do
         {
             numero2 = Random.value;
-        } while (numero2 < 0.01 || numero2 > 0.35);
+        } while (numero2 < 0.00 || numero2 > 0.47);
         numero2 *= 100;
         numero2 = (int)numero2;
         do
         {
             numero3 = Random.value;
-        } while (numero3 < 0.01 || numero3 > 0.35);
+        } while (numero3 < 0.00 || numero3 > 0.47);
         numero3 *= 100;
         numero3 = (int)numero3;
         Debug.Log(numero1+" "+numero2+" "+numero3);
@@ -55,19 +55,19 @@ public class ObjAleatorios : MonoBehaviour
         do
         {
             numero1 = Random.value;
-        } while (numero1 < 0.01 || numero1 > 0.35);
+        } while (numero1 < 0.00 || numero1 > 0.47);
         numero1 *= 100;
         numero1 = (int)numero1;
         do
         {
             numero2 = Random.value;
-        } while (numero2 < 0.01 || numero2 > 0.35);
+        } while (numero2 < 0.00 || numero2 > 0.47);
         numero2 *= 100;
         numero2 = (int)numero2;
         do
         {
             numero3 = Random.value;
-        } while (numero3 < 0.01 || numero3 > 0.35);
+        } while (numero3 < 0.00 || numero3 > 0.47);
         numero3 *= 100;
         numero3 = (int)numero3;
         Debug.Log(numero1 + " " + numero2 + " " + numero3);
