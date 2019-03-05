@@ -15,12 +15,47 @@
     private static int punt1=0;
     private static int punt2=0;
     private static bool desb = false;
-    
-   
+    private static float energ = 0;
+    private static float energspe = 1f;
+    private static float energlim = 100f;
 
-    /**
-     * Character es usado para saber que personaje fue seleccionado
-     * */
+    public static float EnergSpe
+    {
+        get
+        {
+            return energspe;
+        }
+        set
+        {
+            energspe = value;
+        }
+    }
+
+    public static float EnergLim
+    {
+        get
+        {
+            return energlim;
+        }
+        set
+        {
+            energlim = value;
+        }
+    }
+
+    public static float Energ
+    {
+        get
+        {
+            return energ;
+        }
+        set
+        {
+            energ = value;
+        }
+    }
+
+
     public static bool Desb
     {
         get

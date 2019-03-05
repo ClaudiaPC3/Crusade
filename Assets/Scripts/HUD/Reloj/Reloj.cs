@@ -13,6 +13,8 @@ public class Reloj : MonoBehaviour
     bool pre = true;
     float counter = 0;
     GameObject[] jugadores;
+    bool check = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +24,13 @@ public class Reloj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jugadores = GameObject.FindGameObjectsWithTag("jugador");
+        if (check)
+        {
+            jugadores = GameObject.FindGameObjectsWithTag("jugador");
+        }
         if (jugadores.Length==2)
         {
+            check = false;
             counter += Time.deltaTime;
             reloj.fontSize = 90;
             if (counter >= 1f && pre == true)
