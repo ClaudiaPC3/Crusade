@@ -1,8 +1,8 @@
 ﻿public static class Precios
 {
-    private static int Precio0 = 5;
-    private static int Precio1 = 5;
-    private static int Precio2 = 5;
+    private static int Precio0 = 1;
+    private static int Precio1 = 2;
+    private static int Precio2 = 3;
     private static int Precio3 = 5;
     private static int Precio4 = 5;
     private static int Precio5 = 5;
@@ -37,7 +37,7 @@
     private static int Precio34 = 5;
     private static int Precio35 = 5;
     private static int Precio36 = 4;
-    private static int Precio37 = 5;
+    private static int Precio37 = 3;
     private static int Precio38 = 5;
     private static int Precio39 = 5;
     private static int Precio40 = 5;

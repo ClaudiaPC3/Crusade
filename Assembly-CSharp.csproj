@@ -139,6 +139,7 @@
     <Compile Include="Assets\Scripts\Mapa\Reliquia\EfectoZoom.cs" />
     <Compile Include="Assets\Scripts\Mapa\Reliquia\RelInteraccion.cs" />
     <Compile Include="Assets\Scripts\Mapa\Tienda\AsignaObj.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Tienda\ControlTiendas.cs" />
     <Compile Include="Assets\Scripts\Mapa\Tienda\Precios.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\CabOpc.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\HerrOpc.cs" />

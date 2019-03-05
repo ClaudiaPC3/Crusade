@@ -234,4 +234,6 @@ public class AsignacionObj : MonoBehaviour
         return statsT;
     }
 
+    
+
 }

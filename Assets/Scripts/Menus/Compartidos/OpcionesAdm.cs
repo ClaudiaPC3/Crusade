@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement; //Encargado de administrar las escenas
 public class OpcionesAdm : MonoBehaviour
 {
     
-    public GameObject Cierra,MenuCofre,MenuSeleccionObj,MenuTiendaPrin;
+    public GameObject Cierra,MenuCofre,MenuSeleccionObj,MenuTiendaPrin,comprar;
 
     // Start is called before the first frame update
     void Start()
     {
         MenuSeleccionObj.SetActive(false);
-        //MenuTiendaPrin.SetActive(false);
+        MenuTiendaPrin.SetActive(false);
+        //comprar.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -81,4 +83,26 @@ public class OpcionesAdm : MonoBehaviour
         MenuTiendaPrin.SetActive(false);
     }
 
+    public void RegresarMon()
+    {
+        if (GlobalData.EnTienda)
+        {
+            GlobalData.Monedas += Precios.ObjPrecios(Objetos.ObjSelec);
+        }
+        GlobalData.EnTienda = false;
+
+    }
+    public void SaleTienda()
+    {
+
+        GlobalData.EnTienda = false;
+    }
+    public void Comprar()
+    {
+        comprar.SetActive(false);
+        MuestraSeleccionObj();
+        GlobalData.Monedas -= Objetos.PrecioSelec;
+        GlobalData.EnTienda = true;
+        
+    }
 }
