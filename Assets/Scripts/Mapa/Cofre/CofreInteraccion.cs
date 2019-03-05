@@ -18,7 +18,6 @@ public class CofreInteraccion : NetworkBehaviour
     public GameObject jugadorS;
     public GameObject jugadorC;
 
-    
     public int estado = 1;
 
     // Start is called before the first frame update
@@ -27,7 +26,7 @@ public class CofreInteraccion : NetworkBehaviour
         anim.SetFloat("Estado", estado);
         posicion = GetComponent<Transform>();
         MenuCofre = GameObject.FindWithTag("Cofre");
-
+        
         //proceso = GlobalData.EnCurso;////////////////////////////////////////////////
 
     }

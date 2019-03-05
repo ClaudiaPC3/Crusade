@@ -9,6 +9,8 @@ TagManager:
   - Autho
   - jugador
   - reliquia
+  - Comprar
+  - Precio
   layers:
   - Default
   - TransparentFX

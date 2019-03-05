@@ -18,6 +18,7 @@
     private static float energ = 0;
     private static float energspe = 1f;
     private static float energlim = 100f;
+    private static bool enTienda = false;
 
     public static float EnergSpe
     {
@@ -176,5 +177,15 @@
         }
     }
 
-
+    public static bool EnTienda
+    {
+        get
+        {
+            return enTienda;
+        }
+        set
+        {
+            enTienda = value;
+        }
+    }
 }

@@ -13,6 +13,7 @@
     private static int inv3ener = 0;
     private static int inv4ener = 0;
     private static int objSelec = 0;
+    private static int precioSelec = 0;
 
     public static int Inv4ener
     {
@@ -164,6 +165,18 @@
         set
         {
             objSelec = value;
+        }
+    }
+
+    public static int PrecioSelec
+    {
+        get
+        {
+            return precioSelec;
+        }
+        set
+        {
+            precioSelec = value;
         }
     }
 

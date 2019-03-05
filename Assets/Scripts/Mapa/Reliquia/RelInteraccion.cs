@@ -58,7 +58,6 @@ public class RelInteraccion : MonoBehaviour
             }
             else
             {
-               
                 Antizoom();
                 flecha.SetActive(true);
             }
