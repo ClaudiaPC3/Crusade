@@ -9,7 +9,7 @@ public class ControlTiendas : MonoBehaviour
     private int[] xT1,xT2,yT1,yT2; 
     public GameObject[] jugadores;
     public GameObject jugador;
-    public GameObject comprar;
+    public ObjetoId comprar;
     public OpcionesAdm MenuTienda;
 
 
@@ -56,7 +56,7 @@ public class ControlTiendas : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.E))
             {
                 MenuTienda.MuestraTiendaPrin();
-                //comprar.SetActive(false);
+                comprar.OcultarCompra();
             }
         }
         else

@@ -641,7 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jugadores: []
   jugador: {fileID: 0}
-  comprar: {fileID: 1713111722}
+  comprar: {fileID: 703207915}
   MenuTienda: {fileID: 34920467}
 --- !u!1 &38658633
 GameObject:
