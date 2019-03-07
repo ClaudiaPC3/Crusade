@@ -11,8 +11,7 @@ public class OpcionesAdm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MenuSeleccionObj.SetActive(false);
-        MenuTiendaPrin.SetActive(false);
+        
         //comprar.SetActive(false);
 
     }
@@ -37,6 +36,8 @@ public class OpcionesAdm : MonoBehaviour
     {
         Cierra.SetActive(false);
         MenuCofre.SetActive(false);
+        MenuSeleccionObj.SetActive(false);
+        MenuTiendaPrin.SetActive(false);
     }
 
     public void Reinicio()

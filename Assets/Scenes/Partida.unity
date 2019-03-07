@@ -7755,7 +7755,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 703207915}
+      - m_Target: {fileID: 899293972}
         m_MethodName: MandarIdTienda
         m_Mode: 1
         m_Arguments:
@@ -9928,7 +9928,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 899293972}
+      - m_Target: {fileID: 1168078733}
         m_MethodName: MandarIdTienda
         m_Mode: 1
         m_Arguments:
