@@ -4065,12 +4065,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1758a08ed0007841a17d1aa6ee5b917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movani: {fileID: 0}
   bar: {fileID: 2110790439}
-  chicle: {fileID: 4207700226844336198, guid: f66c116044cf03a4491b724e7b1b6b8f, type: 3}
+  jugadores: []
+  nets: []
   trans1: {fileID: 1813225328}
   trans2: {fileID: 1322426017}
   trans3: {fileID: 1015888801}
   trans4: {fileID: 1980569735}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!114 &432196765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4103,7 +4106,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!1 &433006926
 GameObject:
   m_ObjectHideFlags: 0

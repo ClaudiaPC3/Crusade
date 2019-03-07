@@ -5,25 +5,54 @@ using UnityEngine.Networking;
 
 public class Cast : NetworkBehaviour
 {
+    public Movimiento movani;
     public GameObject bar;
-    public GameObject chicle;
+    public GameObject[] jugadores;
+    public GameObject[] nets;
     private Barra barra;
+    private JugadorNet jgnt;
     public RectTransform trans1;
     public RectTransform trans2;
     public RectTransform trans3;
     public RectTransform trans4;
     float cou1=0, cou2=0, cou3=0, cou4=0;
     int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
-    bool cool1 = false, cool2 = false, cool3 = false, cool4 = false;
+    bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true;
+    public Vector3 pos;
+   
+
     // Start is called before the first frame update
     void Start()
     {
         barra = bar.GetComponent<Barra>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (check) { 
+        jugadores = GameObject.FindGameObjectsWithTag("jugador");
+            nets = GameObject.FindGameObjectsWithTag("Autho");
+
+        if (jugadores.Length == 2)
+            {
+            if (NetworkServer.active)
+            {
+                pos = jugadores[0].transform.position;
+                    movani = jugadores[0].GetComponent<Movimiento>();
+                    jgnt = nets[0].GetComponent<JugadorNet>();
+            }
+            else
+            {
+                pos = jugadores[1].transform.position;
+                    movani = jugadores[1].GetComponent<Movimiento>();
+                    jgnt = nets[1].GetComponent<JugadorNet>();
+                }
+            check = true;
+            }
+        }
+
         if(GlobalData.EnPausa == false && GlobalData.EnCofre == false)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -142,7 +171,7 @@ public class Cast : NetworkBehaviour
         switch (id)
         {
             case 4:
-                CastChicle();
+                CastChicle(pos);
                 break;
 
             default:
@@ -150,15 +179,15 @@ public class Cast : NetworkBehaviour
         }
     }
 
-    private void CastChicle()
+    private void CastChicle(Vector3 posMet)
     {
-        CmdSpawnChicle();
+
+        //
+        posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        posMet.z = 0;
+        jgnt.CmdSpawnChicle(posMet);
+        
     }
 
-    [Command]
-    void CmdSpawnChicle()
-    {
-        GameObject chiclecmd = Instantiate(chicle, new Vector3(700, -450, 0), Quaternion.identity);
-        NetworkServer.Spawn(chiclecmd);
-    }
+    
 }

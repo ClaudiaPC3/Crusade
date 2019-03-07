@@ -19,6 +19,7 @@ public class JugadorNet : NetworkBehaviour
     private GameObject Cierra;
     public GameObject Pelota;
     public GameObject SemGen;
+    public GameObject chicle;
 
     public int opcion;
     private string tempname;
@@ -92,6 +93,7 @@ public class JugadorNet : NetworkBehaviour
     }
 
 
+
     //Se envia las pulsaciones a la tecla E a todos los clientes
     [Command]
     void CmdisE(bool n)
@@ -144,5 +146,13 @@ public class JugadorNet : NetworkBehaviour
     {
         name = n;
         
+    }
+
+    [Command]
+    public void CmdSpawnChicle(Vector3 posCmd)
+    {
+
+        GameObject chiclecmd = Instantiate(chicle, posCmd, Quaternion.identity);
+        NetworkServer.Spawn(chiclecmd);
     }
 }
