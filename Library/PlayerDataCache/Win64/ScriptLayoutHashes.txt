@@ -170,7 +170,7 @@ e197d0b748f0fe21846663bdb6454914 Assembly-CSharp.dll:.TerminarCon
 5c0934043154fa312e9998eba0ef9cc8 Assembly-CSharp.dll:.OpenEgyptianGate
 3f3fffa9a19557cbbc409e4d7965e5c9 Assembly-CSharp.dll:DynamicLight2D.ColorBlending
 41479ee7a850f65081ae714a000e53ec Assembly-CSharp.dll:.RelInteraccion
-c691bed53e022313183fb299f065f7be Assembly-CSharp.dll:.Cast
+e1cb908c30045a171fc73485de897bba Assembly-CSharp.dll:.Cast
 14a5a2e5cdf8fb05a06abfcbd609c22a Assembly-CSharp.dll:.followPlayer
 fcc524e590f5b53ae7cc133882265388 Assembly-CSharp.dll:.TimerClass
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer

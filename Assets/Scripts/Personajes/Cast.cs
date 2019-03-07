@@ -26,14 +26,14 @@ public class Cast : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                if (GlobalData.Energ>=Objetos.Inv1ener&&!cool1){
+                if (GlobalData.Energ>=Objetos.Inv1ener&&!cool1&&Objetos.Inv1!=-1){
                     GlobalData.Energ -= Objetos.Inv1ener;
                     barra.BarUpd();
                     cool1 = true;
                     trans1.localScale = new Vector3(1, 1, 1);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2)&&!cool2)
+            if (Input.GetKeyDown(KeyCode.Alpha2)&&!cool2 && Objetos.Inv2 != -1)
             {
                 if (GlobalData.Energ >= Objetos.Inv2ener)
                 {
@@ -43,7 +43,7 @@ public class Cast : MonoBehaviour
                     trans2.localScale = new Vector3(1, 1, 1);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3) && !cool3)
+            if (Input.GetKeyDown(KeyCode.Alpha3) && !cool3 && Objetos.Inv3 != -1)
             {
                 if (GlobalData.Energ >= Objetos.Inv3ener)
                 {
@@ -53,7 +53,7 @@ public class Cast : MonoBehaviour
                     trans3.localScale = new Vector3(1, 1, 1);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Alpha4) && !cool4)
+            if (Input.GetKeyDown(KeyCode.Alpha4) && !cool4 && Objetos.Inv4 != -1)
             {
                 if (GlobalData.Energ >= Objetos.Inv4ener)
                 {
