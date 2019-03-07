@@ -1,27 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Cast : MonoBehaviour
+public class Cast : NetworkBehaviour
 {
+    public Movimiento movani;
     public GameObject bar;
+    public GameObject[] jugadores;
+    public GameObject[] nets;
     private Barra barra;
+    private JugadorNet jgnt;
     public RectTransform trans1;
     public RectTransform trans2;
     public RectTransform trans3;
     public RectTransform trans4;
     float cou1=0, cou2=0, cou3=0, cou4=0;
     int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
-    bool cool1 = false, cool2 = false, cool3 = false, cool4 = false;
+    bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true;
+    public Vector3 pos;
+   
+
     // Start is called before the first frame update
     void Start()
     {
         barra = bar.GetComponent<Barra>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (check) { 
+        jugadores = GameObject.FindGameObjectsWithTag("jugador");
+            nets = GameObject.FindGameObjectsWithTag("Autho");
+
+        if (jugadores.Length == 2)
+            {
+            if (NetworkServer.active)
+            {
+                pos = jugadores[0].transform.position;
+                    movani = jugadores[0].GetComponent<Movimiento>();
+                    jgnt = nets[0].GetComponent<JugadorNet>();
+            }
+            else
+            {
+                pos = jugadores[1].transform.position;
+                    movani = jugadores[1].GetComponent<Movimiento>();
+                    jgnt = nets[1].GetComponent<JugadorNet>();
+                }
+            check = true;
+            }
+        }
+
         if(GlobalData.EnPausa == false && GlobalData.EnCofre == false)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -29,6 +60,7 @@ public class Cast : MonoBehaviour
                 if (GlobalData.Energ>=Objetos.Inv1ener&&!cool1&&Objetos.Inv1!=-1){
                     GlobalData.Energ -= Objetos.Inv1ener;
                     barra.BarUpd();
+                    HabCast(Objetos.Inv1);
                     cool1 = true;
                     trans1.localScale = new Vector3(1, 1, 1);
                 }
@@ -39,6 +71,7 @@ public class Cast : MonoBehaviour
                 {
                     GlobalData.Energ -= Objetos.Inv2ener;
                     barra.BarUpd();
+                    HabCast(Objetos.Inv2);
                     cool2 = true;
                     trans2.localScale = new Vector3(1, 1, 1);
                 }
@@ -49,6 +82,7 @@ public class Cast : MonoBehaviour
                 {
                     GlobalData.Energ -= Objetos.Inv3ener;
                     barra.BarUpd();
+                    HabCast(Objetos.Inv3);
                     cool3 = true;
                     trans3.localScale = new Vector3(1, 1, 1);
                 }
@@ -59,6 +93,7 @@ public class Cast : MonoBehaviour
                 {
                     GlobalData.Energ -= Objetos.Inv4ener;
                     barra.BarUpd();
+                    HabCast(Objetos.Inv4);
                     cool4 = true;
                     trans4.localScale = new Vector3(1, 1, 1);
                 }
@@ -130,4 +165,29 @@ public class Cast : MonoBehaviour
         }
 
     }
+
+    private void HabCast(int id)
+    {
+        switch (id)
+        {
+            case 4:
+                CastChicle(pos);
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void CastChicle(Vector3 posMet)
+    {
+
+        //
+        posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        posMet.z = 0;
+        jgnt.CmdSpawnChicle(posMet);
+        
+    }
+
+    
 }
