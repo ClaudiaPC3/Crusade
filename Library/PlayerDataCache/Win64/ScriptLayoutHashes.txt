@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Relic Hunter.exe
+C:/Users/and/Desktop/tst/Relic Hunter.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
@@ -170,7 +170,7 @@ e197d0b748f0fe21846663bdb6454914 Assembly-CSharp.dll:.TerminarCon
 5c0934043154fa312e9998eba0ef9cc8 Assembly-CSharp.dll:.OpenEgyptianGate
 3f3fffa9a19557cbbc409e4d7965e5c9 Assembly-CSharp.dll:DynamicLight2D.ColorBlending
 41479ee7a850f65081ae714a000e53ec Assembly-CSharp.dll:.RelInteraccion
-227d24f5e09a241f5d8171cba5b72338 Assembly-CSharp.dll:.Cast
+c691bed53e022313183fb299f065f7be Assembly-CSharp.dll:.Cast
 14a5a2e5cdf8fb05a06abfcbd609c22a Assembly-CSharp.dll:.followPlayer
 fcc524e590f5b53ae7cc133882265388 Assembly-CSharp.dll:.TimerClass
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
@@ -225,6 +225,7 @@ a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 2c6dd0562397729a7f93b0f88ecf049d Assembly-CSharp.dll:.MonControl
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+0bb3e5662a7ab33c7d59f0d8f2e3811a Assembly-CSharp.dll:.ControlTiendas
 b99b0e34179ac8a46f457f2053c42da4 Assembly-CSharp.dll:.Host
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.interface_touch
 c150d9404e6b53770dd5f5e91004bccd Assembly-CSharp.dll:.Blur
@@ -250,4 +251,3 @@ c89cc226a411a1e797ad9eaf84bc8a28 Assembly-CSharp.dll:.Movimiento
 7d49f616f4fa0bea10a0eb41a691c2df Assembly-CSharp.dll:DynamicLight2D.Rotation
 4b63f2658702c43526560f617e8a67c2 Assembly-CSharp.dll:.NavJug
 32f65cd41ed310530da5d9d527687ff6 Assembly-CSharp.dll:.Reloj
-0bb3e5662a7ab33c7d59f0d8f2e3811a Assembly-CSharp.dll:.ControlTiendas

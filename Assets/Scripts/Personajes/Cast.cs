@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cast : MonoBehaviour
 {
+    public GameObject bar;
+    private Barra barra;
     public RectTransform trans1;
     public RectTransform trans2;
     public RectTransform trans3;
@@ -14,7 +16,7 @@ public class Cast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        barra = bar.GetComponent<Barra>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class Cast : MonoBehaviour
             {
                 if (GlobalData.Energ>=Objetos.Inv1ener&&!cool1){
                     GlobalData.Energ -= Objetos.Inv1ener;
+                    barra.BarUpd();
                     cool1 = true;
                     trans1.localScale = new Vector3(1, 1, 1);
                 }
@@ -35,6 +38,7 @@ public class Cast : MonoBehaviour
                 if (GlobalData.Energ >= Objetos.Inv2ener)
                 {
                     GlobalData.Energ -= Objetos.Inv2ener;
+                    barra.BarUpd();
                     cool2 = true;
                     trans2.localScale = new Vector3(1, 1, 1);
                 }
@@ -44,6 +48,7 @@ public class Cast : MonoBehaviour
                 if (GlobalData.Energ >= Objetos.Inv3ener)
                 {
                     GlobalData.Energ -= Objetos.Inv3ener;
+                    barra.BarUpd();
                     cool3 = true;
                     trans3.localScale = new Vector3(1, 1, 1);
                 }
@@ -53,6 +58,7 @@ public class Cast : MonoBehaviour
                 if (GlobalData.Energ >= Objetos.Inv4ener)
                 {
                     GlobalData.Energ -= Objetos.Inv4ener;
+                    barra.BarUpd();
                     cool4 = true;
                     trans4.localScale = new Vector3(1, 1, 1);
                 }

@@ -35,7 +35,7 @@ public class Barra : MonoBehaviour
         }
     }
 
-    void BarUpd()
+    public void BarUpd()
     {
         energ = GlobalData.Energ;
         energ = (energ * 100)/ GlobalData.EnergLim;
