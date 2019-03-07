@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Cast : MonoBehaviour
+public class Cast : NetworkBehaviour
 {
     public GameObject bar;
+    public GameObject chicle;
     private Barra barra;
     public RectTransform trans1;
     public RectTransform trans2;
@@ -29,6 +31,7 @@ public class Cast : MonoBehaviour
                 if (GlobalData.Energ>=Objetos.Inv1ener&&!cool1&&Objetos.Inv1!=-1){
                     GlobalData.Energ -= Objetos.Inv1ener;
                     barra.BarUpd();
+                    HabCast(Objetos.Inv1);
                     cool1 = true;
                     trans1.localScale = new Vector3(1, 1, 1);
                 }
@@ -39,6 +42,7 @@ public class Cast : MonoBehaviour
                 {
                     GlobalData.Energ -= Objetos.Inv2ener;
                     barra.BarUpd();
+                    HabCast(Objetos.Inv2);
                     cool2 = true;
                     trans2.localScale = new Vector3(1, 1, 1);
                 }
@@ -49,6 +53,7 @@ public class Cast : MonoBehaviour
                 {
                     GlobalData.Energ -= Objetos.Inv3ener;
                     barra.BarUpd();
+                    HabCast(Objetos.Inv3);
                     cool3 = true;
                     trans3.localScale = new Vector3(1, 1, 1);
                 }
@@ -59,6 +64,7 @@ public class Cast : MonoBehaviour
                 {
                     GlobalData.Energ -= Objetos.Inv4ener;
                     barra.BarUpd();
+                    HabCast(Objetos.Inv4);
                     cool4 = true;
                     trans4.localScale = new Vector3(1, 1, 1);
                 }
@@ -129,5 +135,30 @@ public class Cast : MonoBehaviour
             }
         }
 
+    }
+
+    private void HabCast(int id)
+    {
+        switch (id)
+        {
+            case 4:
+                CastChicle();
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void CastChicle()
+    {
+        CmdSpawnChicle();
+    }
+
+    [Command]
+    void CmdSpawnChicle()
+    {
+        GameObject chiclecmd = Instantiate(chicle, new Vector3(700, -450, 0), Quaternion.identity);
+        NetworkServer.Spawn(chiclecmd);
     }
 }
