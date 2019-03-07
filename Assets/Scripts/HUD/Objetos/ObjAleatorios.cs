@@ -57,9 +57,9 @@ public class ObjAleatorios : MonoBehaviour
                     Per1.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "herrero");
                     break;
                 }
-            default:
+            case 5:
                 {
-                    Per3.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "vacio");
+                    Per1.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "vacio");
                     break;
                 }
         }
@@ -88,9 +88,9 @@ public class ObjAleatorios : MonoBehaviour
                     Per2.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "herrero");
                     break;
                 }
-            default:
+            case 5:
                 {
-                    Per3.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "vacio");
+                    Per2.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "vacio");
                     break;
                 }
         }
@@ -119,7 +119,7 @@ public class ObjAleatorios : MonoBehaviour
                     Per3.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "herrero");
                     break;
                 }
-            default:
+            case 5:
                 {
                     Per3.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "vacio");
                     break;
@@ -181,9 +181,9 @@ public class ObjAleatorios : MonoBehaviour
                     Per1.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "herrero");
                     break;
                 }
-            default:
+            case 5:
                 {
-                    Per3.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "vacio");
+                    Per1.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "vacio");
                     break;
                 }
         }
@@ -212,9 +212,9 @@ public class ObjAleatorios : MonoBehaviour
                     Per2.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "herrero");
                     break;
                 }
-            default:
+            case 5:
                 {
-                    Per3.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "vacio");
+                    Per2.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "vacio");
                     break;
                 }
         }
@@ -243,7 +243,7 @@ public class ObjAleatorios : MonoBehaviour
                     Per3.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "herrero");
                     break;
                 }
-            default:
+            case 5:
                 {
                     Per3.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + "vacio");
                     break;
@@ -266,9 +266,13 @@ public class ObjAleatorios : MonoBehaviour
         {
             personaje = 3;
         }
-        if (objeto >= 27 && objeto <= 36)
+        if (objeto >= 27 && objeto <= 35)
         {
             personaje = 4;
+        }
+        if (objeto > 36)
+        {
+            personaje = 5;
         }
         return personaje;
     }

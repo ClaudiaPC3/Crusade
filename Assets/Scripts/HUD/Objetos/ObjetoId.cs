@@ -7,6 +7,7 @@ public class ObjetoId : MonoBehaviour
 {
     public int id;
     public int precio;
+   
 
     public OpcionesAdm MenuSeleccionObj;
     public GameObject comprar;
@@ -47,6 +48,11 @@ public class ObjetoId : MonoBehaviour
         }
         precioTxt.GetComponent<Text>().text = precio.ToString();
 
+    }
+
+    public void OcultarCompra()
+    {
+        comprar.SetActive(false);
     }
 
     
