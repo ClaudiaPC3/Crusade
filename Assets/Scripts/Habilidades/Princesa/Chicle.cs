@@ -9,6 +9,16 @@ public class Chicle : MonoBehaviour
     public Sprite chicle, pared;
     public GameObject me;
     private SpriteRenderer rnd = null;
+    private GameObject[] chicles;
+
+    private void Start()
+    {
+        chicles = GameObject.FindGameObjectsWithTag("Chicle");
+        if (chicles.Length > 4)
+        {
+            Destroy(chicles[0]);
+        }
+    }
 
     private void Update()
     {
