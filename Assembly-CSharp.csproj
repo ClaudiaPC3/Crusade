@@ -91,6 +91,7 @@
     <Compile Include="Assets\2DDL\Add-ons\LookAt.cs" />
     <Compile Include="Assets\2DDL\Add-ons\Rotation.cs" />
     <Compile Include="Assets\2DDL\Add-ons\Source.cs" />
+    <Compile Include="Assets\ChicleAct.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Princesa\Chicle.cs" />
     <Compile Include="Assets\Scripts\HUD\Barra\Barra.cs" />

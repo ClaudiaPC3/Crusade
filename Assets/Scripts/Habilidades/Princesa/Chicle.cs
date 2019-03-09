@@ -40,6 +40,7 @@ public class Chicle : MonoBehaviour
             rnd = collision.transform.gameObject.GetComponent<SpriteRenderer>();
             rnd.sprite = chicle;
             coll = true;
+            collision.transform.gameObject.GetComponent<ChicleAct>().ischicle = true;
         }
     }
 
