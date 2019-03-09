@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class Chicle : MonoBehaviour
 {
-    public bool Coll = false;
+    public bool cont = false;
     public Sprite chicle;
+
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Coll = true;
-        if(collision.transform.gameObject.tag == "Pared")
+        
+        if(collision.transform.gameObject.tag == "Pared"&&!cont)
         {
             collision.transform.gameObject.GetComponent<SpriteRenderer>().sprite = chicle;
+            cont = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Coll = false;
+        
     }
 
     
