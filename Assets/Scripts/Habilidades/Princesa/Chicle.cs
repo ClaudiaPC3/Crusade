@@ -6,8 +6,9 @@ public class Chicle : MonoBehaviour
 {
     private bool cont = false, coll = false;
     private float counter = 0;
-    public Sprite chicle;
+    public Sprite chicle, pared;
     public GameObject me;
+    private SpriteRenderer rnd = null;
 
     private void Update()
     {
@@ -26,7 +27,8 @@ public class Chicle : MonoBehaviour
         
         if(collision.transform.gameObject.tag == "Pared"&&!cont)
         {
-            collision.transform.gameObject.GetComponent<SpriteRenderer>().sprite = chicle;
+            rnd = collision.transform.gameObject.GetComponent<SpriteRenderer>();
+            rnd.sprite = chicle;
             coll = true;
         }
     }
@@ -36,5 +38,12 @@ public class Chicle : MonoBehaviour
         Destroy(me);
     }
 
-    
+    private void OnDestroy()
+    {
+        if(rnd != null)
+        {
+            rnd.sprite = pared;
+        }
+    }
+
 }
