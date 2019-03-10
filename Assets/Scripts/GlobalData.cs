@@ -19,17 +19,17 @@
     private static float energspe = 1f;
     private static float energlim = 100f;
     private static bool enTienda = false;
-    private static bool server = false;
+    private static int id = 0;
 
-    public static bool Server
+    public static int ID
     {
         get
         {
-            return server;
+            return id;
         }
         set
         {
-            server = value;
+            id = value;
         }
     }
 

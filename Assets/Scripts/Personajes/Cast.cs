@@ -42,7 +42,7 @@ public class Cast : NetworkBehaviour
                 pos = jugadores[0].transform.position;
                     movani = jugadores[0].GetComponent<Movimiento>();
                     jgnt = nets[0].GetComponent<JugadorNet>();
-                    GlobalData.Server = true;
+                    
                     
             }
             else
@@ -50,7 +50,7 @@ public class Cast : NetworkBehaviour
                 pos = jugadores[1].transform.position;
                     movani = jugadores[1].GetComponent<Movimiento>();
                     jgnt = nets[1].GetComponent<JugadorNet>();
-                    GlobalData.Server = false;
+                    
                 }
             check = true;
             }
@@ -188,7 +188,7 @@ public class Cast : NetworkBehaviour
         //
         posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         posMet.z = 0;
-        jgnt.CmdSpawnChicle(posMet, GlobalData.Server);
+        jgnt.CmdSpawnChicle(posMet, GlobalData.ID);
         
     }
 

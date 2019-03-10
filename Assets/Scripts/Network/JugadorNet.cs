@@ -20,7 +20,9 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Pelota;
     public GameObject SemGen;
     public GameObject chicle;
-    public bool isServ = false;
+    public GameObject[] jgsNet;
+    public int id = 0;
+    
 
     public int opcion;
     private string tempname;
@@ -39,6 +41,11 @@ public class JugadorNet : NetworkBehaviour
         {
             return;
         }
+
+        jgsNet = GameObject.FindGameObjectsWithTag("Autho");
+        id = jgsNet.Length;
+        GlobalData.ID = id;
+
         //Si es servidor se llama el comando para enviar la semilla al cliente
         if (isServer)
         {
@@ -150,11 +157,11 @@ public class JugadorNet : NetworkBehaviour
     }
 
     [Command]
-    public void CmdSpawnChicle(Vector3 posCmd, bool jg)
+    public void CmdSpawnChicle(Vector3 posCmd, int idcmd)
     {
         
         GameObject chiclecmd = Instantiate(chicle, posCmd, Quaternion.identity);
-        chiclecmd.GetComponent<Chicle>().servCast = jg;
+        chicle.GetComponent<Chicle>.idCast = idcmd;
         NetworkServer.Spawn(chiclecmd);   
 
     }

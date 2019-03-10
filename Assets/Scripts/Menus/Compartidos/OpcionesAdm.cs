@@ -55,7 +55,7 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.Energ = 0;
         GlobalData.EnergLim = 100f;
         GlobalData.EnergSpe = 1f;
-        GlobalData.Server = false;
+        GlobalData.ID = 0;
         Objetos.Inv1 = 4;
         Objetos.Inv2 = -1;
         Objetos.Inv3 = -1;

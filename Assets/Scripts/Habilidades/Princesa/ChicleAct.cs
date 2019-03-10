@@ -8,12 +8,12 @@ public class ChicleAct : MonoBehaviour
     private bool act = false;
     private float cont = 0;
     public bool ischicle = false;
-    public bool jugCast = false;
+    public int jugCast = 0;
     
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.gameObject.tag == "jugador"&&ischicle&& GlobalData.Server!=jugCast)
+        if (collision.transform.gameObject.tag == "jugador"&&ischicle&& GlobalData.ID!=jugCast)
         {
             jg = collision.transform.transform.position;
             act = true;
