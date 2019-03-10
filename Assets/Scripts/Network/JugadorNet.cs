@@ -20,6 +20,7 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Pelota;
     public GameObject SemGen;
     public GameObject chicle;
+    public bool isServ = false;
 
     public int opcion;
     private string tempname;
@@ -149,10 +150,14 @@ public class JugadorNet : NetworkBehaviour
     }
 
     [Command]
-    public void CmdSpawnChicle(Vector3 posCmd)
+    public void CmdSpawnChicle(Vector3 posCmd, bool jg)
     {
-
+        
         GameObject chiclecmd = Instantiate(chicle, posCmd, Quaternion.identity);
-        NetworkServer.Spawn(chiclecmd);
+        chiclecmd.GetComponent<Chicle>().servCast = jg;
+        NetworkServer.Spawn(chiclecmd);   
+
     }
+
+    
 }

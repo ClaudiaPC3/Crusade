@@ -5,11 +5,13 @@ using UnityEngine;
 public class Chicle : MonoBehaviour
 {
     private bool cont = false, coll = false;
+    public bool servCast = false;
     private float counter = 0;
     public Sprite chicle, pared;
     public GameObject me;
     private SpriteRenderer rnd = null;
     private GameObject[] chicles;
+    
 
     private void Start()
     {
@@ -19,6 +21,8 @@ public class Chicle : MonoBehaviour
             Destroy(chicles[0]);
         }
     }
+
+
 
     private void Update()
     {
@@ -41,6 +45,7 @@ public class Chicle : MonoBehaviour
             rnd.sprite = chicle;
             coll = true;
             collision.transform.gameObject.GetComponent<ChicleAct>().ischicle = true;
+            collision.transform.gameObject.GetComponent<ChicleAct>().jugCast = servCast;
         }
     }
 
