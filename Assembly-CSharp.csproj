@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\GlobalData.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Princesa\Chicle.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Princesa\ChicleAct.cs" />
+    <Compile Include="Assets\Scripts\Habilidades\Princesa\Escalera.cs" />
     <Compile Include="Assets\Scripts\HUD\Barra\Barra.cs" />
     <Compile Include="Assets\Scripts\HUD\Monedas\MonControl.cs" />
     <Compile Include="Assets\Scripts\HUD\Notificacion\Look.cs" />

@@ -222,3 +222,4 @@ c38ac7ec03dbb347dd76f7934df494e0 Assembly-CSharp.dll:.Movimiento
 7d49f616f4fa0bea10a0eb41a691c2df Assembly-CSharp.dll:DynamicLight2D.Rotation
 4b63f2658702c43526560f617e8a67c2 Assembly-CSharp.dll:.NavJug
 32f65cd41ed310530da5d9d527687ff6 Assembly-CSharp.dll:.Reloj
+cf8b049bed6826ed23f5ccc093600286 Assembly-CSharp.dll:.Escalera
