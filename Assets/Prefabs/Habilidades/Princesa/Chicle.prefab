@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idCast: 1
   chicle: {fileID: 21300000, guid: 0f4b29f6d5d25194889cdcd645456a94, type: 3}
-  pared: {fileID: 21300000, guid: 32da23a272b7cd5489c64b6f2aba90d2, type: 3}
+  paredsp: {fileID: 21300000, guid: 32da23a272b7cd5489c64b6f2aba90d2, type: 3}
   me: {fileID: 4207700226844336198}
 --- !u!114 &4559034746960309147
 MonoBehaviour:

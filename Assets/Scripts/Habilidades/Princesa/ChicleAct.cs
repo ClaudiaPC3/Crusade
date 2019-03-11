@@ -9,6 +9,7 @@ public class ChicleAct : MonoBehaviour
     private float cont = 0;
     public bool ischicle = false;
     public int jugCast = 0;
+    public GameObject miChi;
     
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -18,6 +19,7 @@ public class ChicleAct : MonoBehaviour
             jg = collision.transform.transform.position;
             act = true;
         }
+        
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -31,6 +33,7 @@ public class ChicleAct : MonoBehaviour
         {
             act = false;
             cont = 0;
+            Destroy(miChi);
         }
     }
 

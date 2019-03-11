@@ -11,9 +11,9 @@ public class Chicle : NetworkBehaviour
     public int idCast = 0;
 
     private float counter = 0;
-    public Sprite chicle, pared;
+    public Sprite chicle, paredsp;
     public GameObject me;
-    private SpriteRenderer rnd = null;
+    private GameObject pared = null;
     private GameObject[] chicles;
     
     
@@ -47,11 +47,12 @@ public class Chicle : NetworkBehaviour
         
         if(collision.transform.gameObject.tag == "Pared"&&!cont)
         {
-            rnd = collision.transform.gameObject.GetComponent<SpriteRenderer>();
-            rnd.sprite = chicle;
+            pared = collision.transform.gameObject;
+            pared.GetComponent<SpriteRenderer>().sprite = chicle;
             coll = true;
             collision.transform.gameObject.GetComponent<ChicleAct>().ischicle = true;
             collision.transform.gameObject.GetComponent<ChicleAct>().jugCast = idCast;
+            collision.transform.gameObject.GetComponent<ChicleAct>().miChi = me;
         }
     }
 
@@ -62,9 +63,12 @@ public class Chicle : NetworkBehaviour
 
     private void OnDestroy()
     {
-        if(rnd != null)
+        if(pared != null)
         {
-            rnd.sprite = pared;
+            pared.GetComponent<ChicleAct>().ischicle = false;
+            pared.GetComponent<SpriteRenderer>().sprite = paredsp;
+            pared.GetComponent<ChicleAct>().jugCast = 0;
+
         }
     }
 
