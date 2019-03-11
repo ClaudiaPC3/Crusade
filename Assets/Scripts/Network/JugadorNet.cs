@@ -36,6 +36,8 @@ public class JugadorNet : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
         //Si no es jugador local, se sale de este metodo
         if (!isLocalPlayer)
         {
@@ -44,7 +46,9 @@ public class JugadorNet : NetworkBehaviour
 
         jgsNet = GameObject.FindGameObjectsWithTag("Autho");
         id = jgsNet.Length;
+        Debug.Log(id);
         GlobalData.ID = id;
+        Debug.Log(GlobalData.ID);
 
         //Si es servidor se llama el comando para enviar la semilla al cliente
         if (isServer)
@@ -159,12 +163,22 @@ public class JugadorNet : NetworkBehaviour
     [Command]
     public void CmdSpawnChicle(Vector3 posCmd, int idcmd)
     {
-        
+        Debug.Log(idcmd);
+
         GameObject chiclecmd = Instantiate(chicle, posCmd, Quaternion.identity);
-        chicle.GetComponent<Chicle>.idCast = idcmd;
-        NetworkServer.Spawn(chiclecmd);   
+        
+        //Debug.Log(chiclecmd.GetComponent<Chicle>().idCast);
+        NetworkServer.SpawnWithClientAuthority(chiclecmd, connectionToClient);
+        //chiclecmd.GetComponent<Chicle>().idCast = idcmd;
+        RpcSetIdCh(chiclecmd, idcmd);
 
     }
 
-    
+    [ClientRpc]
+    public void RpcSetIdCh(GameObject Target, int id)
+    {
+        Target.GetComponent<Chicle>().idCast = id;
+    }
+
+
 }

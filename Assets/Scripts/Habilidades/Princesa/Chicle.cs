@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Chicle : MonoBehaviour
+public class Chicle : NetworkBehaviour
 {
     private bool cont = false, coll = false;
+
+    
     public int idCast = 0;
+
     private float counter = 0;
     public Sprite chicle, pared;
     public GameObject me;
@@ -21,6 +25,7 @@ public class Chicle : MonoBehaviour
         {
             Destroy(chicles[0]);
         }
+        Debug.Log(idCast);
     }
 
 

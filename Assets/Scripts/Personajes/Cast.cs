@@ -31,6 +31,7 @@ public class Cast : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (check) { 
         jugadores = GameObject.FindGameObjectsWithTag("jugador");
             nets = GameObject.FindGameObjectsWithTag("Autho");
@@ -188,7 +189,10 @@ public class Cast : NetworkBehaviour
         //
         posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         posMet.z = 0;
-        jgnt.CmdSpawnChicle(posMet, GlobalData.ID);
+        int i = GlobalData.ID;
+       
+        Debug.Log(i);
+        jgnt.CmdSpawnChicle(posMet, i);
         
     }
 
