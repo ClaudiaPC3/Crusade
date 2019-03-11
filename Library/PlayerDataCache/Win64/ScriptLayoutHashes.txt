@@ -215,7 +215,7 @@ df82cbecf11476ab7aeda0143ec96bbe Assembly-CSharp.dll:.MeterPartida
 04cab81eeeaae6b52511ca29fc924237 Assembly-CSharp.dll:.MenuCofre
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
-c89cc226a411a1e797ad9eaf84bc8a28 Assembly-CSharp.dll:.Movimiento
+c38ac7ec03dbb347dd76f7934df494e0 Assembly-CSharp.dll:.Movimiento
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 3762bdcad64e775a654c87c54c385262 Assembly-CSharp.dll:DynamicLight2D.Source
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:DynamicLight2D.AddOnBase

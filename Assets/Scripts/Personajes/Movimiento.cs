@@ -7,6 +7,7 @@ public class Movimiento : NetworkBehaviour
 {
     public GameObject camara;
     public Transform transCam, propio;
+    public int id = 0;
 
     //Variable de la velocidad del personaje (Editable desde el prefab del personaje)
     private float speed = 50f;
@@ -22,7 +23,7 @@ public class Movimiento : NetworkBehaviour
     public float lastY = -1f;
     public bool isMov = false;
 
-
+    public GameObject[] jugadores;
     private Vector2 mov;
     private Vector3 cam;
     private Vector3 inicio;
@@ -35,7 +36,9 @@ public class Movimiento : NetworkBehaviour
         propio = GetComponent<Transform>();
         camara = GameObject.Find("Main Camera");
         transCam = camara.GetComponent<Transform>();
-          
+        jugadores = GameObject.FindGameObjectsWithTag("jugador");
+
+        id = jugadores.Length;
 
         if (hasAuthority)
         {

@@ -13,7 +13,7 @@ public class ChicleAct : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.gameObject.tag == "jugador"&&ischicle&& GlobalData.ID!=jugCast)
+        if (collision.transform.gameObject.tag == "jugador"&&ischicle&& collision.transform.gameObject.GetComponent<Movimiento>().id!=jugCast)
         {
             jg = collision.transform.transform.position;
             act = true;
