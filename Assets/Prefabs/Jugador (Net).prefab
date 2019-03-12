@@ -86,6 +86,10 @@ MonoBehaviour:
   Pelota: {fileID: 796660719801594912, guid: 5131e0fce42f96c44ac3d600e48fb792, type: 3}
   SemGen: {fileID: 9020565881532641969, guid: 3b1ec1599af962f4b95a6226cd642c10, type: 3}
   chicle: {fileID: 4207700226844336198, guid: f66c116044cf03a4491b724e7b1b6b8f, type: 3}
+  cofreTrampa: {fileID: 7098111880740540973, guid: cbbec2a778a30f149b426a94e3e5af51,
+    type: 3}
+  jgsNet: []
+  id: 0
   opcion: 0
   name: 
   isE: 0
