@@ -12,6 +12,8 @@ TagManager:
   - Comprar
   - Precio
   - Net
+  - Chicle
+  - Pared
   layers:
   - Default
   - TransparentFX

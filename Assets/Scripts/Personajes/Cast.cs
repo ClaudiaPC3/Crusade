@@ -9,6 +9,7 @@ public class Cast : NetworkBehaviour
     public GameObject bar;
     public GameObject[] jugadores;
     public GameObject[] nets;
+    private GameObject jugador;
     private Barra barra;
     private JugadorNet jgnt;
     public RectTransform trans1;
@@ -31,6 +32,7 @@ public class Cast : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (check) { 
         jugadores = GameObject.FindGameObjectsWithTag("jugador");
             nets = GameObject.FindGameObjectsWithTag("Autho");
@@ -39,15 +41,20 @@ public class Cast : NetworkBehaviour
             {
             if (NetworkServer.active)
             {
-                pos = jugadores[0].transform.position;
+                    jugador = jugadores[0];
+                    pos = jugadores[0].transform.position;
                     movani = jugadores[0].GetComponent<Movimiento>();
                     jgnt = nets[0].GetComponent<JugadorNet>();
+                    
+                    
             }
             else
             {
-                pos = jugadores[1].transform.position;
+                    jugador = jugadores[1];
+                    pos = jugadores[1].transform.position;
                     movani = jugadores[1].GetComponent<Movimiento>();
                     jgnt = nets[1].GetComponent<JugadorNet>();
+                    
                 }
             check = true;
             }
@@ -170,6 +177,10 @@ public class Cast : NetworkBehaviour
     {
         switch (id)
         {
+            case 1:
+                CastEscalera();
+                break;
+
             case 4:
                 CastChicle(pos);
                 break;
@@ -179,13 +190,21 @@ public class Cast : NetworkBehaviour
         }
     }
 
+    private void CastEscalera()
+    {
+        jugador.GetComponent<Escalera>().active = true;
+    }
+
     private void CastChicle(Vector3 posMet)
     {
 
         //
         posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         posMet.z = 0;
-        jgnt.CmdSpawnChicle(posMet);
+        int i = GlobalData.ID;
+       
+        Debug.Log(i);
+        jgnt.CmdSpawnChicle(posMet, i);
         
     }
 

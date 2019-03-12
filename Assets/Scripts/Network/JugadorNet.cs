@@ -20,6 +20,9 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Pelota;
     public GameObject SemGen;
     public GameObject chicle;
+    public GameObject[] jgsNet;
+    public int id = 0;
+    
 
     public int opcion;
     private string tempname;
@@ -33,11 +36,20 @@ public class JugadorNet : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        jgsNet = GameObject.FindGameObjectsWithTag("Autho");
+        id = jgsNet.Length;
+
         //Si no es jugador local, se sale de este metodo
         if (!isLocalPlayer)
         {
             return;
         }
+
+        
+        Debug.Log(id);
+        GlobalData.ID = id;
+        Debug.Log(GlobalData.ID);
+
         //Si es servidor se llama el comando para enviar la semilla al cliente
         if (isServer)
         {
@@ -149,10 +161,24 @@ public class JugadorNet : NetworkBehaviour
     }
 
     [Command]
-    public void CmdSpawnChicle(Vector3 posCmd)
+    public void CmdSpawnChicle(Vector3 posCmd, int idcmd)
     {
+        Debug.Log(idcmd);
 
         GameObject chiclecmd = Instantiate(chicle, posCmd, Quaternion.identity);
-        NetworkServer.Spawn(chiclecmd);
+        
+        //Debug.Log(chiclecmd.GetComponent<Chicle>().idCast);
+        NetworkServer.SpawnWithClientAuthority(chiclecmd, connectionToClient);
+        //chiclecmd.GetComponent<Chicle>().idCast = idcmd;
+        RpcSetIdCh(chiclecmd, idcmd);
+
     }
+
+    [ClientRpc]
+    public void RpcSetIdCh(GameObject Target, int id)
+    {
+        Target.GetComponent<Chicle>().idCast = id;
+    }
+
+
 }
