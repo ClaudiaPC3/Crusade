@@ -20,6 +20,7 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Pelota;
     public GameObject SemGen;
     public GameObject chicle;
+    public GameObject cofreTrampa;
     public GameObject[] jgsNet;
     public int id = 0;
     
@@ -180,5 +181,22 @@ public class JugadorNet : NetworkBehaviour
         Target.GetComponent<Chicle>().idCast = id;
     }
 
+
+    [Command]
+    public void CmdSpawnCofreTrampa(Vector3 posCmd, int idcmd)
+    {
+        Debug.Log(idcmd);
+
+        GameObject cofreTrampacmd = Instantiate(cofreTrampa, posCmd, Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(cofreTrampacmd, connectionToClient);
+        RpcSetIdCof(cofreTrampacmd, idcmd);
+
+    }
+
+    [ClientRpc]
+    public void RpcSetIdCof(GameObject Target, int id)
+    {
+        Target.GetComponent<CofreTrampa>().idCast = id;
+    }
 
 }

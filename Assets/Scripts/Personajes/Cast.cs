@@ -185,6 +185,10 @@ public class Cast : NetworkBehaviour
                 CastChicle(pos);
                 break;
 
+            case 31:
+                CastCofreTrampa(pos);
+                break;
+
             default:
                 break;
         }
@@ -208,5 +212,18 @@ public class Cast : NetworkBehaviour
         
     }
 
-    
+    private void CastCofreTrampa(Vector3 posMet)
+    {
+
+        //
+        posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        posMet.z = 0;
+        int i = GlobalData.ID;
+
+        Debug.Log(i);
+        jgnt.CmdSpawnCofreTrampa(posMet, i);
+
+    }
+
+
 }
