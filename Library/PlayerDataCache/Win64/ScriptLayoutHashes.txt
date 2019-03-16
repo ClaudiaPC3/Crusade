@@ -148,7 +148,7 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 e197d0b748f0fe21846663bdb6454914 Assembly-CSharp.dll:.TerminarCon
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 1179dcc4d3a5cc041a56bea6f13fbf32 Assembly-CSharp.dll:.OpcionesAdm
-cf8b049bed6826ed23f5ccc093600286 Assembly-CSharp.dll:.Escalera
+8f1a9bdaf0e8e1e493cbb0e6215999ad Assembly-CSharp.dll:.Escalera
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:DynamicLight2D.CoreUtils
 3f3fffa9a19557cbbc409e4d7965e5c9 Assembly-CSharp.dll:DynamicLight2D.ColorBlending
