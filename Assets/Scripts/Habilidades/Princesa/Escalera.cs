@@ -14,7 +14,7 @@ public class Escalera : MonoBehaviour
         if (procdeac)
         {
             counter += Time.deltaTime;
-            if (counter >= 0.2)
+            if (counter >= 0.1)
             {
                 me.GetComponent<PolygonCollider2D>().isTrigger = false;
                 active = false;
@@ -30,17 +30,20 @@ public class Escalera : MonoBehaviour
         if (collision.transform.gameObject.tag == "Pared" && active)
         {
             
-            me.GetComponent<PolygonCollider2D>().isTrigger = true;
-            me.transform.position = new Vector3(collision.transform.gameObject.transform.position.x+14, collision.transform.gameObject.transform.position.y - 14, 0);            
+            me.GetComponent<PolygonCollider2D>().isTrigger = true;            
             
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        procdeac = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.transform.gameObject.tag == "Pared")
         {
-            procdeac = false;
             counter = 0;
         }
     }

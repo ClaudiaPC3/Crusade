@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Relic Hunter.exe
+C:/Users/and/Desktop/tst/Relic Hunter.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
@@ -175,6 +175,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 af362fd51ef8182678df1065d289b63d Assembly-CSharp.dll:.NavPer
 e7c7da1dc2d7b946f80bc18a5113228a Assembly-CSharp.dll:.ObjetoId
 2f6944d2bab00edd3a78100a20e09472 Assembly-CSharp.dll:.CofreInteraccion
+a4e7ff198d3e7aece59bbd06892bf870 Assembly-CSharp.dll:.CofreTrampa
 66bca5cc6a18c5298ec75235e56a84d6 Assembly-CSharp.dll:DynamicLight2D.LookAt
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 6d7f75a44df93fe4b07b5b0196bae2f2 Assembly-CSharp.dll:.AsignacionObj
@@ -223,4 +224,3 @@ c38ac7ec03dbb347dd76f7934df494e0 Assembly-CSharp.dll:.Movimiento
 7d49f616f4fa0bea10a0eb41a691c2df Assembly-CSharp.dll:DynamicLight2D.Rotation
 4b63f2658702c43526560f617e8a67c2 Assembly-CSharp.dll:.NavJug
 32f65cd41ed310530da5d9d527687ff6 Assembly-CSharp.dll:.Reloj
-a4e7ff198d3e7aece59bbd06892bf870 Assembly-CSharp.dll:.CofreTrampa
