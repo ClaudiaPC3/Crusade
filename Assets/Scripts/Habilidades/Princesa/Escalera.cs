@@ -1,34 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Escalera : MonoBehaviour
+public class Escalera : NetworkBehaviour
 {
     public bool active = false;
     private float counter = 0;
-    private bool touchPar = false;
+    private bool touchPar = false, ismecast = false;
+    
     public GameObject me;
+    public GameObject[] jgsnet;
 
-    public void Update()
+    public void Start()
     {
-        if (active)
+        jgsnet = GameObject.FindGameObjectsWithTag("Autho");
+
+        if(me.GetComponentInParent<Movimiento>().id == GlobalData.ID)
         {
-            counter += Time.deltaTime;
-            if (counter >= 0.1)
-            {
-                me.GetComponent<PolygonCollider2D>().isTrigger = false;
-                active = false;
-                counter = 0;
-            }
+            ismecast = true;
         }
     }
 
-    
+    public void FixedUpdate()
+    {
+        if (active)
+        {
+            if (ismecast)
+            {
+                counter += Time.deltaTime;
+                if (counter >= 0.1)
+                {
+                    me.GetComponent<PolygonCollider2D>().isTrigger = false;
+
+                    active = false;
+                    counter = 0;
+                }
+            }
+            else
+            {
+
+            }  
+        }
+    }
 
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.gameObject.tag == "Pared")
+        if (collision.transform.gameObject.tag == "Pared" && ismecast)
         {
             touchPar = true;
         }
@@ -36,7 +55,7 @@ public class Escalera : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.transform.gameObject.tag == "Pared")
+        if(collision.transform.gameObject.tag == "Pared" && ismecast)
         {
             touchPar = false;
         }
@@ -44,7 +63,7 @@ public class Escalera : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(active && touchPar)
+        if(active && touchPar || active && !ismecast )
         {
             me.GetComponent<PolygonCollider2D>().isTrigger = true;
         }
@@ -52,12 +71,15 @@ public class Escalera : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        touchPar = false;        
+        if (ismecast)
+        {
+            touchPar = false;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.transform.gameObject.tag == "Pared")
+        if(collision.transform.gameObject.tag == "Pared" && ismecast)
         {
             counter = 0;
         }
