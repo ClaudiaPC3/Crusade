@@ -16,55 +16,57 @@ public class Cast : NetworkBehaviour
     public RectTransform trans2;
     public RectTransform trans3;
     public RectTransform trans4;
-    float cou1=0, cou2=0, cou3=0, cou4=0;
+    float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0;
     int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
     bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true;
     public Vector3 pos;
-   
+
 
     // Start is called before the first frame update
     void Start()
     {
         barra = bar.GetComponent<Barra>();
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (check) { 
-        jugadores = GameObject.FindGameObjectsWithTag("jugador");
+        if (check)
+        {
+            jugadores = GameObject.FindGameObjectsWithTag("jugador");
             nets = GameObject.FindGameObjectsWithTag("Autho");
 
-        if (jugadores.Length == 2)
+            if (jugadores.Length == 2)
             {
-            if (NetworkServer.active)
-            {
+                if (NetworkServer.active)
+                {
                     jugador = jugadores[0];
                     pos = jugadores[0].transform.position;
                     movani = jugadores[0].GetComponent<Movimiento>();
                     jgnt = nets[0].GetComponent<JugadorNet>();
-                    
-                    
-            }
-            else
-            {
+
+
+                }
+                else
+                {
                     jugador = jugadores[1];
                     pos = jugadores[1].transform.position;
                     movani = jugadores[1].GetComponent<Movimiento>();
                     jgnt = nets[1].GetComponent<JugadorNet>();
-                    
+
                 }
-            check = true;
+                check = true;
             }
         }
 
-        if(GlobalData.EnPausa == false && GlobalData.EnCofre == false)
+        if (GlobalData.EnPausa == false && GlobalData.EnCofre == false)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                if (GlobalData.Energ>=Objetos.Inv1ener&&!cool1&&Objetos.Inv1!=-1){
+                if (GlobalData.Energ >= Objetos.Inv1ener && !cool1 && Objetos.Inv1 != -1)
+                {
                     GlobalData.Energ -= Objetos.Inv1ener;
                     barra.BarUpd();
                     HabCast(Objetos.Inv1);
@@ -72,7 +74,7 @@ public class Cast : NetworkBehaviour
                     trans1.localScale = new Vector3(1, 1, 1);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2)&&!cool2 && Objetos.Inv2 != -1)
+            if (Input.GetKeyDown(KeyCode.Alpha2) && !cool2 && Objetos.Inv2 != -1)
             {
                 if (GlobalData.Energ >= Objetos.Inv2ener)
                 {
@@ -114,8 +116,8 @@ public class Cast : NetworkBehaviour
             {
                 cou1 = 0;
                 seg1++;
-                trans1.localScale = new Vector3(1, 1-((float)seg1/(float)Objetos.Inv1cool), 1);
-                if(seg1>= Objetos.Inv1cool)
+                trans1.localScale = new Vector3(1, 1 - ((float)seg1 / (float)Objetos.Inv1cool), 1);
+                if (seg1 >= Objetos.Inv1cool)
                 {
                     cool1 = false;
                     seg1 = 0;
@@ -203,14 +205,34 @@ public class Cast : NetworkBehaviour
     private void CastChicle(Vector3 posMet)
     {
 
-        //
+        /*
         posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         posMet.z = 0;
-        int i = GlobalData.ID;
-       
-        Debug.Log(i);
-        jgnt.CmdSpawnChicle(posMet, i);
-        
+        */
+
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y - 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y + 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 15, jugador.transform.position.y, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 15, jugador.transform.position.y, 0);
+        }
+
+
+        jgnt.CmdSpawnChicle(posMet, GlobalData.ID);
+
     }
 
     private void CastCofreTrampa(Vector3 posMet)
