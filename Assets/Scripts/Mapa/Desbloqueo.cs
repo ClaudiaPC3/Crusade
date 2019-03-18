@@ -16,8 +16,6 @@ public class Desbloqueo : NetworkBehaviour
 
     public NetworkManager manager;
     public GameObject barrera;
-    private int clientes = 0;
-    int size;
     public GameObject[] jugadores;
 
     // Update is called once per frame

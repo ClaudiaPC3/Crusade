@@ -200,6 +200,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 733f6fdc55569168cbc0f8459e327a36 Assembly-CSharp.dll:.GLDebug
+57643eda64a93502058e2fae31605164 Assembly-CSharp.dll:.Trampolin
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MagoOpc
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.HerrOpc
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
@@ -226,4 +227,4 @@ b7d3c451c115c35a72561fd181e294d5 Assembly-CSharp.dll:.Movimiento
 7d49f616f4fa0bea10a0eb41a691c2df Assembly-CSharp.dll:DynamicLight2D.Rotation
 4b63f2658702c43526560f617e8a67c2 Assembly-CSharp.dll:.NavJug
 32f65cd41ed310530da5d9d527687ff6 Assembly-CSharp.dll:.Reloj
-066f768dc3cc506b97ceadd3890221b2 Assembly-CSharp.dll:.Trampolin
+48497cde6124d755e30c1e0335b5b122 Assembly-CSharp.dll:.Gritar

@@ -210,4 +210,16 @@ public class JugadorNet : NetworkBehaviour
     {
         escal.GetComponent<Escalera>().active = val;
     }
+
+    [Command]
+    public void CmdEnem(float changex, float changey)
+    {
+
+    }
+
+    [ClientRpc]
+    public void RpcEnemX(float changex, float changey)
+    {
+
+    }
 }

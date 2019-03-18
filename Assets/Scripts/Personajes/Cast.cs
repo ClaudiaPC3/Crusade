@@ -9,7 +9,7 @@ public class Cast : NetworkBehaviour
     public GameObject bar, tramp;
     public GameObject[] jugadores;
     public GameObject[] nets;
-    private GameObject jugador;
+    private GameObject jugador, enem;
     private Barra barra;
     private JugadorNet jgnt;
     public RectTransform trans1;
@@ -43,6 +43,7 @@ public class Cast : NetworkBehaviour
                 if (NetworkServer.active)
                 {
                     jugador = jugadores[0];
+                    enem = jugadores[1];
                     pos = jugadores[0].transform.position;
                     movani = jugadores[0].GetComponent<Movimiento>();
                     jgnt = nets[0].GetComponent<JugadorNet>();
@@ -52,6 +53,7 @@ public class Cast : NetworkBehaviour
                 else
                 {
                     jugador = jugadores[1];
+                    enem = jugadores[0];
                     pos = jugadores[1].transform.position;
                     movani = jugadores[1].GetComponent<Movimiento>();
                     jgnt = nets[1].GetComponent<JugadorNet>();
@@ -191,6 +193,12 @@ public class Cast : NetworkBehaviour
                 CastChicle(pos);
                 break;
 
+            case 7:
+                    if(GlobalData.IsWarning){
+                        CastGritar();
+                    }
+                break;
+
             case 31:
                 CastCofreTrampa(pos);
                 break;
@@ -198,6 +206,13 @@ public class Cast : NetworkBehaviour
             default:
                 break;
         }
+    }
+
+    public void CastGritar()
+    {
+
+        jugador.GetComponent<Gritar>().Init(true, jugador, enem);
+
     }
 
     public void CastEscalera()
