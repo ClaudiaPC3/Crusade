@@ -26,15 +26,6 @@ public class CofreTrampa : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        jugadores = GameObject.FindGameObjectsWithTag("jugador");
-        if (idCast == 1)
-        {
-            jugadorCofre = jugadores[0];
-        }
-        else
-        {
-            jugadorCofre = jugadores[1];
-        }
         anim.SetFloat("Estado", estado);
         posicion = GetComponent<Transform>();
         MenuCofre = GameObject.FindWithTag("Cofre");
@@ -64,12 +55,21 @@ public class CofreTrampa : NetworkBehaviour
                     jugadorNetC = jugadoresNet[1];
                     jugadorS = jugadores[0];
                     jugadorC = jugadores[1];
+                    if (idCast == 1)
+                    {
+                        jugadorCofre = jugadores[1];
+                    }
+                    else
+                    {
+                        jugadorCofre = jugadores[0];
+                    }
+
                 }
 
-                if ((((jugadorCofre.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorCofre.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorCofre.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorCofre.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42)))) && activo)
+                if ((((jugadorS.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorS.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorS.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorS.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42)))) && activo)
                 {
                     estado = 2;
-                    if (Input.GetKeyUp(KeyCode.E))
+                    if (Input.GetKeyUp(KeyCode.E) && idCast == 2)
                     {
                         GlobalData.EnCofre = true;
                         estado = 3;
@@ -85,13 +85,17 @@ public class CofreTrampa : NetworkBehaviour
                         estado = 1;
                     }
                 }
-                if (((jugadorCofre.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorCofre.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorCofre.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorCofre.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) && activo)
+                if (((jugadorC.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorC.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorC.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorC.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) && activo)
                 {
+                    jugadoresNet = GameObject.FindGameObjectsWithTag("Autho");
+                    jugadorNetC = jugadoresNet[1];
                     estado = 2;
                     bool isE = jugadorNetC.GetComponent<JugadorNet>().isE;
+                    Debug.Log("Entro al cofre serv  " + isE);
 
-                    if (isE)
-                    {      //posiblemente el servidor esta entrando aqui                                       
+                    if (jugadorNetC.GetComponent<JugadorNet>().isE && idCast == 1)
+                    {      //posiblemente el servidor esta entrando aqui            
+                        Debug.Log("Presiono E");
                         estado = 3;
                         activo = false;
                     }
@@ -134,19 +138,21 @@ public class CofreTrampa : NetworkBehaviour
                 jugadorC = jugadores[1];
 
 
-                if ((((jugadorCofre.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorCofre.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorCofre.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorCofre.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) || (jugadorCofre.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorCofre.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorCofre.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorCofre.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) && activo)
+                if ((((jugadorS.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorS.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorS.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorS.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) || (jugadorC.GetComponent<Transform>().transform.position.x <= (posicion.position.x + 44) && jugadorC.GetComponent<Transform>().transform.position.x >= (posicion.position.x - 16)) && (jugadorC.GetComponent<Transform>().transform.position.y <= (posicion.position.y + 16) && jugadorC.GetComponent<Transform>().transform.position.y >= (posicion.position.y - 42))) && activo)
                 {
-                    if (Input.GetKeyUp(KeyCode.E))
+                    if (Input.GetKeyUp(KeyCode.E) && idCast == 1)
                     {
+                        estado = 3;
                         GlobalData.EnCofre = true;
                         activo = false;
                     }
 
                     bool isE = jugadorNetC.GetComponent<JugadorNet>().isE;
 
-                    if (isE)
+                    if (isE && idCast == 2)
                     {
                         activo = false;
+                        estado = 3;
                     }
 
                 }
@@ -156,8 +162,8 @@ public class CofreTrampa : NetworkBehaviour
                     currentTime = Time.deltaTime + currentTime;
                     if (currentTime >= 4.0f)
                     {
-                        GlobalData.EnCofre = false;
                         currentTime = 0.0f;
+                        GlobalData.EnCofre = false;
                         activo = true;
                         Destroy(me);
                     }
