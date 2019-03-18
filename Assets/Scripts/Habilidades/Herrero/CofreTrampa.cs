@@ -156,17 +156,23 @@ public class CofreTrampa : NetworkBehaviour
                     }
 
                 }
+                
 
                 if (!activo)
                 {
                     currentTime = Time.deltaTime + currentTime;
-                    if (currentTime >= 4.0f)
+                    if (currentTime >= 3.5f)
                     {
                         currentTime = 0.0f;
                         GlobalData.EnCofre = false;
                         activo = true;
-                        Destroy(me);
+                        GlobalData.EnCofre = false;
+                       // Destroy(me);
                     }
+                }
+                else
+                {
+                    GlobalData.EnCofre = false;
                 }
 
 
