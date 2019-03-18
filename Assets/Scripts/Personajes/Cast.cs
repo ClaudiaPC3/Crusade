@@ -196,7 +196,8 @@ public class Cast : NetworkBehaviour
 
     private void CastEscalera()
     {
-        jugador.GetComponent<Escalera>().active = true;
+        jgnt.CmdEscalera(jugador, true);
+        //jugador.GetComponent<Escalera>().active = true;
     }
 
     private void CastChicle(Vector3 posMet)

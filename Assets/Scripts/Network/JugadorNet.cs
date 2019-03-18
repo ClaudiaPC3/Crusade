@@ -199,4 +199,15 @@ public class JugadorNet : NetworkBehaviour
         Target.GetComponent<CofreTrampa>().idCast = id;
     }
 
+    [Command]
+    public void CmdEscalera(GameObject escal , bool val)
+    {
+        RpcEscalera(escal, val);
+    }
+
+    [ClientRpc]
+    public void RpcEscalera(GameObject escal, bool val)
+    {
+        escal.GetComponent<Escalera>().active = val;
+    }
 }
