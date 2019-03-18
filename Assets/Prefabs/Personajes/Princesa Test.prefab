@@ -189,14 +189,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camara: {fileID: 0}
-  transCam: {fileID: 0}
-  propio: {fileID: 0}
+  me: {fileID: 4338464498354816666}
   id: 0
-  anim: {fileID: 0}
   lastX: 0
   lastY: -1
   isMov: 0
-  jugadores: []
 --- !u!50 &4338464498354816661
 Rigidbody2D:
   serializedVersion: 4
@@ -354,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   me: {fileID: 4338464498354816666}
+  jgsnet: []
 --- !u!1 &4964402573181101917
 GameObject:
   m_ObjectHideFlags: 0
