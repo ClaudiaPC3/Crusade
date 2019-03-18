@@ -118,15 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af37179e2dad48847a3289824a0ee65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camara: {fileID: 0}
-  transCam: {fileID: 0}
-  propio: {fileID: 0}
+  me: {fileID: 115776761818075580}
   id: 0
-  anim: {fileID: 0}
   lastX: 0
   lastY: -1
   isMov: 0
-  jugadores: []
 --- !u!50 &115776761818075576
 Rigidbody2D:
   serializedVersion: 4
