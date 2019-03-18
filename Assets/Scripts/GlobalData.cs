@@ -20,6 +20,7 @@
     private static float energlim = 100f;
     private static bool enTienda = false;
     private static int id = 0;
+    private static bool isWarning = false;
 
     public static int ID
     {
@@ -199,6 +200,18 @@
         set
         {
             enTienda = value;
+        }
+    }
+
+    public static bool IsWarning
+    {
+        get
+        {
+            return isWarning;
+        }
+        set
+        {
+            isWarning = value;
         }
     }
 }
