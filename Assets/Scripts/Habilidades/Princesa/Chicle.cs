@@ -58,6 +58,7 @@ public class Chicle : NetworkBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if(collision.transform.gameObject.tag == "Chicle")
         Destroy(me);
     }
 
