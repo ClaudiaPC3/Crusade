@@ -21,6 +21,20 @@
     private static bool enTienda = false;
     private static int id = 0;
     private static bool isWarning = false;
+    private static bool isInStair = false;
+
+    public static bool IsInStair
+    {
+        get
+        {
+            return isInStair;
+        }
+        set
+        {
+            isInStair = value;
+        }
+    }
+
 
     public static int ID
     {

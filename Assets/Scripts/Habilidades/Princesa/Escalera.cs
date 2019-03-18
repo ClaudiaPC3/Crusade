@@ -19,6 +19,7 @@ public class Escalera : NetworkBehaviour
         if(me.GetComponentInParent<Movimiento>().id == GlobalData.ID)
         {
             ismecast = true;
+            
         }
     }
 
@@ -32,15 +33,11 @@ public class Escalera : NetworkBehaviour
                 if (counter >= 0.1)
                 {
                     me.GetComponent<PolygonCollider2D>().isTrigger = false;
-
+                    GlobalData.IsInStair = false;
                     active = false;
                     counter = 0;
                 }
-            }
-            else
-            {
-
-            }  
+            }            
         }
     }
 
@@ -74,6 +71,7 @@ public class Escalera : NetworkBehaviour
         if (ismecast)
         {
             touchPar = false;
+            GlobalData.IsInStair = true;
         }
     }
 

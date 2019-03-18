@@ -241,7 +241,9 @@ public class Cast : NetworkBehaviour
                 break;
 
             case 2:
-                CastTrampo(pos);
+                if (GlobalData.IsInStair) {
+                    CastTrampo(pos);
+                }
                 break;
 
             case 4:
