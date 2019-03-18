@@ -16,10 +16,10 @@ public class Cast : NetworkBehaviour
     public RectTransform trans2;
     public RectTransform trans3;
     public RectTransform trans4;
-    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0, countc =0, countg = 0;
+    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0, countc = 0, countg = 0, countst = 0;
     private int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
-    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false, activeCant = false;
-    public Vector3 pos;
+    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false, activeCant = false, activeStun = false, first =true;
+    public Vector3 pos, stun;
 
 
     // Start is called before the first frame update
@@ -198,6 +198,18 @@ public class Cast : NetworkBehaviour
             countg = 0;
         }
 
+        if(countst <= 4 && activeStun)
+        {
+            Stun();
+            countst += Time.deltaTime;
+        }
+        else
+        {
+            activeStun = false;
+            countst = 0;
+            first = true;
+        }
+
         if (Input.GetKey(KeyCode.E))
         {
             jgnt.CmdisE(true);
@@ -208,8 +220,6 @@ public class Cast : NetworkBehaviour
         }
 
     }
-
-
 
     private void HabCast(int id)
     {
@@ -241,12 +251,32 @@ public class Cast : NetworkBehaviour
                 }
                 break;
 
+            case 8:
+                if (GlobalData.IsWarning)
+                {
+                    activeStun = true;
+                }
+                break;
+
             case 31:
                 CastCofreTrampa(pos);
                 break;
 
             default:
                 break;
+        }
+    }
+
+    public void Stun()
+    {
+        if (first)
+        {
+            stun = enem.transform.position;
+            first = false;
+        }
+        if(activeStun)
+        {
+            jgnt.CmdStun(stun.x, stun.y, enem);
         }
     }
 

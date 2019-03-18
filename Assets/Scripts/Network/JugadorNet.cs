@@ -211,4 +211,16 @@ public class JugadorNet : NetworkBehaviour
     {
         enem.transform.position = new Vector3(enem.transform.position.x + changex, enem.transform.position.y + changey, 0);
     }
+
+    [Command]
+    public void CmdStun(float x, float y, GameObject enem)
+    {
+        RpcStun(x, y, enem);
+    }
+
+    [ClientRpc]
+    public void RpcStun(float x, float y, GameObject enem)
+    {
+        enem.transform.position = new Vector3(x, y, 0);
+    }
 }
