@@ -16,9 +16,9 @@ public class Cast : NetworkBehaviour
     public RectTransform trans2;
     public RectTransform trans3;
     public RectTransform trans4;
-    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0;
+    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0, count =0;
     private int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
-    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true;
+    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false;
     public Vector3 pos;
 
 
@@ -175,6 +175,16 @@ public class Cast : NetworkBehaviour
             }
         }
 
+        if (count <= 1 && activeChMo == true)
+        {
+            Gritar();
+            count += Time.deltaTime;
+        }
+        else
+        {
+            activeChMo = false;
+            count = 0;
+        }
     }
 
     private void HabCast(int id)
@@ -195,7 +205,7 @@ public class Cast : NetworkBehaviour
 
             case 7:
                     if(GlobalData.IsWarning){
-                        CastGritar();
+                        activeChMo = true;     
                     }
                 break;
 
@@ -208,11 +218,31 @@ public class Cast : NetworkBehaviour
         }
     }
 
-    public void CastGritar()
+    public void Gritar()
     {
+        float x, y;
+        if (activeChMo)
+        {
+            if (jugador.transform.position.x >= enem.transform.position.x)
+            {
+                x = -1;
+            }
+            else
+            {
+                x = 1;
+            }
 
-        jugador.GetComponent<Gritar>().Init(true, jugador, enem);
+            if (jugador.transform.position.y >= enem.transform.position.y)
+            {
+                y = -1;
+            }
+            else
+            {
+                y = 1;
+            }
 
+            jgnt.CmdEnem(x, y, enem);
+        }
     }
 
     public void CastEscalera()

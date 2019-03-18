@@ -212,14 +212,14 @@ public class JugadorNet : NetworkBehaviour
     }
 
     [Command]
-    public void CmdEnem(float changex, float changey)
+    public void CmdEnem(float changex, float changey, GameObject enem)
     {
-
+        RpcEnem(changex, changey, enem);
     }
 
     [ClientRpc]
-    public void RpcEnemX(float changex, float changey)
+    public void RpcEnem(float changex, float changey, GameObject enem)
     {
-
+        enem.transform.position = new Vector3(enem.transform.position.x + changex, enem.transform.position.y + changey, 0);
     }
 }

@@ -58,8 +58,8 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.EnergSpe = 1f;
     
         Objetos.Inv1 = 2;
-        Objetos.Inv2 = -1;
-        Objetos.Inv3 = -1;
+        Objetos.Inv2 = 1;
+        Objetos.Inv3 = 7;
         Objetos.Inv4 = -1;
         Objetos.ObjSelec = 0;
 
