@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 9092026348094278045}
   - component: {fileID: 6037582459859597667}
   - component: {fileID: 3062176447999428856}
+  - component: {fileID: 3720862133431808405}
   m_Layer: 0
   m_Name: Princesa Test
   m_TagString: jugador
@@ -188,9 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camara: {fileID: 0}
-  transCam: {fileID: 0}
-  propio: {fileID: 0}
-  anim: {fileID: 0}
+  me: {fileID: 4338464498354816666}
+  id: 0
   lastX: 0
   lastY: -1
   isMov: 0
@@ -337,6 +337,21 @@ PolygonCollider2D:
       - {x: 7.5529904, y: -9.907204}
       - {x: 7.9655657, y: -2.2071905}
       - {x: 7.6386547, y: 6.1603656}
+--- !u!114 &3720862133431808405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4338464498354816666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ad0297cce8f224ba3271bea57f92ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  me: {fileID: 4338464498354816666}
+  jgsnet: []
 --- !u!1 &4964402573181101917
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +364,6 @@ GameObject:
   - component: {fileID: 3729838579724718343}
   - component: {fileID: 8775988550922052297}
   - component: {fileID: 2995288012071229583}
-  - component: {fileID: 7638871723791204927}
   - component: {fileID: 2296447653200692269}
   - component: {fileID: 5294284695025121483}
   m_Layer: 0
@@ -473,21 +487,6 @@ MonoBehaviour:
   staticScene: 1
   doNotRenderMesh: 0
   lastLight2DType: 0
---- !u!114 &7638871723791204927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4964402573181101917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4654d275e264f874a96054160da352b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireGO: {fileID: 0}
-  pointLight: {fileID: 9122861085520104775}
-  normalScalarObj: {fileID: 0}
 --- !u!114 &2296447653200692269
 MonoBehaviour:
   m_ObjectHideFlags: 0

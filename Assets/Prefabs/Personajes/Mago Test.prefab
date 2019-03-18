@@ -118,10 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af37179e2dad48847a3289824a0ee65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camara: {fileID: 0}
-  transCam: {fileID: 0}
-  propio: {fileID: 0}
-  anim: {fileID: 0}
+  me: {fileID: 115776761818075580}
+  id: 0
   lastX: 0
   lastY: -1
   isMov: 0
@@ -349,7 +347,6 @@ GameObject:
   - component: {fileID: 2433781694183951473}
   - component: {fileID: 5420964021361274890}
   - component: {fileID: 4937765288887449339}
-  - component: {fileID: 9140761518724961498}
   - component: {fileID: 1396946595060456255}
   - component: {fileID: 5342420168025113804}
   m_Layer: 0
@@ -473,21 +470,6 @@ MonoBehaviour:
   staticScene: 1
   doNotRenderMesh: 0
   lastLight2DType: 0
---- !u!114 &9140761518724961498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623027128013660319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4654d275e264f874a96054160da352b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireGO: {fileID: 0}
-  pointLight: {fileID: 8221806537156091668}
-  normalScalarObj: {fileID: 0}
 --- !u!114 &1396946595060456255
 MonoBehaviour:
   m_ObjectHideFlags: 0

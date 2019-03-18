@@ -5,49 +5,49 @@ using UnityEngine.Networking;
 
 public class Movimiento : NetworkBehaviour
 {
-    public GameObject camara;
-    public Transform transCam, propio;
+    public GameObject me;
+    private GameObject camara;
+    public int id = 0;
 
     //Variable de la velocidad del personaje (Editable desde el prefab del personaje)
     private float speed = 50f;
 
     //Objeto del animador
-    public Animator anim;
+    private Animator anim;
 
     //Objeto Rigid Body
-    Rigidbody2D rg2d;
+    private Rigidbody2D rg2d;
 
     //Variables de control de animaciones
     public float lastX = 0f;
     public float lastY = -1f;
     public bool isMov = false;
 
-
+    private GameObject[] jugadores;
     private Vector2 mov;
     private Vector3 cam;
     private Vector3 inicio;
     // Start is called before the first frame update
     void Start()
     {
-        
         anim = GetComponent<Animator>(); // Ubica nuestro animador
         rg2d = GetComponent<Rigidbody2D>();//Ubica el cuerpo
-        propio = GetComponent<Transform>();
         camara = GameObject.Find("Main Camera");
-        transCam = camara.GetComponent<Transform>();
-          
+        jugadores = GameObject.FindGameObjectsWithTag("jugador");
 
-        if (hasAuthority)
-        {
-            inicio = new Vector3(1349, -431, 0);
-            propio.position = inicio;
-        }
-        else
+        id = jugadores.Length;
+
+        if (id == 1)
         {
             inicio = new Vector3(111, -431, 0);
-            propio.position = inicio;
-        }        
-                
+            me.transform.position = inicio;
+        }
+
+        if (id == 2)
+        {
+            inicio = new Vector3(1349, -431, 0);
+            me.transform.position = inicio;
+        }         
     }
 
     // Update is called once per frame
@@ -97,16 +97,11 @@ public class Movimiento : NetworkBehaviour
             rg2d.MovePosition(rg2d.position + mov * (speed/1.7f) * Time.deltaTime);
         }
 
-        cam = new Vector3(propio.position.x, propio.position.y, -10);
-        transCam.position = cam;
-
-        
-       
+        cam = new Vector3(me.transform.position.x, me.transform.position.y, -10);
+        camara.transform.position = cam;
 
         anim.SetFloat("MovX", mov.x); //Se envian las variables para las animaciones del arbol de movimientos
         anim.SetFloat("MovY", mov.y);
         anim.SetBool("Movement", isMov); //Variable de control para cambio de arboles
-    }
-
-    
+    } 
 }

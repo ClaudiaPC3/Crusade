@@ -91,47 +91,29 @@
     <Compile Include="Assets\2DDL\Add-ons\LookAt.cs" />
     <Compile Include="Assets\2DDL\Add-ons\Rotation.cs" />
     <Compile Include="Assets\2DDL\Add-ons\Source.cs" />
-    <Compile Include="Assets\2DDL\Examples\__Examples_Scripts\CharacterController2D\CharacterController2D.cs" />
-    <Compile Include="Assets\2DDL\Examples\__Examples_Scripts\restoreStone.cs" />
-    <Compile Include="Assets\2DDL\Examples\__Examples_Scripts\rotate.cs" />
-    <Compile Include="Assets\2DDL\Examples\__Examples_Scripts\rotationUsingSync.cs" />
-    <Compile Include="Assets\2DDL\Examples\__Examples_Scripts\SmoothFollow.cs" />
-    <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\BlinkLight.cs" />
-    <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\CatchTheBlueTorch.cs" />
-    <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\CharacterMovement.cs" />
-    <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\CreditsScript.cs" />
-    <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\followPlayer.cs" />
-    <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\OpenEgyptianGate.cs" />
-    <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\SetProximityFactor.cs" />
-    <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\UnlockTheExitDoor.cs" />
-    <Compile Include="Assets\2DDL\Examples\12 - Create and register Casters by code\addingCastersUnefficient.cs" />
-    <Compile Include="Assets\2DDL\Examples\12 - Create and register Casters by code\UsingAddColliderToScene.cs" />
-    <Compile Include="Assets\2DDL\Examples\13 - Delete Casters by code in PlayMode\DeleteCasters.cs" />
-    <Compile Include="Assets\2DDL\Examples\14 - Creation of both 2DDLight and Casters Procedurally\ProceduralLightAndCasters.cs" />
-    <Compile Include="Assets\2DDL\Examples\15 - Light with Physics\followBody.cs" />
-    <Compile Include="Assets\2DDL\Examples\16 - Soft and Smooth shadows edges\Blur.cs" />
-    <Compile Include="Assets\2DDL\Examples\16 - Soft and Smooth shadows edges\PostEffectsBase.cs" />
-    <Compile Include="Assets\2DDL\Examples\2 - Fire Light\AnimateFireSprite.cs" />
-    <Compile Include="Assets\2DDL\Examples\3 - Multiples Lights\interface_manager.cs" />
-    <Compile Include="Assets\2DDL\Examples\4 - Events\InstanceEvents.cs" />
-    <Compile Include="Assets\2DDL\Examples\5 - Bomb Explosion Simulation and Visibility algorithm\bomb.cs" />
-    <Compile Include="Assets\2DDL\Examples\5 - Bomb Explosion Simulation and Visibility algorithm\PlayerStatusManager.cs" />
-    <Compile Include="Assets\2DDL\Examples\6 - Fog of War with Occlusion effect and Sight with dispatch events\OcclusionEventsDelegate.cs" />
-    <Compile Include="Assets\2DDL\Examples\9 - Light Car\SpawnCasters.cs" />
-    <Compile Include="Assets\2DDL\Examples\OLD Examples\0 - First Simple\punchRadius.cs" />
-    <Compile Include="Assets\2DDL\Examples\OLD Examples\8 - ConeOfSight - FieldOfView\bullet.cs" />
-    <Compile Include="Assets\2DDL\Examples\OLD Examples\8 - ConeOfSight - FieldOfView\fire.cs" />
-    <Compile Include="Assets\2DDL\Examples\OLD Examples\8 - ConeOfSight - FieldOfView\rotate_2.cs" />
-    <Compile Include="Assets\Look.cs" />
-    <Compile Include="Assets\manager.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
-    <Compile Include="Assets\Scripts\HUD\MonControl.cs" />
+    <Compile Include="Assets\Scripts\Habilidades\Herrero\CofreTrampa.cs" />
+    <Compile Include="Assets\Scripts\Habilidades\Princesa\Chicle.cs" />
+    <Compile Include="Assets\Scripts\Habilidades\Princesa\ChicleAct.cs" />
+    <Compile Include="Assets\Scripts\Habilidades\Princesa\Escalera.cs" />
+    <Compile Include="Assets\Scripts\HUD\Barra\Barra.cs" />
+    <Compile Include="Assets\Scripts\HUD\Monedas\MonControl.cs" />
+    <Compile Include="Assets\Scripts\HUD\Notificacion\Look.cs" />
+    <Compile Include="Assets\Scripts\HUD\Objetos\AsignacionObj.cs" />
+    <Compile Include="Assets\Scripts\HUD\Objetos\ObjAleatorios.cs" />
+    <Compile Include="Assets\Scripts\HUD\Objetos\ObjetoId.cs" />
+    <Compile Include="Assets\Scripts\HUD\Reloj\Reloj.cs" />
+    <Compile Include="Assets\Scripts\Inventario\Objetos.cs" />
     <Compile Include="Assets\Scripts\Mapa\Cofre\CofreInteraccion.cs" />
     <Compile Include="Assets\Scripts\Mapa\Cofre\MenuCofre.cs" />
     <Compile Include="Assets\Scripts\Mapa\Desbloqueo.cs" />
-    <Compile Include="Assets\Scripts\Mapa\Generacion.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Generacion\Generacion.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Generacion\Semilla.cs" />
     <Compile Include="Assets\Scripts\Mapa\Reliquia\EfectoZoom.cs" />
     <Compile Include="Assets\Scripts\Mapa\Reliquia\RelInteraccion.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Tienda\AsignaObj.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Tienda\ControlTiendas.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Tienda\Precios.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\CabOpc.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\HerrOpc.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\MagoOpc.cs" />
@@ -154,9 +136,8 @@
     <Compile Include="Assets\Scripts\Menus\Perfil\NombresControl.cs" />
     <Compile Include="Assets\Scripts\Menus\Principal\NavPrinc.cs" />
     <Compile Include="Assets\Scripts\Network\JugadorNet.cs" />
+    <Compile Include="Assets\Scripts\Personajes\Cast.cs" />
     <Compile Include="Assets\Scripts\Personajes\Movimiento.cs" />
-    <Compile Include="Assets\Semilla.cs" />
-    <None Include="Assets\2DDL\Examples\16 - Soft and Smooth shadows edges\_BloomAndFlares\MobileBlur.shader" />
     <None Include="Assets\2DDL\2DLight\Shaders\StencilObject.shader" />
     <None Include="Assets\2DDL\2DLight\Shaders\DefaultTexturized.shader" />
     <None Include="Assets\2DDL\Bugs\READ FIRST.txt" />
@@ -173,19 +154,19 @@
     <None Include="Assets\2DDL\2DLight\Shaders\Gradient-ZFighting.shader" />
     <None Include="Assets\2DDL\2DLight\Shaders\occluder.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -389,16 +370,16 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Resources2DDL">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Assets/2DDL/2DLight/Utils/Resources2DDL.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Assets/2DDL/2DLight/Utils/Resources2DDL.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

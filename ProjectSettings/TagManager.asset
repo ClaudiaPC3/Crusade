@@ -9,6 +9,11 @@ TagManager:
   - Autho
   - jugador
   - reliquia
+  - Comprar
+  - Precio
+  - Net
+  - Chicle
+  - Pared
   layers:
   - Default
   - TransparentFX

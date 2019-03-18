@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement; //Encargado de administrar las escenas
 public class OpcionesAdm : MonoBehaviour
 {
     
-    public GameObject Cierra,MenuCofre;
+    public GameObject Cierra,MenuCofre,MenuSeleccionObj,MenuTiendaPrin,comprar;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        //comprar.SetActive(false);
 
     }
 
@@ -34,11 +36,13 @@ public class OpcionesAdm : MonoBehaviour
     {
         Cierra.SetActive(false);
         MenuCofre.SetActive(false);
+        MenuSeleccionObj.SetActive(false);
+        MenuTiendaPrin.SetActive(false);
     }
 
     public void Reinicio()
     {
-        GlobalData.Crel = false;
+
         GlobalData.EnCurso = false;
         GlobalData.EnPausa = false;
         GlobalData.EnCofre = false;
@@ -47,7 +51,60 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.Crel = false;
         GlobalData.Punt1 = 0;
         GlobalData.Punt2 = 0;
+        GlobalData.Desb = false;
+        GlobalData.Energ = 0;
+        GlobalData.EnergLim = 100f;
+        GlobalData.EnergSpe = 1f;
+    
+        Objetos.Inv1 = 1;
+        Objetos.Inv2 = -1;
+        Objetos.Inv3 = -1;
+        Objetos.Inv4 = -1;
+        Objetos.ObjSelec = 0;
 
+       
+}
+
+    public void MuestraSeleccionObj()
+    {
+        MenuSeleccionObj.SetActive(true);               
     }
 
+    public void OcultaSeleccionObj()
+    {
+        MenuSeleccionObj.SetActive(false);
+    }
+
+    public void MuestraTiendaPrin()
+    {
+        MenuTiendaPrin.SetActive(true);
+    }
+
+    public void OcultaTiendaPrin()
+    {
+        MenuTiendaPrin.SetActive(false);
+    }
+
+    public void RegresarMon()
+    {
+        if (GlobalData.EnTienda)
+        {
+            GlobalData.Monedas += Precios.ObjPrecios(Objetos.ObjSelec);
+        }
+        GlobalData.EnTienda = false;
+
+    }
+    public void SaleTienda()
+    {
+
+        GlobalData.EnTienda = false;
+    }
+    public void Comprar()
+    {
+        comprar.SetActive(false);
+        MuestraSeleccionObj();
+        GlobalData.Monedas -= Objetos.PrecioSelec;
+        GlobalData.EnTienda = true;
+        
+    }
 }

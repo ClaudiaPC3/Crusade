@@ -1,5 +1,10 @@
 ﻿public static class GlobalData
 {
+    /**
+     * GlobalData se usa para guardar y consultar datos 
+     * desde cualquier escena del juego.
+     * Estos datos no se destuyen al cambiar de escena.
+     * */
     private static int character = 1;
     private static bool enCurso = false;
     private static bool enPausa = false;
@@ -9,8 +14,74 @@
     private static bool crel = false;
     private static int punt1=0;
     private static int punt2=0;
+    private static bool desb = false;
+    private static float energ = 0;
+    private static float energspe = 1f;
+    private static float energlim = 100f;
+    private static bool enTienda = false;
+    private static int id = 0;
+
+    public static int ID
+    {
+        get
+        {
+            return id;
+        }
+        set
+        {
+            id = value;
+        }
+    }
+
+    public static float EnergSpe
+    {
+        get
+        {
+            return energspe;
+        }
+        set
+        {
+            energspe = value;
+        }
+    }
+
+    public static float EnergLim
+    {
+        get
+        {
+            return energlim;
+        }
+        set
+        {
+            energlim = value;
+        }
+    }
+
+    public static float Energ
+    {
+        get
+        {
+            return energ;
+        }
+        set
+        {
+            energ = value;
+        }
+    }
 
 
+    public static bool Desb
+    {
+        get
+        {
+            return desb;
+        }
+        set
+        {
+            desb = value;
+        }
+    }
+    
     public static int Character
     {
         get
@@ -22,7 +93,7 @@
             character = value;
         }
     }
-
+    
     public static bool EnCurso
     {
         get
@@ -116,6 +187,18 @@
         set
         {
             punt2 = value;
+        }
+    }
+
+    public static bool EnTienda
+    {
+        get
+        {
+            return enTienda;
+        }
+        set
+        {
+            enTienda = value;
         }
     }
 }
