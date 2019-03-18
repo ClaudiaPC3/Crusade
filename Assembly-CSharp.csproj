@@ -96,7 +96,9 @@
     <Compile Include="Assets\Scripts\Habilidades\Princesa\Chicle.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Princesa\ChicleAct.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Princesa\Escalera.cs" />
+    <Compile Include="Assets\Scripts\Habilidades\Princesa\Trampolin.cs" />
     <Compile Include="Assets\Scripts\HUD\Barra\Barra.cs" />
+    <Compile Include="Assets\Scripts\HUD\Eventos\Alerta.cs" />
     <Compile Include="Assets\Scripts\HUD\Monedas\MonControl.cs" />
     <Compile Include="Assets\Scripts\HUD\Notificacion\Look.cs" />
     <Compile Include="Assets\Scripts\HUD\Objetos\AsignacionObj.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="Assets\Scripts\Mapa\Reliquia\EfectoZoom.cs" />
     <Compile Include="Assets\Scripts\Mapa\Reliquia\RelInteraccion.cs" />
     <Compile Include="Assets\Scripts\Mapa\Tienda\AsignaObj.cs" />
+    <Compile Include="Assets\Scripts\Mapa\Tienda\AsignaObjSec.cs" />
     <Compile Include="Assets\Scripts\Mapa\Tienda\ControlTiendas.cs" />
     <Compile Include="Assets\Scripts\Mapa\Tienda\Precios.cs" />
     <Compile Include="Assets\Scripts\Menus\Clase\CabOpc.cs" />

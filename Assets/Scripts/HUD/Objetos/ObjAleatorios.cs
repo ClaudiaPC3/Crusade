@@ -270,7 +270,7 @@ public class ObjAleatorios : MonoBehaviour
         {
             personaje = 4;
         }
-        if (objeto > 36)
+        if (objeto >= 36)
         {
             personaje = 5;
         }

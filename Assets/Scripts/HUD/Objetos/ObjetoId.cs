@@ -10,13 +10,15 @@ public class ObjetoId : MonoBehaviour
    
 
     public OpcionesAdm MenuSeleccionObj;
-    public GameObject comprar;
-    public GameObject precioTxt;
+    public GameObject comprar,comprarSec;
+    public GameObject precioTxt, precioSecTxt;
 
     void Start()
     {
         comprar = GameObject.FindGameObjectWithTag("Comprar");
+        comprarSec = GameObject.FindGameObjectWithTag("ComprarSec");
         precioTxt = GameObject.FindGameObjectWithTag("Precio");
+        precioSecTxt = GameObject.FindGameObjectWithTag("PrecioSec");
         //comprar.SetActive(false);
     }
 
@@ -36,6 +38,7 @@ public class ObjetoId : MonoBehaviour
         {
             Objetos.ObjSelec = id;
             comprar.SetActive(true);
+            comprarSec.SetActive(true);
             Objetos.PrecioSelec = precio;
             /*Objetos.ObjSelec = id;
              MenuSeleccionObj.MuestraSeleccionObj();
@@ -45,14 +48,17 @@ public class ObjetoId : MonoBehaviour
         else
         {
             comprar.SetActive(false);
+            comprarSec.SetActive(false);
         }
         precioTxt.GetComponent<Text>().text = precio.ToString();
+        precioSecTxt.GetComponent<Text>().text = precio.ToString();
 
     }
 
     public void OcultarCompra()
     {
         comprar.SetActive(false);
+        comprarSec.SetActive(false);
     }
 
     

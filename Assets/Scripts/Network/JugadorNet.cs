@@ -210,4 +210,16 @@ public class JugadorNet : NetworkBehaviour
     {
         escal.GetComponent<Escalera>().active = val;
     }
+
+    [Command]
+    public void CmdEnem(float changex, float changey, GameObject enem)
+    {
+        RpcEnem(changex, changey, enem);
+    }
+
+    [ClientRpc]
+    public void RpcEnem(float changex, float changey, GameObject enem)
+    {
+        enem.transform.position = new Vector3(enem.transform.position.x + changex, enem.transform.position.y + changey, 0);
+    }
 }

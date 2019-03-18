@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement; //Encargado de administrar las escenas
 public class OpcionesAdm : MonoBehaviour
 {
     
-    public GameObject Cierra,MenuCofre,MenuSeleccionObj,MenuTiendaPrin,comprar;
+    public GameObject Cierra,MenuCofre,MenuSeleccionObj,MenuTiendaPrin, MenuTiendaSec,comprar,comprarSec;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +38,7 @@ public class OpcionesAdm : MonoBehaviour
         MenuCofre.SetActive(false);
         MenuSeleccionObj.SetActive(false);
         MenuTiendaPrin.SetActive(false);
+        MenuTiendaSec.SetActive(false);
     }
 
     public void Reinicio()
@@ -46,7 +47,7 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.EnCurso = false;
         GlobalData.EnPausa = false;
         GlobalData.EnCofre = false;
-        GlobalData.Monedas = 0;
+        GlobalData.Monedas = 99;
         GlobalData.Srel = false;
         GlobalData.Crel = false;
         GlobalData.Punt1 = 0;
@@ -56,10 +57,10 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.EnergLim = 100f;
         GlobalData.EnergSpe = 1f;
     
-        Objetos.Inv1 = 1;
-        Objetos.Inv2 = -1;
-        Objetos.Inv3 = -1;
-        Objetos.Inv4 = -1;
+        Objetos.Inv1 = 2;
+        Objetos.Inv2 = 1;
+        Objetos.Inv3 = 7;
+        Objetos.Inv4 = 6;
         Objetos.ObjSelec = 0;
 
        
@@ -85,6 +86,16 @@ public class OpcionesAdm : MonoBehaviour
         MenuTiendaPrin.SetActive(false);
     }
 
+    public void MuestraTiendaSec()
+    {
+        MenuTiendaSec.SetActive(true);
+    }
+
+    public void OcultaTiendaSec()
+    {
+        MenuTiendaSec.SetActive(false);
+    }
+
     public void RegresarMon()
     {
         if (GlobalData.EnTienda)
@@ -102,6 +113,7 @@ public class OpcionesAdm : MonoBehaviour
     public void Comprar()
     {
         comprar.SetActive(false);
+        comprarSec.SetActive(false);
         MuestraSeleccionObj();
         GlobalData.Monedas -= Objetos.PrecioSelec;
         GlobalData.EnTienda = true;
