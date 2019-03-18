@@ -3,7 +3,14 @@ guid: a1758a08ed0007841a17d1aa6ee5b917
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - movani: {instanceID: 0}
+  - bar: {instanceID: 0}
+  - tramp: {fileID: 4728757460876757144, guid: a1699430c7ee934478df27ce6fd11652, type: 3}
+  - trans1: {instanceID: 0}
+  - trans2: {instanceID: 0}
+  - trans3: {instanceID: 0}
+  - trans4: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

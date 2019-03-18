@@ -5028,6 +5028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movani: {fileID: 0}
   bar: {fileID: 2110790439}
+  tramp: {fileID: 4728757460876757144, guid: a1699430c7ee934478df27ce6fd11652, type: 3}
   jugadores: []
   nets: []
   trans1: {fileID: 1813225328}

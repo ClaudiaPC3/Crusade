@@ -47,7 +47,7 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.EnCurso = false;
         GlobalData.EnPausa = false;
         GlobalData.EnCofre = false;
-        GlobalData.Monedas = 0;
+        GlobalData.Monedas = 99;
         GlobalData.Srel = false;
         GlobalData.Crel = false;
         GlobalData.Punt1 = 0;
@@ -57,7 +57,7 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.EnergLim = 100f;
         GlobalData.EnergSpe = 1f;
     
-        Objetos.Inv1 = 1;
+        Objetos.Inv1 = 2;
         Objetos.Inv2 = -1;
         Objetos.Inv3 = -1;
         Objetos.Inv4 = -1;

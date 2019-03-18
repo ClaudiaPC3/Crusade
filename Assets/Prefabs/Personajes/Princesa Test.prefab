@@ -188,11 +188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af37179e2dad48847a3289824a0ee65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camara: {fileID: 0}
   me: {fileID: 4338464498354816666}
   id: 0
   lastX: 0
   lastY: -1
+  latX: 0
+  latY: -1
   isMov: 0
 --- !u!50 &4338464498354816661
 Rigidbody2D:

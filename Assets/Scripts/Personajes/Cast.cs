@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class Cast : NetworkBehaviour
 {
     public Movimiento movani;
-    public GameObject bar;
+    public GameObject bar, tramp;
     public GameObject[] jugadores;
     public GameObject[] nets;
     private GameObject jugador;
@@ -16,9 +16,9 @@ public class Cast : NetworkBehaviour
     public RectTransform trans2;
     public RectTransform trans3;
     public RectTransform trans4;
-    float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0;
-    int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
-    bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true;
+    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0;
+    private int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
+    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true;
     public Vector3 pos;
 
 
@@ -183,6 +183,10 @@ public class Cast : NetworkBehaviour
                 CastEscalera();
                 break;
 
+            case 2:
+                CastTrampo(pos);
+                break;
+
             case 4:
                 CastChicle(pos);
                 break;
@@ -196,10 +200,34 @@ public class Cast : NetworkBehaviour
         }
     }
 
-    private void CastEscalera()
+    public void CastEscalera()
     {
         jgnt.CmdEscalera(jugador, true);
-        //jugador.GetComponent<Escalera>().active = true;
+    }
+
+    private void CastTrampo(Vector3 posMet)
+    {
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y - 56, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y + 56, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 56, jugador.transform.position.y, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 56, jugador.transform.position.y, 0);
+        }
+
+        Instantiate(tramp, posMet, Quaternion.identity);
     }
 
     private void CastChicle(Vector3 posMet)
