@@ -92,24 +92,13 @@ public class JugadorNet : NetworkBehaviour
        
     }
 
-    //En Update se envia lo necesario para que la variable isE funcione
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.E))
-        {
-            CmdisE(true);
-        }
-        else
-        {
-            CmdisE(false);
-        }
-    }
+    
 
 
 
     //Se envia las pulsaciones a la tecla E a todos los clientes
     [Command]
-    void CmdisE(bool n)
+    public void CmdisE(bool n)
     {
         isE = n;
    

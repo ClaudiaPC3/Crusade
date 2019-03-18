@@ -197,6 +197,16 @@ public class Cast : NetworkBehaviour
             activeChMo = false;
             countg = 0;
         }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            jgnt.CmdisE(true);
+        }
+        else
+        {
+            jgnt.CmdisE(false);
+        }
+
     }
 
 
