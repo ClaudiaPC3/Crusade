@@ -16,9 +16,9 @@ public class Cast : NetworkBehaviour
     public RectTransform trans2;
     public RectTransform trans3;
     public RectTransform trans4;
-    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0, count =0;
+    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0, countc =0, countg = 0;
     private int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
-    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false;
+    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false, activeCant = false;
     public Vector3 pos;
 
 
@@ -175,17 +175,31 @@ public class Cast : NetworkBehaviour
             }
         }
 
-        if (count <= 1 && activeChMo == true)
+        if (countc <= 0.5 && !activeChMo && activeCant)
+        {
+            Cantar();
+            countc += Time.deltaTime;
+        }
+        else
+        {
+            activeCant = false;
+            countc = 0;
+        }
+
+
+        if (countg <= 1 && activeChMo && !activeCant)
         {
             Gritar();
-            count += Time.deltaTime;
+            countg += Time.deltaTime;
         }
         else
         {
             activeChMo = false;
-            count = 0;
+            countg = 0;
         }
     }
+
+
 
     private void HabCast(int id)
     {
@@ -203,10 +217,18 @@ public class Cast : NetworkBehaviour
                 CastChicle(pos);
                 break;
 
+            case 6:
+                if (GlobalData.IsWarning)
+                {
+                    activeCant = true;
+                }
+                break;
+
             case 7:
-                    if(GlobalData.IsWarning){
-                        activeChMo = true;     
-                    }
+                if(GlobalData.IsWarning)
+                {
+                   activeChMo = true;     
+                }
                 break;
 
             case 31:
@@ -215,6 +237,33 @@ public class Cast : NetworkBehaviour
 
             default:
                 break;
+        }
+    }
+
+    public void Cantar()
+    {
+        float x, y;
+        if (activeCant)
+        {
+            if (jugador.transform.position.x - 18 >= enem.transform.position.x)
+            {
+                x = 1;
+            }
+            else
+            {
+                x = -1;
+            }
+
+            if (jugador.transform.position.y - 18 >= enem.transform.position.y)
+            {
+                y = 1;
+            }
+            else
+            {
+                y = -1;
+            }
+
+            jgnt.CmdEnem(x, y, enem);
         }
     }
 
