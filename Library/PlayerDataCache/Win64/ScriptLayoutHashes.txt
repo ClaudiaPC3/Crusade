@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/and/Desktop/tst/Relic Hunter.exe
+C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Relic Hunter.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
@@ -205,7 +205,7 @@ a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 2c6dd0562397729a7f93b0f88ecf049d Assembly-CSharp.dll:.MonControl
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-1ede3b9f92e8242f521728512296e2af Assembly-CSharp.dll:.ControlTiendas
+749abe5f52b8947a618c5e84fb6670cd Assembly-CSharp.dll:.ControlTiendas
 b99b0e34179ac8a46f457f2053c42da4 Assembly-CSharp.dll:.Host
 954d829fac014582b8e92473540318f7 Assembly-CSharp.dll:.Chicle
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.interface_touch
@@ -225,3 +225,4 @@ b7d3c451c115c35a72561fd181e294d5 Assembly-CSharp.dll:.Movimiento
 7d49f616f4fa0bea10a0eb41a691c2df Assembly-CSharp.dll:DynamicLight2D.Rotation
 4b63f2658702c43526560f617e8a67c2 Assembly-CSharp.dll:.NavJug
 32f65cd41ed310530da5d9d527687ff6 Assembly-CSharp.dll:.Reloj
+e21a511cb3c4ba8dc222d58bf7acaf50 Assembly-CSharp.dll:.Alerta
