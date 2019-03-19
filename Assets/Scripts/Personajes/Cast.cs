@@ -289,7 +289,15 @@ public class Cast : NetworkBehaviour
                     activeAtrac = true;
                 }
                 break;
-                
+
+            case 27:
+                CastCemento(pos);
+                break;
+
+            case 30:
+                CastTela(pos);
+                break;
+
             case 31:
                 CastCofreTrampa(pos);
                 break;
@@ -527,6 +535,61 @@ public class Cast : NetworkBehaviour
 
     }
 
+    private void CastCemento(Vector3 posMet)
+    {
+
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y - 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y + 35, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y + 14, 0);
+        }
+
+
+        jgnt.CmdSpawnCemento(posMet, GlobalData.ID);
+
+    }
+
+    private void CastTela(Vector3 posMet)
+    {
+
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y - 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y + 35, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y + 14, 0);
+        }
+
+
+        jgnt.CmdSpawnTela(posMet, GlobalData.ID);
+
+    }
 
 
 }

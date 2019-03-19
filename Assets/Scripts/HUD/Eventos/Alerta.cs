@@ -44,8 +44,16 @@ public class Alerta : MonoBehaviour
         else
         {
             GlobalData.IsWarning = false;
-            signoAlerta.GetComponent<Image>().transform.localScale = new Vector3(1,1,1);
-            signoAlerta.SetActive(false);
+            //signoAlerta.GetComponent<Image>().transform.localScale = new Vector3(1,1,1);
+            if (signoAlerta.GetComponent<Image>().transform.localScale.x > 0.5)
+            {
+                signoAlerta.GetComponent<Image>().transform.localScale = new Vector3(signoAlerta.GetComponent<Image>().transform.localScale.x- 0.2f , signoAlerta.GetComponent<Image>().transform.localScale.y-0.2f , 1);
+            }
+            else
+            {
+                signoAlerta.SetActive(false);
+            }
+            
         }
     }
 }
