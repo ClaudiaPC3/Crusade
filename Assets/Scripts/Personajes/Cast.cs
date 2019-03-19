@@ -16,9 +16,9 @@ public class Cast : NetworkBehaviour
     public RectTransform trans2;
     public RectTransform trans3;
     public RectTransform trans4;
-    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0, countc = 0, countg = 0, countst = 0, countatr = 0;
+    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0, countc = 0, countg = 0, countst = 0, countatr = 0, countmart = 0;
     private int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
-    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false, activeCant = false, activeStun = false, first =true, activeAtrac = false;
+    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false, activeCant = false, activeStun = false, first =true, activeAtrac = false, activeMart = false;
     public Vector3 pos, stun;
 
 
@@ -198,6 +198,18 @@ public class Cast : NetworkBehaviour
             countg = 0;
         }
 
+        if(countmart <= 5 && activeMart)
+        {
+            Stun();
+            countmart += Time.deltaTime;
+        }
+        else
+        {
+            activeMart = false;
+            countmart = 0;
+            first = true;
+        }
+
         if(countst <= 4 && activeStun)
         {
             Stun();
@@ -276,16 +288,21 @@ public class Cast : NetworkBehaviour
                 {
                     activeAtrac = true;
                 }
-
                 break;
                 
-
             case 31:
                 CastCofreTrampa(pos);
                 break;
 
             case 32:
                 CastTunel(pos);
+                break;
+
+            case 34:
+                if (GlobalData.IsWarning)
+                {
+                    activeMart = true;
+                }
                 break;
 
             default:
@@ -300,10 +317,9 @@ public class Cast : NetworkBehaviour
             stun = enem.transform.position;
             first = false;
         }
-        if(activeStun)
-        {
-            jgnt.CmdStun(stun.x, stun.y, enem);
-        }
+        
+         jgnt.CmdStun(stun.x, stun.y, enem);
+        
     }
 
     public void Atrac()

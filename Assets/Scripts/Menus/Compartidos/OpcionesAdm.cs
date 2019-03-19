@@ -59,7 +59,7 @@ public class OpcionesAdm : MonoBehaviour
     
         Objetos.Inv1 = 32;
         Objetos.Inv2 = 31;
-        Objetos.Inv3 = -1;
+        Objetos.Inv3 = 34;
         Objetos.Inv4 = -1;
         Objetos.ObjSelec = 0;
 
