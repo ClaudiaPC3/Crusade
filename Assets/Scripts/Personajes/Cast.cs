@@ -284,6 +284,10 @@ public class Cast : NetworkBehaviour
                 CastCofreTrampa(pos);
                 break;
 
+            case 32:
+                CastTunel(pos);
+                break;
+
             default:
                 break;
         }
@@ -449,15 +453,64 @@ public class Cast : NetworkBehaviour
     private void CastCofreTrampa(Vector3 posMet)
     {
 
-        //
-        posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        posMet.z = 0;
-        int i = GlobalData.ID;
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x-14, jugador.transform.position.y - 15, 0);
+        }
 
-        Debug.Log(i);
-        jgnt.CmdSpawnCofreTrampa(posMet, i);
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x-14, jugador.transform.position.y + 35, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y+14, 0);
+        }
+
+
+        jgnt.CmdSpawnCofreTrampa(posMet, GlobalData.ID);
 
     }
+
+    private void CastTunel(Vector3 posMet)
+    {
+
+        /*
+        posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        posMet.z = 0;
+        */
+
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y - 25, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y + 25, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 25, jugador.transform.position.y, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 25, jugador.transform.position.y, 0);
+        }
+
+
+        jgnt.CmdSpawnTunel(posMet, GlobalData.ID);
+
+    }
+
 
 
 }

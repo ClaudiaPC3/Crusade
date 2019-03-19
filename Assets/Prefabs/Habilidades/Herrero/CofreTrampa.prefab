@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6103339514794743984}
   m_Layer: 8
   m_Name: CofreTrampa
-  m_TagString: Untagged
+  m_TagString: CofreTrampa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

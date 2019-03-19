@@ -22,6 +22,7 @@
     private static int id = 0;
     private static bool isWarning = false;
     private static bool isInStair = false;
+    private static int inTunel = 0;
 
     public static bool IsInStair
     {
@@ -32,6 +33,18 @@
         set
         {
             isInStair = value;
+        }
+    }
+
+    public static int InTunel
+    {
+        get
+        {
+            return inTunel;
+        }
+        set
+        {
+            inTunel = value;
         }
     }
 

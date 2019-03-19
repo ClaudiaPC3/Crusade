@@ -16,6 +16,8 @@ TagManager:
   - Pared
   - ComprarSec
   - PrecioSec
+  - CofreTrampa
+  - Tunel
   layers:
   - Default
   - TransparentFX

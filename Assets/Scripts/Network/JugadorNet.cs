@@ -20,6 +20,7 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Pelota;
     public GameObject SemGen;
     public GameObject chicle;
+    public GameObject tunel;
     public GameObject cofreTrampa;
     public GameObject[] jgsNet;
     public int id = 0;
@@ -186,6 +187,23 @@ public class JugadorNet : NetworkBehaviour
     public void RpcSetIdCof(GameObject Target, int id)
     {
         Target.GetComponent<CofreTrampa>().idCast = id;
+    }
+
+    [Command]
+    public void CmdSpawnTunel(Vector3 posCmd, int idcmd)
+    {
+        Debug.Log(idcmd);
+
+        GameObject tunelcmd = Instantiate(tunel, posCmd, Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(tunelcmd, connectionToClient);
+        RpcSetIdTunel(tunelcmd, idcmd);
+
+    }
+
+    [ClientRpc]
+    public void RpcSetIdTunel(GameObject Target, int id)
+    {
+        Target.GetComponent<Tunel>().idCast = id;
     }
 
     [Command]
