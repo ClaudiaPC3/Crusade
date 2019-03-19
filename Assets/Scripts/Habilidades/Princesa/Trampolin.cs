@@ -24,38 +24,40 @@ public class Trampolin : MonoBehaviour
         if (transition)
         {
             counter = counter + Time.deltaTime;
-            if(pared.position.x + 14 > System.Math.Round(jugadores[GlobalData.ID - 1].transform.position.x) && !primx)
+            if(pared.position.x  > System.Math.Round(jugadores[GlobalData.ID - 1].transform.position.x)  && !primx)
             {
                 jugadores[GlobalData.ID - 1].transform.position = new Vector3(jugadores[GlobalData.ID - 1].transform.position.x + 1.5f, jugadores[GlobalData.ID - 1].transform.position.y, 0);
                 primx1 = true;
             }
 
-            if (pared.position.x + 14 < System.Math.Round(jugadores[GlobalData.ID - 1].transform.position.x) && !primx1)
+            if (pared.position.x  < System.Math.Round(jugadores[GlobalData.ID - 1].transform.position.x)  && !primx1)
             {
                 jugadores[GlobalData.ID - 1].transform.position = new Vector3(jugadores[GlobalData.ID - 1].transform.position.x - 1.5f, jugadores[GlobalData.ID - 1].transform.position.y, 0);
                 primx = true;
             }
 
-            if (pared.position.y - 14 > System.Math.Round(jugadores[GlobalData.ID - 1].transform.position.y) && !primy)
+            if (pared.position.y  > System.Math.Round(jugadores[GlobalData.ID - 1].transform.position.y)  && !primy)
             {
                 jugadores[GlobalData.ID - 1].transform.position = new Vector3(jugadores[GlobalData.ID - 1].transform.position.x, jugadores[GlobalData.ID - 1].transform.position.y + 1.5f, 0);
                 primy1 = true;
             }
 
-            if (pared.position.y - 14 < System.Math.Round(jugadores[GlobalData.ID - 1].transform.position.y) && !primy1)
+            if (pared.position.y  < System.Math.Round(jugadores[GlobalData.ID - 1].transform.position.y)  && !primy1)
             {
                 jugadores[GlobalData.ID - 1].transform.position = new Vector3(jugadores[GlobalData.ID - 1].transform.position.x, jugadores[GlobalData.ID - 1].transform.position.y - 1.5f, 0);
                 primy = true;
             }
 
             caster.GetComponent<Cast>().CastEscalera();
+            Debug.Log(pared.position);
 
-            if(counter > 0.9)
+            if (counter > 0.9)
             {
                 transition = false;
                 Destroy(me);
 
             }
+            
         }
         
     }
@@ -64,7 +66,9 @@ public class Trampolin : MonoBehaviour
     {
         if(collision.transform.tag == "Pared")
         {
-            pared = collision.transform.gameObject.transform;
+            
+            pared = me.transform;
+            Debug.Log(pared.position);
             transition = true;
             
         }

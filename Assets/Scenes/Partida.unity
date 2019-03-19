@@ -5036,6 +5036,7 @@ MonoBehaviour:
   trans3: {fileID: 1015888801}
   trans4: {fileID: 1980569735}
   pos: {x: 0, y: 0, z: 0}
+  stun: {x: 0, y: 0, z: 0}
 --- !u!114 &432196765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10073,6 +10074,7 @@ MonoBehaviour:
   - {fileID: 7244673460950866384, guid: c4fc5509eebe85e48b76108225cb6d10, type: 3}
   - {fileID: 4207700226844336198, guid: f66c116044cf03a4491b724e7b1b6b8f, type: 3}
   - {fileID: 7098111880740540973, guid: cbbec2a778a30f149b426a94e3e5af51, type: 3}
+  - {fileID: 2462899787187621627, guid: a2453d80b7733d547a1076b6ff5d704c, type: 3}
   m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:

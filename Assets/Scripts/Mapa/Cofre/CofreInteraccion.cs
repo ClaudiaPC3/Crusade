@@ -142,7 +142,7 @@ public class CofreInteraccion : NetworkBehaviour
                 if (!activo)
                 {
                     currentTime = Time.deltaTime + currentTime;
-                    if (currentTime >= 30.0f)
+                    if (currentTime >= 29.0f)
                     {
                         currentTime = 0.0f;
                         activo = true;

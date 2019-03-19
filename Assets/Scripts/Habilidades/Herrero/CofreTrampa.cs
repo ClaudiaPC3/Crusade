@@ -20,12 +20,18 @@ public class CofreTrampa : NetworkBehaviour
     public GameObject jugadorC;
     public GameObject jugadorCofre;
     public GameObject me;
+    private GameObject[] cofres;
 
     public int estado = 1;
 
     // Start is called before the first frame update
     void Start()
     {
+        cofres = GameObject.FindGameObjectsWithTag("CofreTrampa");
+        if (cofres.Length > 2)
+        {
+            Destroy(cofres[0]);
+        }
         anim.SetFloat("Estado", estado);
         posicion = GetComponent<Transform>();
         MenuCofre = GameObject.FindWithTag("Cofre");

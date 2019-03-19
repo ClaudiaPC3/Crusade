@@ -109,7 +109,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-cc5fd6d012d237380a8b13a114ec0ddf Assembly-CSharp.dll:.JugadorNet
+9b134aa1ed0587dfffa97f16ca268f44 Assembly-CSharp.dll:.JugadorNet
 00274a21279f5cb831ce20f895049e38 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
 85c6225087b6178725fb0883157aa1cc Assembly-CSharp.dll:DynamicLight2D.Fire
 f05a6cf31feba28e0485ad18626cf1f7 Assembly-CSharp.dll:.Regresa
@@ -154,7 +154,7 @@ e197d0b748f0fe21846663bdb6454914 Assembly-CSharp.dll:.TerminarCon
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:DynamicLight2D.CoreUtils
 3f3fffa9a19557cbbc409e4d7965e5c9 Assembly-CSharp.dll:DynamicLight2D.ColorBlending
 41479ee7a850f65081ae714a000e53ec Assembly-CSharp.dll:.RelInteraccion
-8ac451167570414d34ecc4abaad9ee00 Assembly-CSharp.dll:.Cast
+ee0aab00849e89b735b8e2dbc2992803 Assembly-CSharp.dll:.Cast
 fcc524e590f5b53ae7cc133882265388 Assembly-CSharp.dll:.TimerClass
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 e21a511cb3c4ba8dc222d58bf7acaf50 Assembly-CSharp.dll:.Alerta
@@ -227,3 +227,4 @@ b7d3c451c115c35a72561fd181e294d5 Assembly-CSharp.dll:.Movimiento
 7d49f616f4fa0bea10a0eb41a691c2df Assembly-CSharp.dll:DynamicLight2D.Rotation
 4b63f2658702c43526560f617e8a67c2 Assembly-CSharp.dll:.NavJug
 32f65cd41ed310530da5d9d527687ff6 Assembly-CSharp.dll:.Reloj
+71ea4866a3c208eb117d1c215c7137be Assembly-CSharp.dll:.Tunel
