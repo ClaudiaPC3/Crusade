@@ -21,7 +21,9 @@ public class JugadorNet : NetworkBehaviour
     public GameObject SemGen;
     public GameObject chicle;
     public GameObject tunel;
+    public GameObject cemento;
     public GameObject cofreTrampa;
+    public GameObject tela;
     public GameObject[] jgsNet;
     public int id = 0;
     
@@ -207,6 +209,16 @@ public class JugadorNet : NetworkBehaviour
     }
 
     [Command]
+    public void CmdSpawnCemento(Vector3 posCmd, int idcmd)
+    {
+        Debug.Log(idcmd);
+
+        GameObject cementocmd = Instantiate(cemento, posCmd, Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(cementocmd, connectionToClient);
+
+    }
+
+    [Command]
     public void CmdEscalera(GameObject escal , bool val)
     {
         RpcEscalera(escal, val);
@@ -240,5 +252,15 @@ public class JugadorNet : NetworkBehaviour
     public void RpcStun(float x, float y, GameObject enem)
     {
         enem.transform.position = new Vector3(x, y, 0);
+    }
+
+    [Command]
+    public void CmdSpawnTela(Vector3 posCmd, int idcmd)
+    {
+        Debug.Log(idcmd);
+
+        GameObject telacmd = Instantiate(tela, posCmd, Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(telacmd, connectionToClient);
+
     }
 }
