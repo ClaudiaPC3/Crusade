@@ -244,69 +244,82 @@ public class Cast : NetworkBehaviour
 
     }
 
+    /*
+     [0-8] = PRINCESA OP
+     [9 - 17] = MAGO
+     [18 - 26] = CABALLERO
+     [27 - 35] = HERRERO
+     [] = POCIONES
+     [] = PIEDRAS
+     */
+
     private void HabCast(int id)
     {
         switch (id)
         {
-            case 1:
+            case 1: //Princesa:Escalera
                 CastEscalera();
                 break;
 
-            case 2:
+            case 2://Princesa.Trampolin
                 if (GlobalData.IsInStair) {
                     CastTrampo(pos);
                 }
                 break;
 
-            case 4:
+            case 4://Princesa.Chicle
                 CastChicle(pos);
                 break;
 
-            case 6:
+            case 5: //Princesa.Miel
+
+                break;
+
+            case 6://Princesa.Cantar
                 if (GlobalData.IsWarning)
                 {
                     activeCant = true;
                 }
                 break;
 
-            case 7:
-                if(GlobalData.IsWarning)
+            case 7://Princesa.Gritar
+                if (GlobalData.IsWarning)
                 {
                    activeChMo = true;     
                 }
                 break;
 
-            case 8:
+            case 8://Princesa.CuentaCuentos
                 if (GlobalData.IsWarning)
                 {
                     activeStun = true;
                 }
                 break;
 
-            case 26:
+            case 26://Caballero.Atraccion
                 if (GlobalData.IsWarning)
                 {
                     activeAtrac = true;
                 }
                 break;
 
-            case 27:
+            case 27://Herrero.Cemento
                 CastCemento(pos);
                 break;
 
-            case 30:
+            case 30://Herrero.Pared
                 CastTela(pos);
                 break;
 
-            case 31:
+            case 31://Herrero.CofreTrampa
                 CastCofreTrampa(pos);
                 break;
 
-            case 32:
+            case 32://Herrero.Tunel
                 CastTunel(pos);
                 break;
 
-            case 34:
+            case 34://Herrero.ChoqueMartillos
                 if (GlobalData.IsWarning)
                 {
                     activeMart = true;
@@ -418,22 +431,24 @@ public class Cast : NetworkBehaviour
 
     private void CastTrampo(Vector3 posMet)
     {
-        if (jugador.GetComponent<Movimiento>().latY == -1)
+    
+
+        if (jugador.GetComponent<Movimiento>().latY == -1)//ABAJO
         {
             posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y - 56, 0);
         }
 
-        if (jugador.GetComponent<Movimiento>().latY == 1)
+        if (jugador.GetComponent<Movimiento>().latY == 1)//ARRIBA
         {
             posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y + 56, 0);
         }
 
-        if (jugador.GetComponent<Movimiento>().latX == -1)
+        if (jugador.GetComponent<Movimiento>().latX == -1)//IZQUIERDA
         {
             posMet = new Vector3(jugador.transform.position.x - 56, jugador.transform.position.y, 0);
         }
 
-        if (jugador.GetComponent<Movimiento>().latX == 1)
+        if (jugador.GetComponent<Movimiento>().latX == 1)//DERECHA
         {
             posMet = new Vector3(jugador.transform.position.x + 56, jugador.transform.position.y, 0);
         }
@@ -565,31 +580,99 @@ public class Cast : NetworkBehaviour
 
     private void CastTela(Vector3 posMet)
     {
-
+        Vector3 locajugador = Redondeo(jugador.transform.position);
         if (jugador.GetComponent<Movimiento>().latY == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y - 15, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y - 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latY == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y + 35, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y + 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+            posMet = new Vector3(locajugador.x - 28, locajugador.y, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y + 14, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y, 0);
         }
 
-
+        Debug.Log(posMet.x+"    "+posMet.y);
         jgnt.CmdSpawnTela(posMet, GlobalData.ID);
 
     }
+
+    private Vector3 Redondeo(Vector3 Jugador_pos_actual)
+    {
+
+        float x, y;
+        float resx, resy;
+
+        x = Jugador_pos_actual.x;
+        resx = Jugador_pos_actual.x % 28f;
+        y = Jugador_pos_actual.y;
+        resy = Jugador_pos_actual.y % 28f;
+        Debug.Log(x + "    " + y);
+
+        if(resx > 14)
+        {
+            x += (28-resx);
+        }
+        else
+        {
+            x -= (resx);
+        }
+
+        if (resy > 14)
+        {
+            y += (28 - resy);
+        }
+        else
+        {
+            y -= (resy);
+        }
+
+
+
+        if ((x-(int)x) > .5f)
+        {
+            x = (int)x + 1f;
+        }
+        else
+        {
+            x = (int)x;
+        }
+
+
+        if ((y - (int)y) > .5f)
+        {
+            y = (int)y + 1f;
+        }
+        else
+        {
+            y = (int)y;
+        }
+        Debug.Log(x + "    " + y);
+        return new Vector3(x, y, 0);
+         
+    }
+
+    private Vector3 Redondeando(Vector3 Jugador_pos_actual)
+    {
+        float x, y;
+
+        x = Jugador_pos_actual.x;
+        y = Jugador_pos_actual.y; 
+
+
+
+        return new Vector3(x, y, 0);
+    }
+
 
 
 }
