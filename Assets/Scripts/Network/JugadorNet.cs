@@ -20,7 +20,10 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Pelota;
     public GameObject SemGen;
     public GameObject chicle;
+    public GameObject tunel;
+    public GameObject cemento;
     public GameObject cofreTrampa;
+    public GameObject tela;
     public GameObject[] jgsNet;
     public int id = 0;
     
@@ -92,24 +95,13 @@ public class JugadorNet : NetworkBehaviour
        
     }
 
-    //En Update se envia lo necesario para que la variable isE funcione
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.E))
-        {
-            CmdisE(true);
-        }
-        else
-        {
-            CmdisE(false);
-        }
-    }
+    
 
 
 
     //Se envia las pulsaciones a la tecla E a todos los clientes
     [Command]
-    void CmdisE(bool n)
+    public void CmdisE(bool n)
     {
         isE = n;
    
@@ -200,6 +192,33 @@ public class JugadorNet : NetworkBehaviour
     }
 
     [Command]
+    public void CmdSpawnTunel(Vector3 posCmd, int idcmd)
+    {
+        Debug.Log(idcmd);
+
+        GameObject tunelcmd = Instantiate(tunel, posCmd, Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(tunelcmd, connectionToClient);
+        RpcSetIdTunel(tunelcmd, idcmd);
+
+    }
+
+    [ClientRpc]
+    public void RpcSetIdTunel(GameObject Target, int id)
+    {
+        Target.GetComponent<Tunel>().idCast = id;
+    }
+
+    [Command]
+    public void CmdSpawnCemento(Vector3 posCmd, int idcmd)
+    {
+        Debug.Log(idcmd);
+
+        GameObject cementocmd = Instantiate(cemento, posCmd, Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(cementocmd, connectionToClient);
+
+    }
+
+    [Command]
     public void CmdEscalera(GameObject escal , bool val)
     {
         RpcEscalera(escal, val);
@@ -221,5 +240,27 @@ public class JugadorNet : NetworkBehaviour
     public void RpcEnem(float changex, float changey, GameObject enem)
     {
         enem.transform.position = new Vector3(enem.transform.position.x + changex, enem.transform.position.y + changey, 0);
+    }
+
+    [Command]
+    public void CmdStun(float x, float y, GameObject enem)
+    {
+        RpcStun(x, y, enem);
+    }
+
+    [ClientRpc]
+    public void RpcStun(float x, float y, GameObject enem)
+    {
+        enem.transform.position = new Vector3(x, y, 0);
+    }
+
+    [Command]
+    public void CmdSpawnTela(Vector3 posCmd, int idcmd)
+    {
+        Debug.Log(idcmd);
+
+        GameObject telacmd = Instantiate(tela, posCmd, Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(telacmd, connectionToClient);
+
     }
 }

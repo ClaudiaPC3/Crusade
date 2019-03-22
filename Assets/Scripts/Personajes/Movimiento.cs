@@ -132,5 +132,7 @@ public class Movimiento : NetworkBehaviour
             latX = 0;
             latY = 1;
         }
+
+        
     }
 }

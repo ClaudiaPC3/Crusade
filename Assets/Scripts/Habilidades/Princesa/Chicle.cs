@@ -45,7 +45,7 @@ public class Chicle : NetworkBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if(collision.transform.gameObject.tag == "Pared"&&!cont)
+        if((collision.transform.gameObject.tag == "Pared"|| collision.transform.gameObject.tag == "Cemento") &&!cont)
         {
             pared = collision.transform.gameObject;
             pared.GetComponent<SpriteRenderer>().sprite = chicle;

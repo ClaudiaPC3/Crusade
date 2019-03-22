@@ -1,17 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement; //Encargado de administrar las escenas
 
 public class OpcionesAdm : MonoBehaviour
 {
     
     public GameObject Cierra,MenuCofre,MenuSeleccionObj,MenuTiendaPrin, MenuTiendaSec,comprar,comprarSec;
+    public Image Icono;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        switch(GlobalData.Character){
+            case 1:
+                {
+                    Icono.sprite = Resources.Load<Sprite>("Sprites/" + "princesa");
+                    break;
+                }
+            case 2:
+                {
+                    Icono.sprite = Resources.Load<Sprite>("Sprites/" + "mago");
+                    break;
+                }
+            case 3:
+                {
+                    Icono.sprite = Resources.Load<Sprite>("Sprites/" + "caballero");
+                    break;
+                }
+            case 4:
+                {
+                    Icono.sprite = Resources.Load<Sprite>("Sprites/" + "herrero");
+                    break;
+                }
+        }
         //comprar.SetActive(false);
 
     }
@@ -57,10 +80,10 @@ public class OpcionesAdm : MonoBehaviour
         GlobalData.EnergLim = 100f;
         GlobalData.EnergSpe = 1f;
     
-        Objetos.Inv1 = 2;
-        Objetos.Inv2 = 1;
-        Objetos.Inv3 = 7;
-        Objetos.Inv4 = 6;
+        Objetos.Inv1 = 30;
+        Objetos.Inv2 = 31;
+        Objetos.Inv3 = 34;
+        Objetos.Inv4 = 27;
         Objetos.ObjSelec = 0;
 
        

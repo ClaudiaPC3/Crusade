@@ -32,9 +32,9 @@ public class Reloj : MonoBehaviour
         {
             check = false;
             counter += Time.deltaTime;
-            reloj.fontSize = 90;
             if (counter >= 1f && pre == true)
             {
+                
                 counter = 0;
                 segs--;
                 if (segs == 0)
@@ -44,6 +44,7 @@ public class Reloj : MonoBehaviour
             }
             if (counter >= 1f && pre == false)
             {
+                reloj.color = Color.white;
                 counter = 0;
                 segs++;
                 if (segs > 59)

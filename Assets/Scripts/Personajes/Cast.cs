@@ -16,10 +16,10 @@ public class Cast : NetworkBehaviour
     public RectTransform trans2;
     public RectTransform trans3;
     public RectTransform trans4;
-    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0, countc =0, countg = 0;
+    private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0, countc = 0, countg = 0, countst = 0, countatr = 0, countmart = 0;
     private int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
-    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false, activeCant = false;
-    public Vector3 pos;
+    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false, activeCant = false, activeStun = false, first =true, activeAtrac = false, activeMart = false;
+    public Vector3 pos, stun;
 
 
     // Start is called before the first frame update
@@ -197,9 +197,52 @@ public class Cast : NetworkBehaviour
             activeChMo = false;
             countg = 0;
         }
+
+        if(countmart <= 5 && activeMart)
+        {
+            Stun();
+            countmart += Time.deltaTime;
+        }
+        else
+        {
+            activeMart = false;
+            countmart = 0;
+            first = true;
+        }
+
+        if(countst <= 4 && activeStun)
+        {
+            Stun();
+            countst += Time.deltaTime;
+        }
+        else
+        {
+            activeStun = false;
+            countst = 0;
+            first = true;
+        }
+
+        if(countatr <=7 && activeAtrac)
+        {
+            Atrac();
+            countatr += Time.deltaTime;
+        }
+        else
+        {
+            activeAtrac = false;
+            countatr = 0;
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            jgnt.CmdisE(true);
+        }
+        else
+        {
+            jgnt.CmdisE(false);
+        }
+
     }
-
-
 
     private void HabCast(int id)
     {
@@ -210,7 +253,9 @@ public class Cast : NetworkBehaviour
                 break;
 
             case 2:
-                CastTrampo(pos);
+                if (GlobalData.IsInStair) {
+                    CastTrampo(pos);
+                }
                 break;
 
             case 4:
@@ -231,12 +276,84 @@ public class Cast : NetworkBehaviour
                 }
                 break;
 
+            case 8:
+                if (GlobalData.IsWarning)
+                {
+                    activeStun = true;
+                }
+                break;
+
+            case 26:
+                if (GlobalData.IsWarning)
+                {
+                    activeAtrac = true;
+                }
+                break;
+
+            case 27:
+                CastCemento(pos);
+                break;
+
+            case 30:
+                CastTela(pos);
+                break;
+
             case 31:
                 CastCofreTrampa(pos);
                 break;
 
+            case 32:
+                CastTunel(pos);
+                break;
+
+            case 34:
+                if (GlobalData.IsWarning)
+                {
+                    activeMart = true;
+                }
+                break;
+
             default:
                 break;
+        }
+    }
+
+    public void Stun()
+    {
+        if (first)
+        {
+            stun = enem.transform.position;
+            first = false;
+        }
+        
+         jgnt.CmdStun(stun.x, stun.y, enem);
+        
+    }
+
+    public void Atrac()
+    {
+        float x, y;
+        if (activeAtrac)
+        {
+            if (jugador.transform.position.x - 18 >= enem.transform.position.x)
+            {
+                x = 0.1f;
+            }
+            else
+            {
+                x = -0.1f;
+            }
+
+            if (jugador.transform.position.y - 18 >= enem.transform.position.y)
+            {
+                y = 0.1f;
+            }
+            else
+            {
+                y = -0.1f;
+            }
+
+            jgnt.CmdEnem(x, y, enem);
         }
     }
 
@@ -360,13 +477,117 @@ public class Cast : NetworkBehaviour
     private void CastCofreTrampa(Vector3 posMet)
     {
 
-        //
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x-14, jugador.transform.position.y - 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x-14, jugador.transform.position.y + 35, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y+14, 0);
+        }
+
+
+        jgnt.CmdSpawnCofreTrampa(posMet, GlobalData.ID);
+
+    }
+
+    private void CastTunel(Vector3 posMet)
+    {
+
+        /*
         posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         posMet.z = 0;
-        int i = GlobalData.ID;
+        */
 
-        Debug.Log(i);
-        jgnt.CmdSpawnCofreTrampa(posMet, i);
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y - 25, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y + 25, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 25, jugador.transform.position.y, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 25, jugador.transform.position.y, 0);
+        }
+
+
+        jgnt.CmdSpawnTunel(posMet, GlobalData.ID);
+
+    }
+
+    private void CastCemento(Vector3 posMet)
+    {
+
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y - 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y + 35, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y + 14, 0);
+        }
+
+
+        jgnt.CmdSpawnCemento(posMet, GlobalData.ID);
+
+    }
+
+    private void CastTela(Vector3 posMet)
+    {
+
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y - 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y + 35, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y + 14, 0);
+        }
+
+
+        jgnt.CmdSpawnTela(posMet, GlobalData.ID);
 
     }
 
