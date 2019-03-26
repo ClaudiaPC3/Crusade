@@ -20,12 +20,14 @@ public class Cast : NetworkBehaviour
     private int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
     private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false, activeCant = false, activeStun = false, activeAtrac = false, activeMart = false;
     public Vector3 pos, stun;
-
+    public AnimatorTimer controlAnim;
+    private bool firstAtrac = true,firstMart=true, firstCantar = true, firstGritar = true;
 
     // Start is called before the first frame update
     void Start()
     {
         barra = bar.GetComponent<Barra>();
+        controlAnim = GetComponent<AnimatorTimer>();
 
     }
 
@@ -182,6 +184,7 @@ public class Cast : NetworkBehaviour
         }
         else
         {
+            firstCantar = true;
             activeCant = false;
             countc = 0;
         }
@@ -194,6 +197,7 @@ public class Cast : NetworkBehaviour
         }
         else
         {
+            firstGritar = true;
             activeChMo = false;
             countg = 0;
         }
@@ -212,11 +216,21 @@ public class Cast : NetworkBehaviour
 
         if (countmart <= 5 && activeMart)
         {
-            jgnt.CmdStun(true, enem);
+            
             countmart += Time.deltaTime;
+            jgnt.CmdStun(true, enem);
+            if (firstMart)
+            {
+                
+                jugador.GetComponent<Animator>().SetBool("isInChoque", true);
+                controlAnim.jugador = jugador;
+                controlAnim.isInTimerChoque = true;
+                firstMart = false;
+            }
         }
         else
         {
+            firstMart = true;
             activeMart = false;
             countmart = 0;
             jgnt.CmdStun(false, enem);
@@ -226,9 +240,11 @@ public class Cast : NetworkBehaviour
         {
             Atrac();
             countatr += Time.deltaTime;
+
         }
         else
         {
+            firstAtrac = true;
             activeAtrac = false;
             countatr = 0;
         }
@@ -241,6 +257,8 @@ public class Cast : NetworkBehaviour
         {
             jgnt.CmdisE(false);
         }
+
+      
 
     }
 
@@ -333,6 +351,14 @@ public class Cast : NetworkBehaviour
 
     public void Atrac()
     {
+        if (firstAtrac)
+        {
+            jugador.GetComponent<Animator>().SetBool("isInAtraccion", true);
+            controlAnim.jugador = jugador;
+            controlAnim.isInTimerAtraccion = true;
+            firstAtrac = false;
+        }
+        
         float x, y;
         if (activeAtrac)
         {
@@ -360,6 +386,14 @@ public class Cast : NetworkBehaviour
 
     public void Cantar()
     {
+        if (firstCantar)
+        {
+            jugador.GetComponent<Animator>().SetBool("isInCantar", true);
+            controlAnim.jugador = jugador;
+            controlAnim.isInTimerCantar = true;
+            firstCantar = false;
+        }
+
         float x, y;
         if (activeCant)
         {
@@ -387,6 +421,15 @@ public class Cast : NetworkBehaviour
 
     public void Gritar()
     {
+
+        if (firstGritar)
+        {
+            jugador.GetComponent<Animator>().SetBool("isInGritar", true);
+            controlAnim.jugador = jugador;
+            controlAnim.isInTimerGritar = true;
+            firstGritar = false;
+        }
+
         float x, y;
         if (activeChMo)
         {
@@ -508,7 +551,11 @@ public class Cast : NetworkBehaviour
 
     private void CastTunel(Vector3 posMet)
     {
-
+        jugador.GetComponent<Animator>().SetBool("isInPala",true);
+        controlAnim.jugador = jugador;
+        controlAnim.isInTimerPala = true;
+       
+        
         Vector3 locajugador = Redondeo(jugador.transform.position);
         if (jugador.GetComponent<Movimiento>().latY == -1)
         {

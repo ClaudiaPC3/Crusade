@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: f1715e94cd7a7d248ae7a71d4818e0dc
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: princesa_cantar-pixilart_0
+    21300002: princesa_cantar-pixilart_1
+    21300004: princesa_cantar-pixilart_2
+    21300006: princesa_cantar-pixilart_3
+    21300008: princesa_cantar-pixilart_4
+    21300010: princesa_cantar-pixilart_5
+    21300012: princesa_cantar-pixilart_6
+    21300014: princesa_cantar-pixilart_7
+    21300016: princesa_cantar-pixilart_8
+    21300018: princesa_cantar-pixilart_9
+    21300020: princesa_cantar-pixilart_10
+    21300022: princesa_cantar-pixilart_11
+    21300024: princesa_cantar-pixilart_12
+    21300026: princesa_cantar-pixilart_13
+    21300028: princesa_cantar-pixilart_14
+    21300030: princesa_cantar-pixilart_15
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 79
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6fe1edd1a902f418b66b86f3076b39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 79
+        width: 18
+        height: 23
+      alignment: 9
+      pivot: {x: 0.475004, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4726ef123dd84b44a7566b5c6cc8192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 79
+        width: 22
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5730414, y: 0.4839312}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4482bf7f03d7f3142957a636dcbd7258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 79
+        width: 21
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5520332, y: 0.48660913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35835075927aba74bb7a363496106419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 53
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71f601626e444f4ca95c09e4da74eef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_5
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 53
+        width: 21
+        height: 24
+      alignment: 9
+      pivot: {x: 0.45404705, y: 0.48172316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b30717a7dd0f214cae477b97ed9a72a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_6
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 53
+        width: 23
+        height: 24
+      alignment: 9
+      pivot: {x: 0.41990015, y: 0.4798956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3619c4e41db3adc42b289acdcd651612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_7
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 53
+        width: 18
+        height: 23
+      alignment: 9
+      pivot: {x: 0.47075737, y: 0.5057214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ead406a0e2ac24a9640b27374fc1f4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 28
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84fcfc3cb21a9744ac1db44afa027c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_9
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 28
+        width: 20
+        height: 24
+      alignment: 9
+      pivot: {x: 0.54861736, y: 0.4569529}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175771531af992e43acf7288eff21e4d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_10
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 28
+        width: 22
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5883952, y: 0.4582189}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04fdc1cebafa7784c9797dcc9d157bd7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_11
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 28
+        width: 22
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5883952, y: 0.45948505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ed6d1a52413cf4cba97a1aa5c3fae4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e27fe93d2faac41967ca07dfd620bd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_13
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1
+        width: 22
+        height: 24
+      alignment: 9
+      pivot: {x: 0.4091052, y: 0.45926568}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c5ffcfa7be7bc43ba7b4c988c6a79c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_14
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1
+        width: 22
+        height: 24
+      alignment: 9
+      pivot: {x: 0.36365077, y: 0.45759904}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad7a841d89d9e8478c882b035a58c19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: princesa_cantar-pixilart_15
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1
+        width: 19
+        height: 24
+      alignment: 9
+      pivot: {x: 0.47206277, y: 0.45797768}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a965ac090b6ca68489dd0ee6ac2a1c66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c6e74e640ae1d22458be3cb3c970485c
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

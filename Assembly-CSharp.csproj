@@ -92,6 +92,7 @@
     <Compile Include="Assets\2DDL\Add-ons\Rotation.cs" />
     <Compile Include="Assets\2DDL\Add-ons\Source.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
+    <Compile Include="Assets\Scripts\Habilidades\AnimatorTimer.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Herrero\Cemento.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Herrero\CofreTrampa.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Herrero\Tela.cs" />
