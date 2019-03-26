@@ -30,7 +30,7 @@ public class Chicle : NetworkBehaviour
 
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!coll)
         {
