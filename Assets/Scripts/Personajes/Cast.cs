@@ -480,24 +480,25 @@ public class Cast : NetworkBehaviour
     private void CastCofreTrampa(Vector3 posMet)
     {
 
+        Vector3 locajugador = Redondeo(jugador.transform.position);
         if (jugador.GetComponent<Movimiento>().latY == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x-14, jugador.transform.position.y - 15, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y - 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latY == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x-14, jugador.transform.position.y + 35, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y + 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+            posMet = new Vector3(locajugador.x - 28, locajugador.y, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y+14, 0);
+            posMet = new Vector3(locajugador.x + 28, locajugador.y, 0);
         }
 
 
@@ -508,29 +509,25 @@ public class Cast : NetworkBehaviour
     private void CastTunel(Vector3 posMet)
     {
 
-        /*
-        posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        posMet.z = 0;
-        */
-
+        Vector3 locajugador = Redondeo(jugador.transform.position);
         if (jugador.GetComponent<Movimiento>().latY == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y - 25, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y - 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latY == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y + 25, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y + 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 25, jugador.transform.position.y, 0);
+            posMet = new Vector3(locajugador.x - 28, locajugador.y, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x + 25, jugador.transform.position.y, 0);
+            posMet = new Vector3(locajugador.x + 28, locajugador.y, 0);
         }
 
 
@@ -541,24 +538,25 @@ public class Cast : NetworkBehaviour
     private void CastCemento(Vector3 posMet)
     {
 
+        Vector3 locajugador = Redondeo(jugador.transform.position);
         if (jugador.GetComponent<Movimiento>().latY == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y - 15, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y - 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latY == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y + 35, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y + 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+            posMet = new Vector3(locajugador.x - 28, locajugador.y, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y + 14, 0);
+            posMet = new Vector3(locajugador.x + 28, locajugador.y, 0);
         }
 
 
@@ -586,7 +584,7 @@ public class Cast : NetworkBehaviour
 
         if (jugador.GetComponent<Movimiento>().latX == 1)
         {
-            posMet = new Vector3(locajugador.x, locajugador.y, 0);
+            posMet = new Vector3(locajugador.x+28, locajugador.y, 0);
         }
 
         Debug.Log(posMet.x+"    "+posMet.y);
@@ -605,45 +603,13 @@ public class Cast : NetworkBehaviour
         y = Jugador_pos_actual.y;
         resy = Jugador_pos_actual.y % 28f;
         Debug.Log(x + "    " + y);
-
-        if(resx > 14)
-        {
-            x += (28-resx);
-        }
-        else
-        {
-            x -= (resx);
-        }
-
-        if (resy > 14)
-        {
-            y += (28 - resy);
-        }
-        else
-        {
-            y -= (resy);
-        }
+        x -= (resx);
+        y -= (resy);
 
 
+        x = (int)x;
+        y = (int)y;
 
-        if ((x-(int)x) > .5f)
-        {
-            x = (int)x + 1f;
-        }
-        else
-        {
-            x = (int)x;
-        }
-
-
-        if ((y - (int)y) > .5f)
-        {
-            y = (int)y + 1f;
-        }
-        else
-        {
-            y = (int)y;
-        }
         Debug.Log(x + "    " + y);
         return new Vector3(x, y, 0);
          
