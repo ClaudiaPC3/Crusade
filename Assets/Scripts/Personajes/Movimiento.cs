@@ -102,6 +102,11 @@ public class Movimiento : NetworkBehaviour
             rg2d.MovePosition(rg2d.position + mov * (speed / 1.7f) * Time.deltaTime);
         }
 
+        if(rg2d.velocity.x < 5 || rg2d.velocity.y < 5)
+        {
+            rg2d.velocity = new Vector2(0, 0);
+        }
+
         cam = new Vector3(me.transform.position.x, me.transform.position.y, -10);
         camara.transform.position = cam;
 
