@@ -243,15 +243,15 @@ public class JugadorNet : NetworkBehaviour
     }
 
     [Command]
-    public void CmdStun(float x, float y, GameObject enem)
+    public void CmdStun(bool stun, GameObject enem)
     {
-        RpcStun(x, y, enem);
+        RpcStun(stun, enem);
     }
 
     [ClientRpc]
-    public void RpcStun(float x, float y, GameObject enem)
+    public void RpcStun(bool stun, GameObject enem)
     {
-        enem.transform.position = new Vector3(x, y, 0);
+        enem.GetComponent<Movimiento>().isInStun = stun;
     }
 
     [Command]

@@ -62,6 +62,8 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 d2d85170fb8c9b5657709adfa78a440b Assembly-CSharp.dll:DynamicLight2D.LensFlares
 98ad81e9f689a492509f07e75b810aaa Unity.TextMeshPro.dll:TMPro.TMP_InputField
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 17b9a99fc67579a80fc5fbc80962c12a Assembly-CSharp.dll:.fpsClass
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -223,7 +225,7 @@ df82cbecf11476ab7aeda0143ec96bbe Assembly-CSharp.dll:.MeterPartida
 04cab81eeeaae6b52511ca29fc924237 Assembly-CSharp.dll:.MenuCofre
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
-b7d3c451c115c35a72561fd181e294d5 Assembly-CSharp.dll:.Movimiento
+daa3e953764b06c8ca61ccbbe4ec25f6 Assembly-CSharp.dll:.Movimiento
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 3762bdcad64e775a654c87c54c385262 Assembly-CSharp.dll:DynamicLight2D.Source
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:DynamicLight2D.AddOnBase
