@@ -23,6 +23,7 @@
     private static bool isWarning = false;
     private static bool isInStair = false;
     private static int inTunel = 0;
+  
 
     public static bool IsInStair
     {

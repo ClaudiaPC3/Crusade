@@ -23,6 +23,7 @@ public class Movimiento : NetworkBehaviour
     public float lastY = -1f;
     public float latX = 0f, latY = -1f;
     public bool isMov = false;
+    public bool isInStun = false;
 
     private GameObject[] jugadores;
     private Vector2 mov;
@@ -66,7 +67,7 @@ public class Movimiento : NetworkBehaviour
         {
             return;
         }
-        if (GlobalData.EnPausa == false && GlobalData.EnCofre == false)
+        if (GlobalData.EnPausa == false && GlobalData.EnCofre == false && !isInStun)
         {
             mov = new Vector2( //En este vector se asigna la información obtenida por perifericos
             Input.GetAxisRaw("Horizontal"), //señal X de los perifericos
