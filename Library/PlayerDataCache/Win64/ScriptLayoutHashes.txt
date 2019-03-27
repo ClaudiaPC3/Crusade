@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Relic Hunter.exe
+D:/Users/Claudia/Documents/CETI/8tvo/PROYECTO/exe/Relic Hunter.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
@@ -109,7 +109,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-63141fcef0b51d35772176d5c8efe711 Assembly-CSharp.dll:.JugadorNet
+6b79c91112ff645468b7449330dd3a4f Assembly-CSharp.dll:.JugadorNet
 00274a21279f5cb831ce20f895049e38 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
 85c6225087b6178725fb0883157aa1cc Assembly-CSharp.dll:DynamicLight2D.Fire
 f05a6cf31feba28e0485ad18626cf1f7 Assembly-CSharp.dll:.Regresa
@@ -181,6 +181,7 @@ d9dee038fde28d9e467e6b2d30a21bc5 Assembly-CSharp.dll:.ObjetoId
 2f6944d2bab00edd3a78100a20e09472 Assembly-CSharp.dll:.CofreInteraccion
 a4e7ff198d3e7aece59bbd06892bf870 Assembly-CSharp.dll:.CofreTrampa
 66bca5cc6a18c5298ec75235e56a84d6 Assembly-CSharp.dll:DynamicLight2D.LookAt
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.gancho
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 6d7f75a44df93fe4b07b5b0196bae2f2 Assembly-CSharp.dll:.AsignacionObj
 aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset

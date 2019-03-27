@@ -92,6 +92,10 @@ MonoBehaviour:
   cofreTrampa: {fileID: 7098111880740540973, guid: cbbec2a778a30f149b426a94e3e5af51,
     type: 3}
   tela: {fileID: 3844260006670363525, guid: b7fafb8f94c72d646a5382489536c958, type: 3}
+  paredEscapeHorizontal: {fileID: 7885700924854230480, guid: 6fa7ed45083b7ba4aaf51f72f897d510,
+    type: 3}
+  paredEscapeVertical: {fileID: 7690010728796157303, guid: 4def4903ca79fe64eac22d5f423cb921,
+    type: 3}
   jgsNet: []
   id: 0
   opcion: 0

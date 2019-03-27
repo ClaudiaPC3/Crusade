@@ -25,7 +25,10 @@ public class JugadorNet : NetworkBehaviour
     public GameObject cemento;
     public GameObject cofreTrampa;
     public GameObject tela;
+    public GameObject paredEscapeHorizontal;
+    public GameObject paredEscapeVertical;
     public GameObject[] jgsNet;
+
     public int id = 0;
     
 
@@ -270,6 +273,26 @@ public class JugadorNet : NetworkBehaviour
 
         GameObject telacmd = Instantiate(tela, posCmd, Quaternion.identity);
         NetworkServer.SpawnWithClientAuthority(telacmd, connectionToClient);
+
+    }
+
+    [Command]
+    public void CmdSpawnEscapeHorizontal(Vector3 posCmd, int idcmd)
+    {
+        Debug.Log(idcmd);
+
+        GameObject ParedHorizontalcmd = Instantiate(paredEscapeHorizontal, posCmd, Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(ParedHorizontalcmd, connectionToClient);
+
+    }
+
+    [Command]
+    public void CmdSpawnEscapeVertical(Vector3 posCmd, int idcmd)
+    {
+        Debug.Log(idcmd);
+
+        GameObject ParedVerticalcmd = Instantiate(paredEscapeVertical, posCmd, Quaternion.identity);
+        NetworkServer.SpawnWithClientAuthority(ParedVerticalcmd, connectionToClient);
 
     }
 }

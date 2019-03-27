@@ -344,6 +344,14 @@ public class Cast : NetworkBehaviour
                 CastTunel(pos);
                 break;
 
+            case 33: //Herrero.Escape
+                if (GlobalData.IsWarning)
+                {
+                    CastEscape(pos);
+                }
+                break;
+                
+
             case 34://Herrero.ChoqueMartillos
                 if (GlobalData.IsWarning)
                 {
@@ -670,6 +678,44 @@ public class Cast : NetworkBehaviour
         jgnt.CmdSpawnTela(posMet, GlobalData.ID);
 
     }
+
+    private void CastEscape(Vector3 posMet)
+    {
+        Vector3 locajugador = Redondeo(jugador.transform.position);
+
+
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(locajugador.x, locajugador.y - 28, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(locajugador.x, locajugador.y + 28, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(locajugador.x - 28, locajugador.y, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(locajugador.x + 28, locajugador.y, 0);
+        }
+
+        if(jugador.GetComponent<Movimiento>().latX == 1 || jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            jgnt.CmdSpawnEscapeVertical(posMet, GlobalData.ID);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1 || jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            jgnt.CmdSpawnEscapeHorizontal(posMet, GlobalData.ID);
+        }
+
+    }
+
 
     private Vector3 Redondeo(Vector3 Jugador_pos_actual)
     {
