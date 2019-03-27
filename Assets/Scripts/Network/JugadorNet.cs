@@ -20,6 +20,7 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Pelota;
     public GameObject SemGen;
     public GameObject chicle;
+    public GameObject gancho;
     public GameObject tunel;
     public GameObject cemento;
     public GameObject cofreTrampa;
@@ -156,14 +157,22 @@ public class JugadorNet : NetworkBehaviour
     [Command]
     public void CmdSpawnChicle(Vector3 posCmd, int idcmd)
     {
-        Debug.Log(idcmd);
-
         GameObject chiclecmd = Instantiate(chicle, posCmd, Quaternion.identity);
         
-        //Debug.Log(chiclecmd.GetComponent<Chicle>().idCast);
         NetworkServer.SpawnWithClientAuthority(chiclecmd, connectionToClient);
-        //chiclecmd.GetComponent<Chicle>().idCast = idcmd;
+  
         RpcSetIdCh(chiclecmd, idcmd);
+
+    }
+
+    [Command]
+    public void CmdSpawnGancho(Vector3 posCmd, int idcmd)
+    {
+        GameObject ganchocmd = Instantiate(gancho, posCmd, Quaternion.identity);
+
+        NetworkServer.SpawnWithClientAuthority(ganchocmd, connectionToClient);
+        
+        //RpcSetIdCh(chiclecmd, idcmd);
 
     }
 

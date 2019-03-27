@@ -314,6 +314,13 @@ public class Cast : NetworkBehaviour
                 }
                 break;
 
+            case 18://Caballero.Gancho
+                CastGancho(pos);
+                break;
+
+            case 19://Caballero.GanchoBotas
+                break;
+
             case 26://Caballero.Atraccion
                 if (GlobalData.IsWarning)
                 {
@@ -453,6 +460,31 @@ public class Cast : NetworkBehaviour
 
             jgnt.CmdEnem(x, y, enem);
         }
+    }
+
+    private void CastGancho(Vector3 posMet)
+    {
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y - 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y + 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 15, jugador.transform.position.y, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 15, jugador.transform.position.y, 0);
+        }
+
+        jgnt.CmdSpawnGancho(posMet, GlobalData.ID);
     }
 
     public void CastEscalera()

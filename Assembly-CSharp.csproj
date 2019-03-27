@@ -93,6 +93,7 @@
     <Compile Include="Assets\2DDL\Add-ons\Source.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
     <Compile Include="Assets\Scripts\Habilidades\AnimatorTimer.cs" />
+    <Compile Include="Assets\Scripts\Habilidades\Caballero\gancho.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Herrero\Cemento.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Herrero\CofreTrampa.cs" />
     <Compile Include="Assets\Scripts\Habilidades\Herrero\Tela.cs" />
@@ -161,19 +162,19 @@
     <None Include="Assets\2DDL\2DLight\Shaders\Gradient-ZFighting.shader" />
     <None Include="Assets\2DDL\2DLight\Shaders\occluder.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -377,16 +378,16 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Resources2DDL">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Assets/2DDL/2DLight/Utils/Resources2DDL.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Assets/2DDL/2DLight/Utils/Resources2DDL.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/ppc/Documents/CETI/Proyecto Titulación/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/and/Documents/Crusade/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
