@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-D:/Users/Claudia/Documents/CETI/8tvo/PROYECTO/exe/Relic Hunter.exe
+C:/Users/ppc/Documents/CETI/Proyecto Titulación/Ejecutable/Relic Hunter.exe
 SceneListBegin?
 Assets/Scenes/Menu principal.unity
 Assets/Scenes/Partida.unity
@@ -155,8 +155,9 @@ e197d0b748f0fe21846663bdb6454914 Assembly-CSharp.dll:.TerminarCon
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:DynamicLight2D.CoreUtils
 3f3fffa9a19557cbbc409e4d7965e5c9 Assembly-CSharp.dll:DynamicLight2D.ColorBlending
 41479ee7a850f65081ae714a000e53ec Assembly-CSharp.dll:.RelInteraccion
-ee0aab00849e89b735b8e2dbc2992803 Assembly-CSharp.dll:.Cast
+4f0b1ff4ca5e6cbbceafc5403143051b Assembly-CSharp.dll:.Cast
 fcc524e590f5b53ae7cc133882265388 Assembly-CSharp.dll:.TimerClass
+eb8bf918b30950349e76ff853ad82d35 Assembly-CSharp.dll:.AnimatorTimer
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 e21a511cb3c4ba8dc222d58bf7acaf50 Assembly-CSharp.dll:.Alerta
 bd8d387b385e1434fac57741beaf8ddf Assembly-CSharp.dll:.NavConexion
@@ -223,7 +224,7 @@ df82cbecf11476ab7aeda0143ec96bbe Assembly-CSharp.dll:.MeterPartida
 04cab81eeeaae6b52511ca29fc924237 Assembly-CSharp.dll:.MenuCofre
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
-b7d3c451c115c35a72561fd181e294d5 Assembly-CSharp.dll:.Movimiento
+daa3e953764b06c8ca61ccbbe4ec25f6 Assembly-CSharp.dll:.Movimiento
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 3762bdcad64e775a654c87c54c385262 Assembly-CSharp.dll:DynamicLight2D.Source
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:DynamicLight2D.AddOnBase

@@ -13,7 +13,7 @@ public class Reloj : MonoBehaviour
     bool pre = true;
     float counter = 0;
     GameObject[] jugadores;
-    bool check = true;
+    bool check = true, colorChange = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class Reloj : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (check)
         {
@@ -44,7 +44,11 @@ public class Reloj : MonoBehaviour
             }
             if (counter >= 1f && pre == false)
             {
-                reloj.color = Color.white;
+                if (!colorChange)
+                {
+                    reloj.color = Color.white;
+                    colorChange = true;
+                }
                 counter = 0;
                 segs++;
                 if (segs > 59)

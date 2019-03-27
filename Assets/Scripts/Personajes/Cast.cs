@@ -18,14 +18,16 @@ public class Cast : NetworkBehaviour
     public RectTransform trans4;
     private float cou1 = 0, cou2 = 0, cou3 = 0, cou4 = 0, countc = 0, countg = 0, countst = 0, countatr = 0, countmart = 0;
     private int seg1 = 0, seg2 = 0, seg3 = 0, seg4 = 0;
-    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false, activeCant = false, activeStun = false, first =true, activeAtrac = false, activeMart = false;
+    private bool cool1 = false, cool2 = false, cool3 = false, cool4 = false, check = true, activeChMo = false, activeCant = false, activeStun = false, activeAtrac = false, activeMart = false;
     public Vector3 pos, stun;
-
+    public AnimatorTimer controlAnim;
+    private bool firstAtrac = true,firstMart=true, firstCantar = true, firstGritar = true;
 
     // Start is called before the first frame update
     void Start()
     {
         barra = bar.GetComponent<Barra>();
+        controlAnim = GetComponent<AnimatorTimer>();
 
     }
 
@@ -182,6 +184,7 @@ public class Cast : NetworkBehaviour
         }
         else
         {
+            firstCantar = true;
             activeCant = false;
             countc = 0;
         }
@@ -194,41 +197,54 @@ public class Cast : NetworkBehaviour
         }
         else
         {
+            firstGritar = true;
             activeChMo = false;
             countg = 0;
         }
 
-        if(countmart <= 5 && activeMart)
-        {
-            Stun();
-            countmart += Time.deltaTime;
-        }
-        else
-        {
-            activeMart = false;
-            countmart = 0;
-            first = true;
-        }
-
         if(countst <= 4 && activeStun)
         {
-            Stun();
+            jgnt.CmdStun(true, enem);
             countst += Time.deltaTime;
         }
         else
         {
             activeStun = false;
             countst = 0;
-            first = true;
+            jgnt.CmdStun(false, enem);
         }
 
-        if(countatr <=7 && activeAtrac)
+        if (countmart <= 5 && activeMart)
         {
-            Atrac();
-            countatr += Time.deltaTime;
+            
+            countmart += Time.deltaTime;
+            jgnt.CmdStun(true, enem);
+            if (firstMart)
+            {
+                
+                jugador.GetComponent<Animator>().SetBool("isInChoque", true);
+                controlAnim.jugador = jugador;
+                controlAnim.isInTimerChoque = true;
+                firstMart = false;
+            }
         }
         else
         {
+            firstMart = true;
+            activeMart = false;
+            countmart = 0;
+            jgnt.CmdStun(false, enem);
+        }
+
+        if (countatr <=7 && activeAtrac)
+        {
+            Atrac();
+            countatr += Time.deltaTime;
+
+        }
+        else
+        {
+            firstAtrac = true;
             activeAtrac = false;
             countatr = 0;
         }
@@ -241,6 +257,8 @@ public class Cast : NetworkBehaviour
         {
             jgnt.CmdisE(false);
         }
+
+      
 
     }
 
@@ -296,6 +314,13 @@ public class Cast : NetworkBehaviour
                 }
                 break;
 
+            case 18://Caballero.Gancho
+                CastGancho(pos);
+                break;
+
+            case 19://Caballero.GanchoBotas
+                break;
+
             case 26://Caballero.Atraccion
                 if (GlobalData.IsWarning)
                 {
@@ -331,20 +356,16 @@ public class Cast : NetworkBehaviour
         }
     }
 
-    public void Stun()
-    {
-        if (first)
-        {
-            stun = enem.transform.position;
-            first = false;
-        }
-        
-         jgnt.CmdStun(stun.x, stun.y, enem);
-        
-    }
-
     public void Atrac()
     {
+        if (firstAtrac)
+        {
+            jugador.GetComponent<Animator>().SetBool("isInAtraccion", true);
+            controlAnim.jugador = jugador;
+            controlAnim.isInTimerAtraccion = true;
+            firstAtrac = false;
+        }
+        
         float x, y;
         if (activeAtrac)
         {
@@ -372,6 +393,14 @@ public class Cast : NetworkBehaviour
 
     public void Cantar()
     {
+        if (firstCantar)
+        {
+            jugador.GetComponent<Animator>().SetBool("isInCantar", true);
+            controlAnim.jugador = jugador;
+            controlAnim.isInTimerCantar = true;
+            firstCantar = false;
+        }
+
         float x, y;
         if (activeCant)
         {
@@ -399,6 +428,15 @@ public class Cast : NetworkBehaviour
 
     public void Gritar()
     {
+
+        if (firstGritar)
+        {
+            jugador.GetComponent<Animator>().SetBool("isInGritar", true);
+            controlAnim.jugador = jugador;
+            controlAnim.isInTimerGritar = true;
+            firstGritar = false;
+        }
+
         float x, y;
         if (activeChMo)
         {
@@ -422,6 +460,31 @@ public class Cast : NetworkBehaviour
 
             jgnt.CmdEnem(x, y, enem);
         }
+    }
+
+    private void CastGancho(Vector3 posMet)
+    {
+        if (jugador.GetComponent<Movimiento>().latY == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y - 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latY == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y + 15, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == -1)
+        {
+            posMet = new Vector3(jugador.transform.position.x - 15, jugador.transform.position.y, 0);
+        }
+
+        if (jugador.GetComponent<Movimiento>().latX == 1)
+        {
+            posMet = new Vector3(jugador.transform.position.x + 15, jugador.transform.position.y, 0);
+        }
+
+        jgnt.CmdSpawnGancho(posMet, GlobalData.ID);
     }
 
     public void CastEscalera()
@@ -492,24 +555,25 @@ public class Cast : NetworkBehaviour
     private void CastCofreTrampa(Vector3 posMet)
     {
 
+        Vector3 locajugador = Redondeo(jugador.transform.position);
         if (jugador.GetComponent<Movimiento>().latY == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x-14, jugador.transform.position.y - 15, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y - 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latY == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x-14, jugador.transform.position.y + 35, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y + 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+            posMet = new Vector3(locajugador.x - 28, locajugador.y, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y+14, 0);
+            posMet = new Vector3(locajugador.x + 28, locajugador.y, 0);
         }
 
 
@@ -519,30 +583,30 @@ public class Cast : NetworkBehaviour
 
     private void CastTunel(Vector3 posMet)
     {
-
-        /*
-        posMet = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        posMet.z = 0;
-        */
-
+        jugador.GetComponent<Animator>().SetBool("isInPala",true);
+        controlAnim.jugador = jugador;
+        controlAnim.isInTimerPala = true;
+       
+        
+        Vector3 locajugador = Redondeo(jugador.transform.position);
         if (jugador.GetComponent<Movimiento>().latY == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y - 25, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y - 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latY == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x, jugador.transform.position.y + 25, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y + 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 25, jugador.transform.position.y, 0);
+            posMet = new Vector3(locajugador.x - 28, locajugador.y, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x + 25, jugador.transform.position.y, 0);
+            posMet = new Vector3(locajugador.x + 28, locajugador.y, 0);
         }
 
 
@@ -553,24 +617,25 @@ public class Cast : NetworkBehaviour
     private void CastCemento(Vector3 posMet)
     {
 
+        Vector3 locajugador = Redondeo(jugador.transform.position);
         if (jugador.GetComponent<Movimiento>().latY == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y - 15, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y - 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latY == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 14, jugador.transform.position.y + 35, 0);
+            posMet = new Vector3(locajugador.x, locajugador.y + 28, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == -1)
         {
-            posMet = new Vector3(jugador.transform.position.x - 35, jugador.transform.position.y + 14, 0);
+            posMet = new Vector3(locajugador.x - 28, locajugador.y, 0);
         }
 
         if (jugador.GetComponent<Movimiento>().latX == 1)
         {
-            posMet = new Vector3(jugador.transform.position.x + 10, jugador.transform.position.y + 14, 0);
+            posMet = new Vector3(locajugador.x + 28, locajugador.y, 0);
         }
 
 
@@ -598,7 +663,7 @@ public class Cast : NetworkBehaviour
 
         if (jugador.GetComponent<Movimiento>().latX == 1)
         {
-            posMet = new Vector3(locajugador.x, locajugador.y, 0);
+            posMet = new Vector3(locajugador.x+28, locajugador.y, 0);
         }
 
         Debug.Log(posMet.x+"    "+posMet.y);
@@ -617,45 +682,13 @@ public class Cast : NetworkBehaviour
         y = Jugador_pos_actual.y;
         resy = Jugador_pos_actual.y % 28f;
         Debug.Log(x + "    " + y);
-
-        if(resx > 14)
-        {
-            x += (28-resx);
-        }
-        else
-        {
-            x -= (resx);
-        }
-
-        if (resy > 14)
-        {
-            y += (28 - resy);
-        }
-        else
-        {
-            y -= (resy);
-        }
+        x -= (resx);
+        y -= (resy);
 
 
+        x = (int)x;
+        y = (int)y;
 
-        if ((x-(int)x) > .5f)
-        {
-            x = (int)x + 1f;
-        }
-        else
-        {
-            x = (int)x;
-        }
-
-
-        if ((y - (int)y) > .5f)
-        {
-            y = (int)y + 1f;
-        }
-        else
-        {
-            y = (int)y;
-        }
         Debug.Log(x + "    " + y);
         return new Vector3(x, y, 0);
          

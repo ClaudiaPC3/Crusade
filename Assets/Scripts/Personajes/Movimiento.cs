@@ -23,6 +23,7 @@ public class Movimiento : NetworkBehaviour
     public float lastY = -1f;
     public float latX = 0f, latY = -1f;
     public bool isMov = false;
+    public bool isInStun = false;
 
     private GameObject[] jugadores;
     private Vector2 mov;
@@ -66,7 +67,7 @@ public class Movimiento : NetworkBehaviour
         {
             return;
         }
-        if (GlobalData.EnPausa == false && GlobalData.EnCofre == false)
+        if (GlobalData.EnPausa == false && GlobalData.EnCofre == false && !isInStun)
         {
             mov = new Vector2( //En este vector se asigna la información obtenida por perifericos
             Input.GetAxisRaw("Horizontal"), //señal X de los perifericos
@@ -102,6 +103,11 @@ public class Movimiento : NetworkBehaviour
             rg2d.MovePosition(rg2d.position + mov * (speed / 1.7f) * Time.deltaTime);
         }
 
+        if(rg2d.velocity.x < 5 || rg2d.velocity.y < 5)
+        {
+            rg2d.velocity = new Vector2(0, 0);
+        }
+
         cam = new Vector3(me.transform.position.x, me.transform.position.y, -10);
         camara.transform.position = cam;
 
@@ -109,25 +115,25 @@ public class Movimiento : NetworkBehaviour
         anim.SetFloat("MovY", mov.y);
         anim.SetBool("Movement", isMov); //Variable de control para cambio de arboles
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             latX = -1;
             latY = 0;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             latX = 1;
             latY = 0;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             latX = 0;
             latY = -1;
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             latX = 0;
             latY = 1;

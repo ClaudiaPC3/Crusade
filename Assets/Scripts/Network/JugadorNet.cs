@@ -20,6 +20,7 @@ public class JugadorNet : NetworkBehaviour
     public GameObject Pelota;
     public GameObject SemGen;
     public GameObject chicle;
+    public GameObject gancho;
     public GameObject tunel;
     public GameObject cemento;
     public GameObject cofreTrampa;
@@ -156,14 +157,22 @@ public class JugadorNet : NetworkBehaviour
     [Command]
     public void CmdSpawnChicle(Vector3 posCmd, int idcmd)
     {
-        Debug.Log(idcmd);
-
         GameObject chiclecmd = Instantiate(chicle, posCmd, Quaternion.identity);
         
-        //Debug.Log(chiclecmd.GetComponent<Chicle>().idCast);
         NetworkServer.SpawnWithClientAuthority(chiclecmd, connectionToClient);
-        //chiclecmd.GetComponent<Chicle>().idCast = idcmd;
+  
         RpcSetIdCh(chiclecmd, idcmd);
+
+    }
+
+    [Command]
+    public void CmdSpawnGancho(Vector3 posCmd, int idcmd)
+    {
+        GameObject ganchocmd = Instantiate(gancho, posCmd, Quaternion.identity);
+
+        NetworkServer.SpawnWithClientAuthority(ganchocmd, connectionToClient);
+        
+        //RpcSetIdCh(chiclecmd, idcmd);
 
     }
 
@@ -243,15 +252,15 @@ public class JugadorNet : NetworkBehaviour
     }
 
     [Command]
-    public void CmdStun(float x, float y, GameObject enem)
+    public void CmdStun(bool stun, GameObject enem)
     {
-        RpcStun(x, y, enem);
+        RpcStun(stun, enem);
     }
 
     [ClientRpc]
-    public void RpcStun(float x, float y, GameObject enem)
+    public void RpcStun(bool stun, GameObject enem)
     {
-        enem.transform.position = new Vector3(x, y, 0);
+        enem.GetComponent<Movimiento>().isInStun = stun;
     }
 
     [Command]
